@@ -1,0 +1,66 @@
+.login{
+  max-width: 40rem;
+  margin-left: auto;
+  margin-right: auto;
+
+  & h1 {
+    margin: 30px 30px 100px 30px;
+    text-align: center;
+  }
+  &_inputField{
+    position: relative;
+    max-width: 25rem;
+    height: 35rem;
+    border: 2px solid black;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 120px;
+
+
+    &-image{
+      position: absolute;
+      width: 100%;
+      top: - 70px;
+      left: calc(50% - 65px);
+    }
+    & img{
+      border: 2px solid lightslategrey;
+      border-radius: 50%;
+
+
+    }
+  }
+
+  &_input{
+    padding: 30px;
+
+    & p {
+      margin: 0 0 10px 0;
+      font-weight: bold;
+    }
+
+    & input[type=text], input[type=password] {
+      width: 100%;
+      margin-bottom: 50px;
+      border: none;
+      border-bottom: 1px solid black;
+    }
+    & input[type=submit]{
+      border: none;
+      width: 8rem;
+      margin-right: 20px;
+      background-color: lightslategrey;
+      border-radius: 5px;
+      padding: 5px;
+      margin-bottom: 20px;
+    }
+    & button{
+      border: none;
+      width: 8rem;
+      border-radius: 5px;
+      padding: 5px;
+      background-color: lightslategrey;
+
+    }
+  }
+}

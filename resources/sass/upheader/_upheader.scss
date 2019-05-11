@@ -1,0 +1,15 @@
+.up-header{
+
+  &_left{
+    font-size: 2rem;
+    font-family: 'Gugi', cursive;
+    float: left;
+  }
+
+  &_right{
+    position: relative;
+    margin-top: auto;
+    margin-bottom: auto;
+    float: right;
+  }
+}

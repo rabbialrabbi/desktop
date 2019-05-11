@@ -1,4 +1,10 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://fonts.googleapis.com/css?family=Gugi" rel="stylesheet);@charset "UTF-8";
+
+.list-error {
+  color: red;
+  font-weight: bold;
+  margin-top: 50px;
+}
 
 /*!
  * Bootstrap v4.3.1 (https://getbootstrap.com/)
@@ -10662,8 +10668,255 @@ a.text-dark:focus {
   }
 }
 
-.navbar-laravel {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+.wrapper {
+  overflow: hidden;
+  padding-left: 18px;
+  padding-right: 18px;
+  padding-top: 20px;
+  max-width: 1236px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.wrapper--medium {
+  max-width: 976px;
+}
+
+.wrapper--no-padding-until-medium {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.wrapper--no-padding-until-large {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.wrapper .wrapper {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.wrapper--b-margin {
+  margin-bottom: 1rem;
+}
+
+.up-header_left {
+  font-size: 2rem;
+  font-family: "Gugi", cursive;
+  float: left;
+}
+
+.up-header_right {
+  position: relative;
+  margin-top: auto;
+  margin-bottom: auto;
+  float: right;
+}
+
+.navhead {
+  background-color: #282535;
+  width: 100%;
+  padding: 0.8rem 0;
+  clear: left;
+}
+
+.navhead ul {
+  clear: left;
+  padding-top: 1rem;
+}
+
+.navhead li {
+  font-size: 1.2rem;
+  font-weight: 300;
+  list-style: none;
+  float: right;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  border-left: 5px solid black;
+}
+
+.navhead a {
+  text-decoration: none;
+}
+
+.formfield {
+  position: relative;
+  border-bottom: 10px solid cornflowerblue;
+}
+
+.formfield img {
+  width: 100%;
+}
+
+.formfield_box {
+  color: white;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 50rem;
+  height: 10rem;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 5px;
+}
+
+.formfield_table {
+  margin: 40px 5px 0 5px;
+  width: 100%;
+  text-align: center;
+}
+
+.formfield select {
+  display: inline-block;
+  border-radius: 2px;
+  border: none;
+  width: 150px;
+  height: 2rem;
+  padding: 5px;
+}
+
+.formfield input[type=submit] {
+  display: inline-block;
+  border-radius: 1px;
+}
+
+.list {
+  margin-top: 20px;
+}
+
+.list_betweenSpace {
+  margin-top: 50px;
+}
+
+.list_component {
+  max-width: 200px;
+  margin-right: 50px;
+}
+
+.list_button {
+  margin-right: 20px;
+}
+
+.post-form h1 {
+  margin-top: 20px;
+}
+
+.login {
+  max-width: 40rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.login h1 {
+  margin: 30px 30px 100px 30px;
+  text-align: center;
+}
+
+.login_inputField {
+  position: relative;
+  max-width: 25rem;
+  height: 35rem;
+  border: 2px solid black;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 120px;
+}
+
+.login_inputField-image {
+  position: absolute;
+  width: 100%;
+  top: -70px;
+  left: calc(50% - 65px);
+}
+
+.login_inputField img {
+  border: 2px solid lightslategrey;
+  border-radius: 50%;
+}
+
+.login_input {
+  padding: 30px;
+}
+
+.login_input p {
+  margin: 0 0 10px 0;
+  font-weight: bold;
+}
+
+.login_input input[type=text],
+.login_input input[type=password] {
+  width: 100%;
+  margin-bottom: 50px;
+  border: none;
+  border-bottom: 1px solid black;
+}
+
+.login_input input[type=submit] {
+  border: none;
+  width: 8rem;
+  margin-right: 20px;
+  background-color: lightslategrey;
+  border-radius: 5px;
+  padding: 5px;
+  margin-bottom: 20px;
+}
+
+.login_input button {
+  border: none;
+  width: 8rem;
+  border-radius: 5px;
+  padding: 5px;
+  background-color: lightslategrey;
+}
+
+.ticket-center {
+  text-align: center;
+}
+
+.ticket-details h1 {
+  text-align: center;
+}
+
+.ticket-details h4 {
+  margin-bottom: 30px;
+}
+
+.ticket-details_component {
+  margin-left: 30%;
+}
+
+.profile-user_head {
+  width: 100%;
+  height: 200px;
+  overflow: auto;
+  margin-top: 50px;
+  box-shadow: 5px 5px 20px;
+}
+
+.profile-user_head h1 {
+  text-align: center;
+}
+
+.profile-user_body {
+  width: 100%;
+  height: 400px;
+  overflow: auto;
+  margin-top: 50px;
+  box-shadow: 5px 5px 20px;
+}
+
+.profile-user_body h2 {
+  margin: 10px 0 30px 0;
+}
+
+.footer {
+  color: white;
+  width: 100%;
+  height: 80px;
+  background-color: #282535;
+  margin-top: 50px;
 }
 

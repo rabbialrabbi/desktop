@@ -11,6 +11,22 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', function(){
+   return redirect('/client');
 });
+
+Route::resource('client','ClientController');
+Route::resource('booking','BookingController');
+
+Route::get('/admin', 'ProfileController@index');
+Route::get('/user/{id}', 'ProfileController@userview');
+
+Route::get('/about', function () {
+    return view('about');
+});
+
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

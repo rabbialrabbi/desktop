@@ -1,0 +1,15 @@
+.list{
+  margin-top: 20px;
+
+  &_betweenSpace{
+    margin-top: 50px;
+  }
+
+  &_component{
+    max-width: 200px;
+    margin-right: 50px;
+  }
+  &_button{
+    margin-right: 20px ;
+  }
+}

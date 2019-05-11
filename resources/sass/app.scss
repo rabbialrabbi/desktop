@@ -1,14 +1,23 @@
 
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css?family=Gugi" rel="stylesheet');
+
 
 // Variables
 @import 'variables';
+@import "errors";
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
-.navbar-laravel {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
-}
+@import "wrapper";
+@import "upheader/upheader";
+@import "navbar/navbar";
+@import "formfield/formfield";
+@import "list/list";
+@import "form/post";
+@import "login/main";
+@import "ticket";
+@import "profile/admin";
+@import "footer";
