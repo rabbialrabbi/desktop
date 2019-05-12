@@ -14,11 +14,20 @@ class ticket_booking extends Model
     public function getData($info){
 
         // check filter
+
+
         if($info->from == null && $info->to == null && $info->route == null && $info->from == null){
             $data = DB::table('ticket_booking')->where('status', '=', 'open'
             )->orderBy('id')->get();
            return $data;
         }else{
+
+            $info->validate([
+                'from'=>['required'],
+                'to'=>['required'],
+                'route'=>['required'],
+                'date'=>['required'],
+            ]);
 
             $data = DB::table('ticket_booking')->where([
                 ['from', '=', $info->from],

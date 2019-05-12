@@ -10787,6 +10787,10 @@ a.text-dark:focus {
   margin-top: 20px;
 }
 
+.list_flotRight {
+  float: right;
+}
+
 .list_betweenSpace {
   margin-top: 50px;
 }

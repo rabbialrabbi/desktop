@@ -12,8 +12,10 @@
 */
 
 Route::get('/', function(){
-   return redirect('/client');
+    return redirect('/client');
 });
+
+Route::post('/search', 'ClientController@index');
 
 Route::resource('client','ClientController');
 Route::resource('booking','BookingController');

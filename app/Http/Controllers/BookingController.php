@@ -22,7 +22,7 @@ class BookingController extends Controller
     public function update($id)
     {
         $update= ticket_booking::findOrFail($id);
-        $update->status= 'pending';
+        $update->status= 'Pending';
         $update->save();
 
         return redirect('/');
