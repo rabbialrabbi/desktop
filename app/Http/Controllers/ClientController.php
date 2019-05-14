@@ -41,12 +41,6 @@ class ClientController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-
-//        dd('Working good');
-        return view('form.post');
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -54,22 +48,7 @@ class ClientController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        $user_id= auth()->id();
-        $attributes = request()->validate([
-            'agency'=>['required'],
-            'route'=>['required'],
-            'from'=>['required'],
-            'date'=>['required'],
-            'to'=>['required'],
-            'price'=>['required'],
-        ]);
 
-        ticket_booking::create($attributes + ['user_id'=> $user_id]);
-
-        return redirect('/');
-    }
 
     /**
      * Display the specified resource.

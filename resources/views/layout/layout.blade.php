@@ -42,13 +42,13 @@
                 </li>
             @else
                 <li >
-                    <a href="/user/{{auth()->id()}}">{{ __('Profile') }}</a>
+                    <a href="/user">{{ __('Profile') }}</a>
                 </li>
                 @endif
             @endguest</li>
         <li><a href="/about">About</a></li>
-        <li><a href="/client/create">Post</a></li>
-        <li style="border-left: none;"><a href="/client">Home</a></li>
+        <li><a href="/booking/create">Post</a></li>
+        <li style="border-left: none;"><a href="/ticket">Home</a></li>
     </ul>
 </div>
 

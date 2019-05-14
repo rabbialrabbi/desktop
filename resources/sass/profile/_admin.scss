@@ -23,3 +23,18 @@
 
   }
 }
+.tickSymbol{
+   color: green;
+   font-size: 1.2rem;
+   text-decoration: none;
+ }
+
+.xSymbol{
+  color: red;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+a:hover, a:active {
+  opacity: .6;
+  text-decoration: none;
+}

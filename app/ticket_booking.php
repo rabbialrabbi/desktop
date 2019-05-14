@@ -45,4 +45,13 @@ class ticket_booking extends Model
 
         return $data;
     }
+
+    public function getPendingValue($id){
+        $data= DB::table('ticket_booking')->where([
+            ['user_id','=',$id],
+            ['status','=','Pending']
+        ])->orderBy('date')->get();
+
+        return $data;
+    }
 }

@@ -12,7 +12,7 @@ class ticketBookingSeeder extends Seeder
     public function run()
     {
         DB::table('ticket_booking')->insert([
-        'user_id'=>1,
+        'user_id'=>2,
         'agency'=>'Romana',
         'route'=>'air',
         'from'=>'Australia',
@@ -22,7 +22,7 @@ class ticketBookingSeeder extends Seeder
         ]);
 
         DB::table('ticket_booking')->insert([
-        'user_id'=>1,
+        'user_id'=>2,
         'agency'=>'Royel',
         'route'=>'air',
         'from'=>'England',
@@ -32,7 +32,7 @@ class ticketBookingSeeder extends Seeder
         ]);
 
         DB::table('ticket_booking')->insert([
-        'user_id'=>1,
+        'user_id'=>2,
         'agency'=>'Romana',
         'route'=>'air',
         'from'=>'USA',
@@ -42,13 +42,56 @@ class ticketBookingSeeder extends Seeder
         ]);
 
         DB::table('ticket_booking')->insert([
-        'user_id'=>1,
+        'user_id'=>2,
         'agency'=>'Romana',
         'route'=>'air',
         'from'=>'Australia',
         'to'=>'Brazil',
         'price'=>'150',
         'date'=>'2019/05/15',
+        ]);
+
+        DB::table('ticket_booking')->insert([
+            'user_id'=>2,
+            'agency'=>'Romana',
+            'route'=>'air',
+            'from'=>'Japan',
+            'to'=>'Canada',
+            'price'=>'150',
+            'date'=>'2019/05/17',
+        ]);
+
+        DB::table('ticket_booking')->insert([
+            'user_id'=>2,
+            'agency'=>'Romana',
+            'route'=>'air',
+            'from'=>'Peru',
+            'to'=>'Brazil',
+            'price'=>'20',
+            'status'=>'Pending',
+            'date'=>'2019/05/15',
+        ]);
+
+        DB::table('ticket_booking')->insert([
+            'user_id'=>2,
+            'agency'=>'Romana',
+            'route'=>'air',
+            'from'=>'Peru',
+            'to'=>'Brazil',
+            'price'=>'20',
+            'status'=>'Pending',
+            'date'=>'2019/05/15',
+        ]);
+
+        DB::table('ticket_booking')->insert([
+            'user_id'=>2,
+            'agency'=>'Romana',
+            'route'=>'air',
+            'from'=>'Peru',
+            'to'=>'Brazil',
+            'price'=>'20',
+            'status'=>'Sold',
+            'date'=>'2019/05/15',
         ]);
 
 

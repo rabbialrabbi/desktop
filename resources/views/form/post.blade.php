@@ -9,15 +9,15 @@
 
            <h3>Please Fill All information to Post Ticket</h3>
 
-           <form action="/client" method="post">
+           <form action="/post/create" method="post">
                @csrf
                <p>Name/Agency: <input type="text" name="agency" ><span class="list-error">  {{ $errors->first('agency') }}</span></p>
                <p>Route Type:  <select name="route" id="">
                        <option value="air">Air</option>
                        <option value="bus">Bus</option>
                        <option value="train">Train</option>
-                   </select><span class="list-error">  {{ $errors->first('agency') }}</span> Date: <input type="date" name="date"><span class="list-error">  {{ $errors->first('agency') }}</span></p>
-               <p>From : <input type="text" name="from"><span class="list-error">  {{ $errors->first('agency') }}</span> To : <input type="text" name="to"><span class="list-error">  {{ $errors->first('agency') }}</span></p>
+                   </select><span class="list-error">  {{ $errors->first('route') }}</span> Date: <input type="date" name="date"><span class="list-error">  {{ $errors->first('date') }}</span></p>
+               <p>From : <input type="text" name="from"><span class="list-error">  {{ $errors->first('from') }}</span> To : <input type="text" name="to"><span class="list-error">  {{ $errors->first('to') }}</span></p>
                <p>Price: <input type="text" name="price"><span class="list-error">  {{ $errors->first('agency') }}</span></p>
 
                <input type="submit" value="Post">
@@ -25,5 +25,6 @@
            </form>
        </div>
    </div>
+
 
 @endsection

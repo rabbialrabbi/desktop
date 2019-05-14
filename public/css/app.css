@@ -10916,6 +10916,24 @@ a.text-dark:focus {
   margin: 10px 0 30px 0;
 }
 
+.tickSymbol {
+  color: green;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+.xSymbol {
+  color: red;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+a:hover,
+a:active {
+  opacity: 0.6;
+  text-decoration: none;
+}
+
 .footer {
   color: white;
   width: 100%;

@@ -12,16 +12,29 @@
 */
 
 Route::get('/', function(){
-    return redirect('/client');
+    return redirect('/ticket');
 });
 
-Route::post('/search', 'ClientController@index');
+Route::post('/ticket/search', 'ticketController@index');
+Route::get('/ticket', 'ticketController@index');
+Route::get('/ticket/{id}', 'ticketController@ticketDetails');
+Route::get('/ticket/{id}/confirm', 'ticketController@ticketConfirm');
 
-Route::resource('client','ClientController');
-Route::resource('booking','BookingController');
+
+Route::post('/post/create', 'bookingController@store');
+Route::get('/booking/create', 'bookingController@create');
+Route::get('/booking/{id}/confirm', 'bookingController@confirmStatus');
+Route::get('/booking/{id}/deny', 'bookingController@denyStatus');
+Route::post('/booking/{id}', function (){
+    return view('sendMail');
+});
 
 Route::get('/admin', 'ProfileController@index');
-Route::get('/user/{id}', 'ProfileController@userview');
+Route::get('/admin/{id}', 'ProfileController@deleteUser');
+
+Route::get('/user', 'ProfileController@userview');
+Route::get('/user/{id}', 'ProfileController@userProfileShow');
+Route::post('/user/{id}', 'ProfileController@userProfileStore');
 
 Route::get('/about', function () {
     return view('about');

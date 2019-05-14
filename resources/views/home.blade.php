@@ -2,10 +2,10 @@
 
 @section('body')
     <div class="formfield">
-        <img src="image/flyair.jpg" alt="BackGround" height="500px">
+        <img src= "{{ asset('image/flyair.jpg') }}" alt="BackGround" height="500px">
         <div class="formfield_box">
             <div class="formfield_input">
-                <form action="/search" method="post">
+                <form action="/ticket/search" method="post">
                     @csrf
                 <table class="formfield_table">
                     <tr class="formfield_table-header">
@@ -79,8 +79,8 @@
                         <span class="list_component">Price: ${{$d->price}}</span>
                     </div>
                     <div class="col-3 ">
-                        <a href="/booking/{{ $d->id}}" class= "btn btn-primary list_button" >Request</a>
-                        <a href="/booking/{{ $d->id}}" class="btn btn-primary list_button">Details</a>
+                        <a href="/ticket/{{ $d->id}}/confirm" class= "btn btn-primary list_button" >Request</a>
+                        <a href="/ticket/{{ $d->id}}" class="btn btn-primary list_button">Details</a>
                     </div>
                 </div>
 

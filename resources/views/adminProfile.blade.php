@@ -19,6 +19,7 @@
              <th>Email</th>
              <th>Join Date</th>
              <th></th>
+             <th></th>
          </tr>
          </thead>
          <tbody>
@@ -27,7 +28,8 @@
              <td>{{$user->name}}</td>
              <td>{{$user->email}}</td>
              <td>{{$user->created_at}}</td>
-             <td><a href="">Delete</a></td>
+             <td><a href="/user/{{$user->id}}">Edit</a></td>
+             <td><a href="/admin/{{$user->id}}">Delete</a></td>
          </tr>
              @endforeach
          </tbody>
