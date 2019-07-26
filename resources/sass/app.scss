@@ -1,16 +1,14 @@
 
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css?family=Courgette&display=swap');
+
 @import url('https://fonts.googleapis.com/css?family=Gugi" rel="stylesheet');
 
 
 // Variables
 @import 'variables';
 @import "errors";
-
-// Bootstrap
-@import '~bootstrap/scss/bootstrap';
-
 @import "wrapper";
 @import "upheader/upheader";
 @import "navbar/navbar";

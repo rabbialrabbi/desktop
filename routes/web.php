@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function(){
-    return redirect('/ticket');
+    return redirect('/about');
 });
 
 Route::post('/ticket/search', 'ticketController@index');

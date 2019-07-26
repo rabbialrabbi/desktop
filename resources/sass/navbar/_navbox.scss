@@ -1,0 +1,10 @@
+.menu-box{
+  & li{
+    list-style: none;
+    display: inline-flex;
+
+  }
+  & a {
+    text-decoration: none;
+  }
+}
