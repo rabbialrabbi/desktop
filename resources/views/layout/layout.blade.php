@@ -13,6 +13,7 @@
 </head>
 <body>
 
+
 <div id="app" class="up-header wrapper">
     <div class="row">
         <div class="col-3">
@@ -59,7 +60,10 @@
                 </div>
                 <div class="row">
                     <div class="up-header_right-center">
-                        <span>My Account </span><i class="fas fa-chevron-down"></i>
+                        <div class="dropdown-hover">
+                            <span>My Account </span><i class="fas fa-chevron-down"></i>
+                        </div>
+
                     </div>
                 </div>
 
@@ -70,8 +74,16 @@
                         </div>
                     </div>
                     <div class="row">
-                        <button>LogIn</button>
-                        <button>Register</button>
+
+                        <div class="dropdown-button">
+                            <button>Sign In</button>
+                            <button>Register</button>
+                        </div>
+                        {{--<div class="dropdown-button">--}}
+                            {{--<button>LogIn</button>--}}
+                            {{--<button>Register</button>--}}
+                        {{--</div>--}}
+
                     </div>
                 </div>
 
@@ -80,41 +92,8 @@
     </div>
 </div>
 
-{{--<div class=" navhead">--}}
-    {{--<ul class="wrapper">--}}
-        {{--<li> @guest--}}
-            {{--<li >--}}
-                {{--<a href="{{ route('login') }}">{{ __('Login') }}</a>--}}
-            {{--</li>--}}
-        {{--@else--}}
-
-            {{--<li>--}}
-
-                {{--<a  href="{{ route('logout') }}"--}}
-                   {{--onclick="event.preventDefault();--}}
-                   {{--document.getElementById('logout-form').submit();">--}}
-                    {{--{{ __('Logout') }}</a>--}}
-                    {{--<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">--}}
-                        {{--@csrf--}}
-                    {{--</form>--}}
-            {{--</li>--}}
-            {{--@if( auth()->user()->email == 'admin@g.com')--}}
-                {{--<li >--}}
-                    {{--<a href="/admin">{{ __('Admin') }}</a>--}}
-                {{--</li>--}}
-            {{--@else--}}
-                {{--<li >--}}
-                    {{--<a href="/user">{{ __('Profile') }}</a>--}}
-                {{--</li>--}}
-                {{--@endif--}}
-            {{--@endguest</li>--}}
-        {{--<li><a href="/about">About</a></li>--}}
-        {{--<li><a href="/booking/create">Post</a></li>--}}
-        {{--<li style="border-left: none;"><a href="/ticket">Home</a></li>--}}
-    {{--</ul>--}}
-{{--</div>--}}
-
 @yield('body')
+
 
 <div class="footer">
     <p class="wrapper">CopyRight @ 2019</p>

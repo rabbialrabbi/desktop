@@ -1,5 +1,12 @@
 .formfield{
+
+  form{
+    padding: 0;
+    margin: 0;
+
+  }
   position: relative;
+  margin-top: 20px;
   border-bottom: 10px solid cornflowerblue;
   img {
     width: 100%;
@@ -8,32 +15,57 @@
     color: white;
     position: absolute;
     left: 50%;
-    top: 50%;
-    width: 50rem;
-    height: 10rem;
+    top: 60%;
     transform: translate(-50%, -50%);
     text-align: center;
-    background-color:  rgba(0,0,0, .7);
-    border-radius: 5px;
-  }
-  &_table{
-    margin: 40px 5px 0 5px;
-    width: 100%;
-    text-align: center;
+
   }
 
-  select {
+  input {
+    float: left;
     display: inline-block;
-    border-radius: 2px;
+    height: 60px;
+    width: 11rem;
+    padding: 5px 15px;
     border: none;
-    width: 150px;
-    height: 2rem;
-    padding: 5px;
+
+    }
 
   }
-  input[type= submit] {
-    display: inline-block;
-    border-radius: 1px;
 
-  }
+.form-home{
+  margin-left: auto;
+  margin-right: auto;
+  //box-shadow: 5px 5px 10px;
 }
+
+
+.form-element{
+  float: left;
+  height: 60px;
+
+}
+
+
+.form-element span{
+  display: inline-block;
+  height: 60px;
+  border-right: 1px solid lightgray;
+  background-color: white;
+  clear: left;
+
+}
+
+.form-element:first-child input{
+  border-radius: 5px 0 0 5px ;
+}
+
+.form-element:nth-child(5) input{
+  border-radius: 0 5px 5px 0;
+  background-color: #0D71B3;
+  color: white;
+}
+.clr{
+  clear: both;
+}
+

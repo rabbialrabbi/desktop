@@ -1,5 +1,9 @@
 import Vue from "vue";
 
+import './select2';
+
+window.select = select;
+
 window.Vue = Vue;
 
 window._ = require('lodash');
