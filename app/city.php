@@ -10,7 +10,7 @@ class city extends Model
     public $guarded =[];
 
     public function getData(){
-        return $data = city::findOrFail(1);
+        return $data = city::find(1);
 
 
     }
