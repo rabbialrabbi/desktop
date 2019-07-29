@@ -17,6 +17,7 @@ class ticket_booking extends Model
 
 
         if($info->from == null && $info->to == null && $info->route == null && $info->from == null){
+
             $data = DB::table('ticket_booking')->where('status', '=', 'open'
             )->orderBy('id')->get();
            return $data;

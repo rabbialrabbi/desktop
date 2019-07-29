@@ -11,33 +11,29 @@
                     <div class="form-element">
                     <input class="from" list="from" placeholder="Want to go from">
                     <datalist id="from">
-                        <option value="Internet Explorer">
-                        <option value="Firefox">
-                        <option value="Chrome">
-                        <option value="Opera">
-                        <option value="Safari">
+
+                        @foreach($fromValue as $from)
+                            <option value="{{$from}}">
+                        @endforeach
+
                     </datalist>
                     <span></span>
                     </div>
                     <div class="form-element">
                         <input list="to" placeholder="Want to go from">
                         <datalist id="to">
-                            <option value="Internet Explorer">
-                            <option value="Firefox">
-                            <option value="Chrome">
-                            <option value="Opera">
-                            <option value="Go">
+
+                            @foreach($toValue as $to)
+                                <option value="{{$to}}">
+                            @endforeach
+
                         </datalist>
                         <span></span>
                     </div>
                     <div class="form-element">
                         <input list="type" placeholder="Want to go from">
                         <datalist id="type">
-                            <option value="Internet Explorer">
-                            <option value="Firefox">
-                            <option value="Chrome">
-                            <option value="Opera">
-                            <option value="Go">
+                            <option value="Bus">
                         </datalist>
                         <span></span>
                     </div>
@@ -98,11 +94,8 @@
         <h2>Available Bus </h2>
         <div class="heading-uline"></div>
         </div>
-        <h5>Route : Dhaka -> Bogura</h5>
-        <p><span>Bogura</span>Bogura, formarly known as Bogra, is a major city located in the Bogura District, Rajshahi
-            Division, Bangladesh. It is major commercial hub. The Bogura bridge connects the Rajshahi Division and
-            Rangpur Division. This city is also known as the capital of North Bengal of Bangladesh. Shatmatha is the
-            heart of this city</p>
+        <h5>Route : Dhaka -> {{$city->name}}</h5>
+        <p><span>{{$city->name}}</span> {{$city->description}} <a href="{{$city->link}}">More</a></p>
         <h5>Estimate Km : 192 | Estimate Time: 5.5hr | Estimate price: 350-1200</h5>
     </div>
 

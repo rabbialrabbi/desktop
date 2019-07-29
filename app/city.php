@@ -6,6 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class city extends Model
 {
-    protected $table= 'city';
-    public $guarded= [];
+    protected $table = 'city';
+    public $guarded =[];
+
+    public function getData(){
+        return $data = city::findOrFail(1);
+
+
+    }
 }
