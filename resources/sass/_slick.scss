@@ -1,0 +1,47 @@
+@import "slick/slick.css";
+@import "slick/slick-theme.css";
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.slider {
+  width: 100%;
+  margin: 100px auto;
+}
+
+.slick-slide {
+  margin: 0px 20px;
+}
+
+.slick-slide img {
+  width: 100%;
+  margin: 20px 5px;
+  box-shadow: 5px 5px 10px #888888;
+}
+.slick-slide img:hover {
+  box-shadow: 5px 5px 10px 10px darkgray;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: black;
+}
+
+
+.slick-slide {
+  transition: all ease-in-out .3s;
+
+}
+
+.slick-active {
+
+}
+
+.slick-current {
+  opacity: 1;
+}

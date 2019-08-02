@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\user;
+use App\route;
 use App\city;
 use App\ticket_booking;
 use Illuminate\Http\Request;
@@ -11,17 +12,17 @@ class ticketController extends Controller
 {
 
 
-    public function index(ticket_booking $booking, city $city)
+    public function index(ticket_booking $booking)
     {
-        $info= request();
-        $data = $booking->getData($info);
-        $cities = $city->getData();
+       $router=  route::All();
+//        dd($router->departureCity()->first()->name.
+//        $router->arrivalCity()->first()->name
+//            );
         $fromValue= $booking->getTicketColumnValue('from');
         $toValue= $booking->getTicketColumnValue('to');
-
+//
         return view('home',[
-            'data'=>$data,
-            'city'=>$cities,
+            'router'=>$router,
             'fromValue'=>$fromValue,
             'toValue'=>$toValue
         ]);

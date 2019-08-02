@@ -10,7 +10,12 @@ class route extends Model
         return $this->belongsTo('App\bus');
     }
 
-    public function city(){
-        return $this->hasMany('App\city');
+    public function departureCity(){
+        return $this->belongsTo('App\city','departure_id', 'id');
     }
+
+    public function arrivalCity(){
+        return $this->belongsTo('App\city','arrival_id', 'id');
+    }
+
 }

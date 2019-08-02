@@ -1,6 +1,21 @@
 @extends('layout.layout')
 
 @section('body')
+
+    {{--error field--}}
+    @if($errors->any())
+        @foreach($errors->all() as $e)
+            <div class="wrapper">
+                <div class="alert alert-danger alert-dismissible fade show mt-2" role="alert">
+                    {{ $e }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            </div>
+
+        @endforeach
+    @endif
     {{--Search form Field--}}
     <div id="searchResult" class="formfield">
         <img src= "{{ asset('image/flyair.jpg') }}" alt="BackGround" height="500px">
@@ -50,91 +65,85 @@
         </div>
     </div>
 
+    <div class="regular slider wrapper">
+        <div><a href=""><img src="image/alhamraLogo.png" alt="alhamra" ></a></div>
+        <div><a href=""><img src="image/desh.png" alt="Desh" ></a></div>
+        <div><a href=""><img src="image/eagleLogo.png" alt="Eagle" ></a></div>
+        <div><a href=""><img src="image/enaLogo.png" alt="Ena" ></a></div>
+        <div><a href=""><img src="image/greenline.png" alt="GreenLine" ></a></div>
+        <div><a href=""><img src="image/hanifLogo.png" alt="Hanif" ></a></div>
+        <div><a href=""><img src="image/nabilLogo.png" alt="Nabil" ></a></div>
+        <div><a href=""><img src="image/sakuraLogo.png" alt="Sakura" ></a></div>
+        <div><a href=""><img src="image/sAlomLogo.png" alt="S Alom" ></a></div>
+        <div><a href=""><img src="image/shohagLogo.png" alt="Shohag" ></a></div>
+        <div><a href=""><img src="image/shymoliLogo.png" alt="Shymoli" ></a></div>
+        <div><a href=""><img src="image/srlogo.png" alt="SR Travels" ></a></div>
+        <div><a href=""><img src="image/trTravels.png" alt="Tr Travels" ></a></div>
+    </div>
 
 
 
-            {{--<div class="formfield_input">--}}
-                {{--<form action="/ticket/search" method="post">--}}
-                    {{--@csrf--}}
-                {{--<table class="formfield_table">--}}
-                    {{--<tr class="formfield_table-header">--}}
-                        {{--<td>From</td>--}}
-                        {{--<td>To</td>--}}
-                        {{--<td>Type</td>--}}
-                        {{--<td>Time</td>--}}
-                        {{--<td></td>--}}
-                    {{--</tr>--}}
-                    {{--<tr>--}}
-                        {{--<td><select name="from" id="" required>--}}
-                                {{--@foreach($fromValue as $from)--}}
-                                    {{--<option value='{{$from}}'>{{$from}}</option>--}}
-                                    {{--@endforeach--}}
-                            {{--</select></td>--}}
-                        {{--<td><select name="to" id="" required>--}}
-                                {{--@foreach($toValue as $to)--}}
-                                    {{--<option value='{{$to}}'>{{$to}}</option>--}}
-                                {{--@endforeach--}}
-                            {{--</select></td>--}}
-                        {{--<td><select name="route" id="" required>--}}
-                                {{--<option value="air">Air</option>--}}
-                                {{--<option value="bus">Bus</option>--}}
-                                {{--<option value="train">Train</option>--}}
-                            {{--</select></td>--}}
-                        {{--<td><input type="date" name="date" required></td>--}}
-                        {{--<td><input type="submit" value="Search"></td>--}}
-                    {{--</tr>--}}
-                {{--</table>--}}
-                {{--</form>--}}
+    <div class="search-result wrapper">
+        <div class="heading ">
+            <h2>Top Bus Route </h2>
+            <div class="heading-uline"></div>
+        </div>
+        <div class="row">
+            <div class="container">
 
-            {{--</div>--}}
+                <table class="table table-hover top-route">
+                    <thead>
+                    <tr>
+                        <th>From</th>
+                        <th>To</th>
+                        <th>Distance</th>
+                        <th>Price</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach($router as $route)
+                        <tr>
+                            <td><i class="fa fa-map-marker" aria-hidden="true"> </i>
+                                {{ $route->departureCity()->first()->name}}</td>
+                            <td><i class="fa fa-map-marker" aria-hidden="true"></i>
+                                {{ $route->arrivalCity()->first()->name}}</td>
+                            <td>{{$route->est_distance}}</td>
+                            <td>{{$route->est_price}}</td>
+                            <td><button>Book Now</button></td>
+                        </tr>
+                    @endforeach
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
 
 
     <div class="search-result wrapper">
         <div class="heading">
-        <h2>Available Bus </h2>
+        <h2>Available Route </h2>
         <div class="heading-uline"></div>
         </div>
-        <h5>Route : Dhaka -> {{$city->name}}</h5>
-        <p><span>{{$city->name}}</span> {{$city->description}} <a href="{{$city->link}}">More</a></p>
-        <h5>Estimate Km : 192 | Estimate Time: 5.5hr | Estimate price: 350-1200</h5>
-    </div>
 
-        <div class="search-result_table wrapper">
-            <table>
-                <thead>
-                <tr>
-                    <th>Agency</th>
-                    <th>Trips</th>
-                    <th>Time</th>
-                    <th></th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>SR. Travels</td>
-                    <td>8 trips</td>
-                    <td>8 times</td>
-                    <td style="text-align: center"><button>Pick Date</button></td>
-                </tr>
-                </tbody>
-            </table>
+        <div class="row">
+            <div class="col-4">
+                @foreach($router as $route)
+                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                    {{ $route->departureCity()->first()->name}} <span> -----------></span>
+                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                    {{ $route->arrivalCity()->first()->name}} </br>
+                    @endforeach
+            </div>
+            <div class="col-4"></div>
+            <div class="col-4"></div>
+        </div>
         </div>
 
 
 
-    {{--@if($errors->any())--}}
-        {{--@foreach($errors->all() as $e)--}}
-            {{--<div class="wrapper">--}}
-            {{--<div class="alert alert-danger alert-dismissible fade show mt-2" role="alert">--}}
-                {{--{{ $e }}--}}
-                {{--<button type="button" class="close" data-dismiss="alert" aria-label="Close">--}}
-                    {{--<span aria-hidden="true">&times;</span>--}}
-                {{--</button>--}}
-            {{--</div>--}}
-            {{--</div>--}}
 
-            {{--@endforeach--}}
-        {{--@endif--}}
 
     {{--<div class="list">--}}
         {{--@foreach($data as $d)--}}
@@ -169,6 +178,21 @@
         {{--</div>--}}
             {{--@endforeach--}}
     {{--</div>--}}
+
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+    <script src="{{asset('js/slick.js')}}" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+        $(document).on('ready', function() {
+            $(".regular").slick({
+                autoplay: true,
+                autoplaySpeed: 1000,
+                arrows:false,
+                infinite: true,
+                slidesToShow: 6,
+                slidesToScroll: 1
+            });
+        });
+    </script>
 
 
 @endsection

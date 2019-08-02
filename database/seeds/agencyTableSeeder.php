@@ -16,7 +16,7 @@ class agencyTableSeeder extends Seeder
            'name'=>'SR Travels',
            'address'=>'Dhaka',
            'contact'=>'017XXXXXXXX',
-            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+           'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
 //            'created_at' => date("Y-m-d H:i:s"), //also possible
 
         ]);
@@ -26,8 +26,27 @@ class agencyTableSeeder extends Seeder
             'address'=>'Dhaka',
             'contact'=>'017XXXXXXXX',
             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-//            'created_at' => date("Y-m-d H:i:s"), //also possible
+        ]);
 
+        DB::table('agency')->insert([
+            'name'=>'Manik',
+            'address'=>'Dhaka',
+            'contact'=>'017XXXXXXXX',
+            'created_at' => Carbon::now()->format('Y-m-d H:i:s')
+        ]);
+
+        DB::table('agency')->insert([
+            'name'=>'Nabil',
+            'address'=>'Dhaka',
+            'contact'=>'017XXXXXXXX',
+            'created_at' => Carbon::now()->format('Y-m-d H:i:s')
+        ]);
+
+        DB::table('agency')->insert([
+            'name'=>'Hanif',
+            'address'=>'Dhaka',
+            'contact'=>'017XXXXXXXX',
+            'created_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);
     }
 }

@@ -1,0 +1,24 @@
+.fa-map-marker {
+  padding: 5px;
+}
+.top-route th{
+  color: #0D71B3;
+}
+
+.top-route tr td:last-child{
+  text-align: center;
+}
+
+.top-route button{
+  border: 1px solid #0D71B3;
+  background-color: white;
+  border-radius: 4px;
+  padding: 5px 15px;
+}
+
+.top-route tr:hover button {
+
+  background-color: #0D71B3;
+  color: white;
+
+}

@@ -11,10 +11,12 @@
 @import 'variables';
 @import "errors";
 @import "wrapper";
+@import "slick";
 @import "upheader/upheader";
 @import "navbar/navbar";
-@import "formfield/formfield";
-@import "formfield/searchResult";
+@import "home/formfield";
+@import "home/searchResult";
+@import "home/topRoute";
 @import "list/list";
 @import "form/post";
 @import "login/main";
