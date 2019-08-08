@@ -17,53 +17,69 @@
         @endforeach
     @endif
     {{--Search form Field--}}
+
+
+
+
     <div id="searchResult" class="formfield">
-        <img src= "{{ asset('image/flyair.jpg') }}" alt="BackGround" height="500px">
-        <div class="formfield_box">
-            <form action="/action_page.php">
-                <div class="form-home">
-                    <div class="shadow">
-                    <div class="form-element">
-                    <input class="from" list="from" placeholder="Want to go from">
-                    <datalist id="from">
+        <img src= "{{ asset('image/flyair.jpg') }}" alt="BackGround" height="600px">
 
-                        @foreach($fromValue as $from)
-                            <option value="{{$from}}">
-                        @endforeach
+        <div class="formfield_box row">
+            <div class="col-sm-1 col-md-2 col-lg-2"></div>
+            <div class="col-sm-10 col-md-8 col-lg-8">
+                <form action="/action_page.php">
+                    <div class="form-home">
+                        <div class="form-element">
+                            <input class="from" list="from" placeholder="Want to go from">
+                            <datalist id="from">
 
-                    </datalist>
-                    <span></span>
-                    </div>
-                    <div class="form-element">
-                        <input list="to" placeholder="Want to go from">
-                        <datalist id="to">
+                                @foreach($fromValue as $from)
+                                    <option value="{{$from}}">
+                                @endforeach
 
-                            @foreach($toValue as $to)
-                                <option value="{{$to}}">
-                            @endforeach
+                            </datalist>
+                            <span></span>
+                        </div>
+                        <div class="form-element">
+                            <input list="to" placeholder="Want to go from">
+                            <datalist id="to">
 
-                        </datalist>
-                        <span></span>
+                                @foreach($toValue as $to)
+                                    <option value="{{$to}}">
+                                @endforeach
+
+                            </datalist>
+                            <span></span>
+                        </div>
+                        <div class="form-element">
+                            <input list="type" placeholder="Want to go from">
+                            <datalist id="type">
+                                <option value="Bus">
+                            </datalist>
+                            <span></span>
+                        </div>
+                        <div class="form-element">
+                            <input type="date">
+                        </div>
+                        <div class="form-element">
+                            <input type="submit">
+                        </div>
+                        <div class="clr"></div>
                     </div>
-                    <div class="form-element">
-                        <input list="type" placeholder="Want to go from">
-                        <datalist id="type">
-                            <option value="Bus">
-                        </datalist>
-                        <span></span>
-                    </div>
-                    <div class="form-element">
-                        <input type="date">
-                    </div>
-                    <div class="form-element">
-                        <input type="submit">
-                    </div>
-                    <div class="clr"></div>
-                </div>
-                </div>
-            </form>
+                </form>
+            </div>
+            <div class="col-sm-1 col-md-2 col-lg-2"></div>
+
         </div>
+
     </div>
+
+      {{--<div class="formfield_box">--}}
+            {{--<div class="">--}}
+            {{----}}
+        {{--</div> --}}
+    {{--</div>--}}
+
 
     <div class="regular slider wrapper">
         <div><a href=""><img src="image/alhamraLogo.png" alt="alhamra" ></a></div>
@@ -110,7 +126,7 @@
                                 {{ $route->arrivalCity()->first()->name}}</td>
                             <td>{{$route->est_distance}}</td>
                             <td>{{$route->est_price}}</td>
-                            <td><button>Book Now</button></td>
+                            <td><a href="/booking/{{$route->departure_id}}/{{$route->arrival_id}}"><button>Book Now</button></a></td>
                         </tr>
                     @endforeach
                     </tbody>
@@ -121,20 +137,28 @@
 
 
 
-    <div class="search-result wrapper">
+    <div class="available_city wrapper">
         <div class="heading">
         <h2>Available Route </h2>
         <div class="heading-uline"></div>
         </div>
 
-        <div class="row">
-            <div class="col-4">
-                @foreach($router as $route)
-                    <i class="fa fa-map-marker" aria-hidden="true"></i>
-                    {{ $route->departureCity()->first()->name}} <span> -----------></span>
-                    <i class="fa fa-map-marker" aria-hidden="true"></i>
-                    {{ $route->arrivalCity()->first()->name}} </br>
+        <div class="row ">
+            <div class="col-4 available_city-col">
+
+                <table>
+                    @foreach($router as $route)
+                    <tr>
+                        <a href=""><td><i class="fa fa-map-marker" aria-hidden="true"></i>
+                            {{ $route->departureCity()->first()->name}}</td>
+                        <td> ----------></td>
+                        <td><i class="fa fa-map-marker" aria-hidden="true"></i>
+                            {{ $route->arrivalCity()->first()->name}}</td>
+                        </a>
+                    </tr>
                     @endforeach
+                </table>
+
             </div>
             <div class="col-4"></div>
             <div class="col-4"></div>

@@ -17,7 +17,7 @@ class DatabaseSeeder extends Seeder
         $this->call(citySeeder::class);
         $this->call(agencyTableSeeder::class);
         $this->call(busesTableSeeder::class);
-        $this->call(sitsTableSeeder::class);
+        $this->call(seatTableSeeder::class);
         $this->call(routesTableSeeder::class);
     }
 }

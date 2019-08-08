@@ -1,6 +1,41 @@
 @extends('layout.layout')
 
 @section('body')
+
+    <div class="wrapper">
+        <h2>Destination : {{$destination_from->name}} to {{$destination_to->name}} </h2>
+
+        <p><strong>{{$destination_to->name}}</strong>
+            {{$destination_to->description}} <a href="{{$destination_to->link}}"> More.. </a></p>
+
+        <h5>Estimate Distance: {{$route_info->est_distance}} Km | Estimate Time : {{$route_info->est_time}} hr | Estimate Price : {{$route_info->est_price}} TK</h5>
+
+        <table class="table">
+            <thead>
+            <tr class="bg-secondary">
+                <th scope="col">Agency</th>
+                <th scope="col">Trips</th>
+                <th scope="col">First Trip</th>
+                <th scope="col">Last Trip</th>
+                <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach($routes as $route)
+            <tr>
+                <th scope="row">{{$route['agency'] }}</th>
+                <td>{{$route['trips'] }} (trips)</td>
+                <td>{{$route['first_trip'] }}</td>
+                <td>{{$route['last_trip'] }}</td>
+                <td><a href="/bookingbus/{{$route['agency_id']}}/{{$route_info->id}}"><button>Details</button></a></td>
+            </tr>
+                @endforeach
+
+            </tbody>
+        </table>
+    </div>
+
+    {{--
 <div class="wrapper">
     <div class="ticket-details">
     <h1>Information</h1>
@@ -46,5 +81,6 @@
         </form>
     </div>
 </div>
+--}}
 
 @endsection

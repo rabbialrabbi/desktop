@@ -1,23 +1,26 @@
-.formfield{
+.formfield {
 
-  form{
+  form {
     padding: 0;
     margin: 0;
 
   }
   position: relative;
-  margin-top: 20px;
   border-bottom: 10px solid cornflowerblue;
   img {
     width: 100%;
   }
-  &_box{
+  &_box {
     color: white;
     position: absolute;
-    left: 50%;
-    top: 60%;
-    transform: translate(-50%, -50%);
+    left: 0%;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50);
     text-align: center;
+    @media only screen and (min-width: 1920px ) {
+      margin-left: 5%;
+    }
 
   }
 
@@ -25,19 +28,21 @@
     float: left;
     display: inline-block;
     height: 60px;
-    width: 10em;
     padding: 5px 15px;
     border: none;
-
+    @media only screen and (max-width: 1250px ) {
+      width: 7em;
     }
-
+    @media only screen and (max-width: 1366px ) {
+      width: 10em;
+    }
+    @media only screen and (min-width: 1920px ) {
+      width: 13em;
+    }
   }
-
-.form-home{
-  margin-left: auto;
-  margin-right: auto;
-  //box-shadow: 5px 5px 10px;
 }
+
+
 
 
 .form-element{
@@ -45,6 +50,8 @@
   height: 60px;
 
 }
+
+
 
 
 .form-element span{
@@ -68,4 +75,3 @@
 .clr{
   clear: both;
 }
-

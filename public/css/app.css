@@ -600,7 +600,6 @@ body::after {
 
 .formfield {
   position: relative;
-  margin-top: 20px;
   border-bottom: 10px solid cornflowerblue;
 }
 
@@ -616,25 +615,44 @@ body::after {
 .formfield_box {
   color: white;
   position: absolute;
-  left: 50%;
-  top: 60%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  left: 0%;
+  top: 50%;
+  width: 100%;
+  -webkit-transform: translateY(-50);
+          transform: translateY(-50);
   text-align: center;
+}
+
+@media only screen and (min-width: 1920px) {
+  .formfield_box {
+    margin-left: 5%;
+  }
 }
 
 .formfield input {
   float: left;
   display: inline-block;
   height: 60px;
-  width: 10em;
   padding: 5px 15px;
   border: none;
 }
 
-.form-home {
-  margin-left: auto;
-  margin-right: auto;
+@media only screen and (max-width: 1250px) {
+  .formfield input {
+    width: 7em;
+  }
+}
+
+@media only screen and (max-width: 1366px) {
+  .formfield input {
+    width: 10em;
+  }
+}
+
+@media only screen and (min-width: 1920px) {
+  .formfield input {
+    width: 13em;
+  }
 }
 
 .form-element {
@@ -749,6 +767,20 @@ body::after {
 .top-route tr:hover button {
   background-color: #0D71B3;
   color: white;
+}
+
+.available_city-col {
+  padding: 0;
+  margin-left: 60px;
+}
+
+.available_city-row {
+  margin-bottom: 10px;
+  color: #0D71B3;
+}
+
+.available_city-row:hover .fa-map-marker {
+  font-size: 20px;
 }
 
 .list {

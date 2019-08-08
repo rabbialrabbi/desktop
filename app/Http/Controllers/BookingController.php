@@ -2,27 +2,79 @@
 
 namespace App\Http\Controllers;
 
+use App\agency;
+use App\bus;
+use App\city;
 use App\User;
 use App\booking;
 use App\ticket_booking;
 use Illuminate\Http\Request;
+use App\route;
+use Illuminate\Support\Facades\DB;
 
 class BookingController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth')->except('show');
+        $this->middleware('auth')->except(['showAgency','showBus','showSeat']);
     }
 
-    public function show($id)
+    public function showAgency($from_id, $to_id)
     {
-        $ticket = ticket_booking::findOrFail($id);
-        $client= User::findOrFail($ticket->user_id);
+       $route_id= route::where(['departure_id'=>$from_id, 'arrival_id'=>$to_id])->first();
 
-        return view('ticketDetails',[
-            'ticket'=>$ticket,
-            'client'=>$client]);
+           $destination_from=city::findOrFail($from_id);
+           $destination_to=city::findOrFail($to_id);
+
+
+       $find_buses = DB::table('buses')->select(DB::raw('count(id) as bus_count, agency_id'))->where('route_id','=',$route_id->id)->groupBy('agency_id')->get();
+
+
+       foreach ($find_buses as $buses) {
+           $bus_list[] = [
+               'agency' => agency::findOrFail($buses->agency_id)->name,
+               'agency_id' => $buses->agency_id,
+               'trips' => $buses->bus_count,
+               'first_trip' => bus::where(['route_id' => $route_id->id, 'agency_id' => $buses->agency_id])
+                   ->first()->departure_time,
+               'last_trip' => bus::where(['route_id' => $route_id->id, 'agency_id' => $buses->agency_id])
+                   ->orderBy('departure_time', 'desc')
+                   ->first()->departure_time
+           ];
+       }
+
+           return view('ticketDetails', [
+               'routes'=>$bus_list,
+               'destination_from'=>$destination_from,
+               'destination_to'=>$destination_to,
+               'route_info'=>$route_id
+
+           ]);
+
     }
+
+    public function showBus($agency_id , $route_id){
+
+           $bus_list=  bus::with('agency','sits')->where(['agency_id'=>$agency_id, 'route_id'=>$route_id])->get();
+
+           return view('busDetails',['buses'=>$bus_list]);
+
+
+    }
+
+    public function showSeat($bus_id){
+
+       $seatDetails = bus::findOrFail($bus_id)->sits()->get();
+
+       foreach ($seatDetails as $seats){
+           echo $seats->name . "</br>";
+       }
+        return view('seatDetails',[]);
+    }
+
+
+
+
 
     public function create()
     {
