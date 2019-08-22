@@ -162,41 +162,43 @@
 
 
 
+{{--
+
+    <div class="list">
+        @foreach($data as $d)
+        <div class="card wrapper list_betweenSpace">
+            <h5 class="card-header">
+                <div class="row">
+                    <div class="col-9">
+                    {{$d->agency}}
+                </div>
+                <div class="col-3">
+                    Date: {{$d->date}}
+                </div>
+                </div>
+                </h5>
 
 
-    {{--<div class="list">--}}
-        {{--@foreach($data as $d)--}}
-        {{--<div class="card wrapper list_betweenSpace">--}}
-            {{--<h5 class="card-header">--}}
-                {{--<div class="row">--}}
-                    {{--<div class="col-9">--}}
-                    {{--{{$d->agency}}--}}
-                {{--</div>--}}
-                {{--<div class="col-3">--}}
-                    {{--Date: {{$d->date}}--}}
-                {{--</div>--}}
-                {{--</div>--}}
-                {{--</h5>--}}
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-9">
+                        <span class="list_component">From: {{$d->from}}</span>
+                        <span class="list_component">To: {{$d->to}}</span>
+                        <span class="list_component">Price: ${{$d->price}}</span>
+                    </div>
+                    <div class="col-3 ">
+                        <a href="/ticket/{{ $d->id}}/confirm" class= "btn btn-primary list_button" >Request</a>
+                        <a href="/ticket/{{ $d->id}}" class="btn btn-primary list_button">Details</a>
+                    </div>
+                </div>
 
 
-            {{--<div class="card-body">--}}
-                {{--<div class="row">--}}
-                    {{--<div class="col-9">--}}
-                        {{--<span class="list_component">From: {{$d->from}}</span>--}}
-                        {{--<span class="list_component">To: {{$d->to}}</span>--}}
-                        {{--<span class="list_component">Price: ${{$d->price}}</span>--}}
-                    {{--</div>--}}
-                    {{--<div class="col-3 ">--}}
-                        {{--<a href="/ticket/{{ $d->id}}/confirm" class= "btn btn-primary list_button" >Request</a>--}}
-                        {{--<a href="/ticket/{{ $d->id}}" class="btn btn-primary list_button">Details</a>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
+            </div>
+        </div>
+            @endforeach
+    </div>
 
-
-            {{--</div>--}}
-        {{--</div>--}}
-            {{--@endforeach--}}
-    {{--</div>--}}
+    --}}
 
     <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
     <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>

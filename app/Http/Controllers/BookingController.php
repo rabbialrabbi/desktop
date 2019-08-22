@@ -57,7 +57,7 @@ class BookingController extends Controller
 
     public function showBus(){
 
-if(@$_GET['agency_id'] & @$_GET['route_id']){
+if(@$_GET['agency_id'] and @$_GET['route_id']){
     $bus_list=  bus::with('agency','seat')->where(['agency_id'=>$_GET['agency_id'], 'route_id'=>$_GET['route_id']])->get();
 }else{
     $bus_list=  bus::with('agency','seat','route')->where(['agency_id'=>$_GET['agencyId']])->get();

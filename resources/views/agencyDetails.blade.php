@@ -31,11 +31,11 @@
                 <td>{{$route['first_trip'] }}</td>
                 <td>{{$route['last_trip'] }}</td>
                 <td>
-                    <form id="formId" action="/bookingbus" method="GET">
+                    <form id="formId{{$route['agency_id']}}" action="/bookingbus" method="GET">
                         <input type="hidden" name="agency_id" value={{$route['agency_id']}}>
                         <input type="hidden" name="route_id" value={{$route_info->id}}>
                         <input type="hidden" name="date" id="" value="Nothing">
-                        <input type="button" id="datepicker" value="Select Date">
+                        <input type="button" id="datepicker{{$route['agency_id']}}" onclick="datePicker({{$route['agency_id']}})" value="Select Date">
                     </form>
                 </td>
             </tr>
@@ -96,15 +96,16 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
     <script>
-        $( function() {
-            $( "#datepicker" ).datepicker({
-                minDate:0,
-                onSelect : function (dateText, inst) {
-                    $("input[name='date']").val(dateText);
-                    $('#formId').submit(); // <-- SUBMIT
-                }
-            });
-        } );
+        @foreach($routes as $route)
+                $("#datepicker{{$route['agency_id']}}").datepicker({
+                    minDate:0,
+                    onSelect : function (dateText, inst) {
+                        $("input[name='date']").val(dateText);
+                        $("#formId{{$route['agency_id']}}").submit(); // <-- SUBMIT
+                    }
+                });
+        @endforeach
+
     </script>
 
 @endsection
