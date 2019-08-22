@@ -12,11 +12,7 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 const app = new Vue({
     el: '#app',
     methods:{
-        addActive(){
-            document.getElementById('menu-active').classList.add('menu-active');
-            document.getElementById('bar-active').classList.add('bar-active');
-            document.getElementById('anchor-active').classList.add('anchor-active');
-        }
+
     }
 });
 

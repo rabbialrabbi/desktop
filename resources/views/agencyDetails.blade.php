@@ -1,6 +1,9 @@
+ {{--      from router --> '/booking/{from_id}/{to_id}', 'bookingController@showAgency' To -->;          --}}
+
 @extends('layout.layout')
 
 @section('body')
+
 
     <div class="wrapper">
         <h2>Destination : {{$destination_from->name}} to {{$destination_to->name}} </h2>
@@ -27,7 +30,14 @@
                 <td>{{$route['trips'] }} (trips)</td>
                 <td>{{$route['first_trip'] }}</td>
                 <td>{{$route['last_trip'] }}</td>
-                <td><a href="/bookingbus/{{$route['agency_id']}}/{{$route_info->id}}"><button>Details</button></a></td>
+                <td>
+                    <form id="formId" action="/bookingbus" method="GET">
+                        <input type="hidden" name="agency_id" value={{$route['agency_id']}}>
+                        <input type="hidden" name="route_id" value={{$route_info->id}}>
+                        <input type="hidden" name="date" id="" value="Nothing">
+                        <input type="button" id="datepicker" value="Select Date">
+                    </form>
+                </td>
             </tr>
                 @endforeach
 
@@ -82,5 +92,19 @@
     </div>
 </div>
 --}}
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script>
+        $( function() {
+            $( "#datepicker" ).datepicker({
+                minDate:0,
+                onSelect : function (dateText, inst) {
+                    $("input[name='date']").val(dateText);
+                    $('#formId').submit(); // <-- SUBMIT
+                }
+            });
+        } );
+    </script>
 
 @endsection

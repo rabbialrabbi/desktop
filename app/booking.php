@@ -2,11 +2,14 @@
 
 namespace App;
 
-use App\ticket_booking;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\DB;
 
-class booking
+class booking extends Model
 {
+    public $table = 'booking';
+
+    public function seat(){
+        $this->belongsTo('App\seat');
+    }
 
 }

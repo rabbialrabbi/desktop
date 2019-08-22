@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\agency;
 use App\user;
 use App\route;
 use App\city;
@@ -20,11 +21,13 @@ class ticketController extends Controller
 //            );
         $fromValue= $booking->getTicketColumnValue('from');
         $toValue= $booking->getTicketColumnValue('to');
-//
+        $agency=  agency::All();
+
         return view('home',[
             'router'=>$router,
             'fromValue'=>$fromValue,
-            'toValue'=>$toValue
+            'toValue'=>$toValue,
+            'agencies'=>$agency
         ]);
     }
 

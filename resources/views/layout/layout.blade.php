@@ -8,6 +8,8 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}" type="text/css">
 
     <title>Document</title>
@@ -96,6 +98,7 @@
 @yield('body')
 
 
+
 <div class="footer">
     <p class="wrapper">CopyRight @ 2019</p>
 
@@ -127,6 +130,7 @@
         })
     }
 </script>
+
 </body>
 </html>
 
