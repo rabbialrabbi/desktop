@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/../Shop/.idea/Shop.iml" filepath="$PROJECT_DIR$/../Shop/.idea/Shop.iml" />
       <module fileurl="file://$PROJECT_DIR$/../Test/.idea/Test.iml" filepath="$PROJECT_DIR$/../Test/.idea/Test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/app.iml" filepath="$PROJECT_DIR$/.idea/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Test/laravel/.idea/laravel.iml" filepath="$PROJECT_DIR$/../Test/laravel/.idea/laravel.iml" />
     </modules>
   </component>
 </project>

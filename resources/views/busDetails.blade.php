@@ -10,8 +10,9 @@
                 <th scope="col">SN</th>
                 <th scope="col">Agency</th>
                 <th scope="col">Time</th>
+                <th scope="col">Destination</th>
                 <th scope="col">Type</th>
-                <th scope="col">fare</th>
+                <th scope="col">Fare</th>
                 <th scope="col"></th>
             </tr>
             </thead>
@@ -24,8 +25,9 @@
                     <th scope="row">{{$i}}</th>
                     <td>{{$bus->agency()->first()->name }}</td>
                     <td>{{$bus->departure_time }}</td>
-                    <td>{{$bus->type}}</td>
-                    <td>{{$bus->sits()->first()->fare}}</td>
+                    <td>{{$bus->route()->first()->departureCity()->first()->name }} to {{$bus->route()->first()->arrivalCity()->first()->name}}</td>
+                    <td>{{$bus->model}} {{$bus->type}}</td>
+                    <td>{{$bus->seat()->first()->fare}}</td>
                     <td><a href="{{route('seat.show', ['bus_id' => $bus->id])}}" ><button>Booking</button></a></td>
                 </tr>
             @endforeach
@@ -34,3 +36,5 @@
         </table>
     </div>
     @endsection
+
+

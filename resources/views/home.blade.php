@@ -80,21 +80,16 @@
         {{--</div> --}}
     {{--</div>--}}
 
-
+    <div class="heading ">
+        <h2>Our Valuable Agency</h2>
+        <div class="heading-uline"></div>
+    </div>
     <div class="regular slider wrapper">
-        <div><a href=""><img src="image/alhamraLogo.png" alt="alhamra" ></a></div>
-        <div><a href=""><img src="image/desh.png" alt="Desh" ></a></div>
-        <div><a href=""><img src="image/eagleLogo.png" alt="Eagle" ></a></div>
-        <div><a href=""><img src="image/enaLogo.png" alt="Ena" ></a></div>
-        <div><a href=""><img src="image/greenline.png" alt="GreenLine" ></a></div>
-        <div><a href=""><img src="image/hanifLogo.png" alt="Hanif" ></a></div>
-        <div><a href=""><img src="image/nabilLogo.png" alt="Nabil" ></a></div>
-        <div><a href=""><img src="image/sakuraLogo.png" alt="Sakura" ></a></div>
-        <div><a href=""><img src="image/sAlomLogo.png" alt="S Alom" ></a></div>
-        <div><a href=""><img src="image/shohagLogo.png" alt="Shohag" ></a></div>
-        <div><a href=""><img src="image/shymoliLogo.png" alt="Shymoli" ></a></div>
-        <div><a href=""><img src="image/srlogo.png" alt="SR Travels" ></a></div>
-        <div><a href=""><img src="image/trTravels.png" alt="Tr Travels" ></a></div>
+        @foreach($agencies as $agency)
+
+            <div><a href="/agency/{{$agency->id}}"><img src="image/{{$agency->image_name}}" alt="{{$agency->image_name}}" ></a></div>
+
+            @endforeach
     </div>
 
 
@@ -204,6 +199,7 @@
     {{--</div>--}}
 
     <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script src="{{asset('js/slick.js')}}" type="text/javascript" charset="utf-8"></script>
     <script type="text/javascript">
         $(document).on('ready', function() {

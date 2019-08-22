@@ -18,6 +18,7 @@ class CreateAgencyTable extends Migration
             $table->text('name');
             $table->text('address');
             $table->text('contact');
+            $table->text('image_name');
             $table->timestamps();
         });
     }

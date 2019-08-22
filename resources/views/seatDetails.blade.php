@@ -4,50 +4,120 @@
 
     <div class="wrapper">
         <div class="row wrapper">
-            <div class="col-6">
-                <div class="sit">
+            <div class="col-2"></div>
+            <div class="col-4 seat">
+                <div class="ctr">
 
-                    <div class="row">
-                        <div class="col-4">Get</div>
+                    <div class="row seat-box">
+                        <div class="col-4"><div class="get">Gate</div></div>
                         <div class="col-4">Engine</div>
-                        <div class="col-4">Wheel</div>
+                        <div class="col-4"><img src="{{asset('image/wheel.png')}}" alt="wheel" width="50px" height="45px"></div>
                     </div>
 
-                    <div class="row">
-                        <div class="col-2">A1</div>
-                        <div class="col-2"></div>
-                        <div class="col-2"></div>
-                        <div class="col-2">B1</div>
-                        <div class="col-2">C1</div>
-
+                    @if($seatAline == 3)
+                    @foreach($columns as $column)
+                    <div class="row seat-box">
+                        <div class="col-3">
+                            <div id="seat_id-{{$column['A']->id}}" class="perseat {{$column['A']->status}}" onclick=booking('{{$column['A']->id}}','{{$column['A']->name}}',300)>{{$column['A']->name}}</div>
+                        </div>
+                        <div class="col-3"></div>
+                        <div class="col-3">
+                            <div id="seat_id-{{$column['B']->id}}" class="perseat {{$column['B']->status}}">{{$column['B']->name}}</div>
+                        </div>
+                        <div class="col-3">
+                            <div id="seat_id-{{$column['C']->id}}" class="perseat {{$column['C']->status}}">{{$column['C']->name}}</div>
+                        </div>
                     </div>
+                        @endforeach
+                        @else
+                        @foreach($columns as $column)
+                            <div class="row seat-box">
+                                <div class="col-3">
+                                    <div class="perseat">{{$column['A']->name}}</div>
+                                </div>
+                                <div class="col-3 seat-box_col-2">
+                                    <div class="perseat">{{$column['B']->name}}</div>
+                                </div>
+                                <div class="col-3 seat-box_col-3">
+                                    <div class="perseat">{{$column['C']->name}}</div>
+                                </div>
+                                <div class="col-3">
+                                    <div class="perseat">{{$column['D']->name}}</div>
+                                </div>
+                            </div>
+                        @endforeach
+
+                        @endif
                 </div>
+                </div>
+            <div class="col-6">
+                <div class="seat-details_account">
+                    <h4>Account</h4>
+                    <table class="seat-details_table">
+                        <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th></th>
+                            <th>Fare</th>
+                            <th>Amount</th>
+                        </tr>
+                        </thead>
+                        <tbody id="tbody">
+                        </tbody>
+                        <tfoot>
+                        <tr>
+                            <td></td>
+                            <td>Total</td>
+                            <td></td>
+                            <td id="total"></td>
+                        </tr>
+                        </tfoot>
+                    </table>
+                </div>
+
             </div>
-            <div class="col-6"></div>
 
         </div>
-        <table class="table">
-            <thead>
-            <tr class="bg-secondary">
-                <th scope="col">Agency</th>
-                <th scope="col">Trips</th>
-                <th scope="col">First Trip</th>
-                <th scope="col">Last Trip</th>
-                <th scope="col"></th>
-            </tr>
-            </thead>
-            <tbody>
-
-                <tr>
-                    <th scope="row">######</th>
-                    <td>######</td>
-                    <td>######</td>
-                    <td>######</td>
-                    <td><a ><button>Details</button></a></td>
-                </tr>
-
-            </tbody>
-        </table>
     </div>
+
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+
+    <script>
+
+        let i = 0 ;
+        let total = 0;
+        function booking(id, name, fare) {
+
+            let hasClass_booked = $('#seat_id-'+id).hasClass('booked');
+            if (!hasClass_booked) {
+                $('#seat_id-'+id).toggleClass('pending');
+
+
+                let value_confirmation = document.getElementById(name);
+
+
+
+
+                if(!value_confirmation){
+
+                    $('#tbody').append(`<tr class="fare" id="fare `+ name+`"><td>`+ name +`</td><td>X</td><td>`+fare+`</td><td>`+fare+`</td></tr>`);
+                    let body_element = document.getElementById('tbody');
+
+                    for(i=0; i<body_element.rows.length; i++){
+                        total = total + parseInt(body_element.rows[i].cells[3].innerHTML);
+                    }
+
+                } else{
+                    tag_value.remove();
+                }
+                $('#total').text(total);
+
+            }
+        }
+
+
+
+
+    </script>
 
     @endsection

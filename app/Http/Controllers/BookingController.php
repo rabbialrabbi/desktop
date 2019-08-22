@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\agency;
 use App\bus;
 use App\city;
+use App\seat;
 use App\User;
 use App\booking;
 use App\ticket_booking;
@@ -12,11 +13,12 @@ use Illuminate\Http\Request;
 use App\route;
 use Illuminate\Support\Facades\DB;
 
+
 class BookingController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth')->except(['showAgency','showBus','showSeat']);
+        $this->middleware('auth')->except(['showAgency','showBus','showSeat','booking']);
     }
 
     public function showAgency($from_id, $to_id)
@@ -43,7 +45,7 @@ class BookingController extends Controller
            ];
        }
 
-           return view('ticketDetails', [
+           return view('agencyDetails', [
                'routes'=>$bus_list,
                'destination_from'=>$destination_from,
                'destination_to'=>$destination_to,
@@ -53,24 +55,34 @@ class BookingController extends Controller
 
     }
 
-    public function showBus($agency_id , $route_id){
+    public function showBus(){
 
-           $bus_list=  bus::with('agency','sits')->where(['agency_id'=>$agency_id, 'route_id'=>$route_id])->get();
+if(@$_GET['agency_id'] & @$_GET['route_id']){
+    $bus_list=  bus::with('agency','seat')->where(['agency_id'=>$_GET['agency_id'], 'route_id'=>$_GET['route_id']])->get();
+}else{
+    $bus_list=  bus::with('agency','seat','route')->where(['agency_id'=>$_GET['agencyId']])->get();
+}
+
 
            return view('busDetails',['buses'=>$bus_list]);
 
 
     }
 
-    public function showSeat($bus_id){
+    public function showSeat($bus_id, seat $seat)
+    {
 
-       $seatDetails = bus::findOrFail($bus_id)->sits()->get();
 
-       foreach ($seatDetails as $seats){
-           echo $seats->name . "</br>";
-       }
-        return view('seatDetails',[]);
+        $bus = bus::findOrFail($bus_id);
+        $columns = $seat->getSeatDetails($bus_id);
+
+        return view('seatDetails',[
+            'columns'=>$columns,
+            'seatAline' =>$bus->seats
+            ]);
     }
+
+
 
 
 
@@ -116,4 +128,5 @@ class BookingController extends Controller
         return back();
 
     }
+
 }
