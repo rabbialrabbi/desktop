@@ -4,8 +4,6 @@
     <list default="true" id="c544db70-9192-45cd-b243-d0e4cbae3905" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BookingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BookingController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/agencyDetails.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/agencyDetails.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/vendor/beyondcode/laravel-dump-server/" />
     <ignored path="$PROJECT_DIR$/vendor/composer/" />
@@ -151,12 +149,12 @@
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.3" value="2" />
-          <entry key="project.open.time.4" value="21" />
+          <entry key="project.open.time.4" value="22" />
           <entry key="project.open.time.5" value="41" />
           <entry key="project.open.time.6" value="14" />
           <entry key="project.open.time.7" value="3" />
           <entry key="project.open.time.8" value="2" />
-          <entry key="project.opened" value="85" />
+          <entry key="project.opened" value="86" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -204,7 +202,7 @@
           <entry key="env" value="21" />
           <entry key="html" value="1315" />
           <entry key="js" value="331" />
-          <entry key="php" value="23486" />
+          <entry key="php" value="23488" />
           <entry key="sass" value="21" />
           <entry key="scss" value="4703" />
           <entry key="txt" value="11" />
@@ -217,7 +215,7 @@
           <entry key="CSS" value="394" />
           <entry key="HTML" value="1319" />
           <entry key="JavaScript" value="331" />
-          <entry key="PHP" value="14309" />
+          <entry key="PHP" value="14311" />
           <entry key="PLAIN_TEXT" value="48" />
           <entry key="SCSS" value="4677" />
           <entry key="Sass" value="21" />
@@ -226,7 +224,7 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5415778">
+    <splitter split-orientation="horizontal" split-proportion="0.47761193">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
@@ -247,11 +245,11 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/resources/views/agencyDetails.blade.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="497">
-                  <caret line="35" column="87" lean-forward="true" selection-start-line="35" selection-start-column="87" selection-end-line="35" selection-end-column="87" />
+                <state relative-caret-position="945">
+                  <caret line="35" column="87" selection-start-line="35" selection-start-column="87" selection-end-line="35" selection-end-column="87" />
                   <folding>
                     <element signature="e#1910#3652#0#Blade" />
                   </folding>
@@ -259,11 +257,11 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BookingController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="459">
-                  <caret line="57" column="30" selection-start-line="57" selection-start-column="30" selection-end-line="57" selection-end-column="30" />
+                <state relative-caret-position="-810">
+                  <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
                 </state>
               </provider>
             </entry>
@@ -307,15 +305,6 @@
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="389">
                   <caret line="74" column="28" selection-start-line="74" selection-start-column="28" selection-end-line="74" selection-end-column="28" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/resources/sass/app.scss">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="540">
-                  <caret line="20" column="20" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
                 </state>
               </provider>
             </entry>
@@ -404,8 +393,8 @@
         <option value="$PROJECT_DIR$/resources/sass/_slick.scss" />
         <option value="$PROJECT_DIR$/resources/views/seatDetails.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/home.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/BookingController.php" />
         <option value="$PROJECT_DIR$/resources/views/agencyDetails.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/BookingController.php" />
       </list>
     </option>
   </component>
@@ -669,12 +658,13 @@
       <workItem from="1566345042488" duration="1685000" />
       <workItem from="1566410598729" duration="647000" />
       <workItem from="1566450370694" duration="991000" />
-      <workItem from="1566456326857" duration="1556000" />
+      <workItem from="1566456326857" duration="2360000" />
+      <workItem from="1566517114420" duration="645000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="380956000" />
+    <option name="totallyTimeSpent" value="382405000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1023,6 +1013,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/sass/app.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="567">
+          <caret line="20" column="20" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="243">
@@ -1034,6 +1031,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4374">
           <caret line="162" selection-start-line="162" selection-end-line="162" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/agencyDetails.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="945">
+          <caret line="35" column="87" selection-start-line="35" selection-start-column="87" selection-end-line="35" selection-end-column="87" />
+          <folding>
+            <element signature="e#1910#3652#0#Blade" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1061,27 +1068,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/sass/app.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="20" column="20" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BookingController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="57" column="30" selection-start-line="57" selection-start-column="30" selection-end-line="57" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/agencyDetails.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="497">
-          <caret line="35" column="87" lean-forward="true" selection-start-line="35" selection-start-column="87" selection-end-line="35" selection-end-column="87" />
-          <folding>
-            <element signature="e#1910#3652#0#Blade" />
-          </folding>
+        <state relative-caret-position="-810">
+          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
         </state>
       </provider>
     </entry>
