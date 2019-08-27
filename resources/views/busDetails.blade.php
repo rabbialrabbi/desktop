@@ -1,3 +1,4 @@
+{{--From : Route::get('/bookingbus', 'bookingController@showBus');--}}
 @extends('layout.layout')
 
 
@@ -28,7 +29,7 @@
                     <td>{{$bus->route()->first()->departureCity()->first()->name }} to {{$bus->route()->first()->arrivalCity()->first()->name}}</td>
                     <td>{{$bus->model}} {{$bus->type}}</td>
                     <td>{{$bus->seat()->first()->fare}}</td>
-                    <td><a href="{{route('seat.show', ['bus_id' => $bus->id])}}" ><button>Booking</button></a></td>
+                    <td><a href="{{route('seat.show', ['bus_id' => $bus->id, 'booking_date'=>$booking_date])}}" ><button>Booking</button></a></td>
                 </tr>
             @endforeach
 

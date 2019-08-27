@@ -22,6 +22,7 @@ class CreateBusesTable extends Migration
             $table->text('type')->nullable();
             $table->text('break')->nullable();
             $table->integer('seats');
+            $table->integer('fare');
             $table->time('departure_time');
             $table->timestamps();
         });

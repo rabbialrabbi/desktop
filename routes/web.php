@@ -19,13 +19,17 @@ Route::get('/', function(){
 Route::get('/agency/{id}', 'homeController@agencyDetails');
 
 
+Route::post('/ticket/search', 'ticketController@index');
+
+
 Route::get('/booking/{from_id}/{to_id}', 'bookingController@showAgency');
 Route::get('/bookingbus', 'bookingController@showBus');
-Route::get('/bookingseat/{bus_id}', 'bookingController@showSeat')->name('seat.show');
+Route::get('/bookingseat/{bus_id}/{booking_date}', 'bookingController@showSeat')->name('seat.show');
+Route::post('/booking', 'bookingController@confirmBooking');
 // end after update
 
 
-Route::post('/ticket/search', 'ticketController@index');
+
 Route::get('/ticket','ticketController@index');
 Route::get('/ticket/{id}', 'ticketController@ticketDetails');
 Route::get('/ticket/{id}/confirm', 'ticketController@ticketConfirm');

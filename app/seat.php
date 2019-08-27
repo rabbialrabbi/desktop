@@ -5,10 +5,13 @@ namespace App;
 use App\booking;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class seat extends Model
 {
 
+    protected $date = '';
+    protected $time = '';
 
 //Query for data of column
     public function getData($bus_id, $column = 'A')
@@ -26,6 +29,7 @@ class seat extends Model
             $data[$i]->status= $status[$i];
         }
 
+        // ttips push object
         // push data to a object on create object details https://stackoverflow.com/questions/23916521/php-push-new-key-and-value-in-existing-object-array
 
 
@@ -33,7 +37,7 @@ class seat extends Model
     }
 
     public function getStatus($id){
-        $data = @DB::table('booking')->where('seat_id','=',$id)->first()->status;
+        $data = @DB::table('booking')->where([['seat_id','=',$id],['date','=',$this->date],['time','=',$this->time]])->first()->status;
         if($data == 'Booked'){
             return 'booked' ;
         }elseif($data == 'Pending'){
@@ -46,15 +50,19 @@ class seat extends Model
 
 
 // fetch the different column data and convert it to a single array
-    public function getSeatDetails($bus_id){
-
+    public function getSeatDetails($bus_id, $date){
         $bus = bus::findOrFail($bus_id);
 
+        // Collect date and time form the booking data
+        $this->date = Carbon::create($date)->format('Y-m-d');
+        $this->time = $bus->departure_time;
+
+        // Collect seat details
         $columnA = $this->getData($bus_id, 'A');
         $columnB = $this->getData($bus_id, 'B');
         $columnC = $this->getData($bus_id, 'C');
 
-        // for seat column type 4
+        // for bus with seat column type 4
         if($bus->seats == 4){
             $columnD = $this->getData($bus_id, 'D');
 
@@ -63,7 +71,6 @@ class seat extends Model
             }
 
             return $column ;
-            exit();
         }
 
         for ($i = 0; $i < COUNT($columnA); $i++) {

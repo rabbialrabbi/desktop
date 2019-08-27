@@ -13,3 +13,4 @@ class booking extends Model
     }
 
 }
+

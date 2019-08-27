@@ -19,8 +19,6 @@ class CreateSeatsTable extends Migration
             $table->text('column');
             $table->text('row');
             $table->text('status')->default('open');
-            $table->integer('fare');
-            $table->text('person_number')->nullable();
             $table->timestamps();
         });
     }

@@ -18,6 +18,7 @@ class busesTableSeeder extends Seeder
             'model'=>'Hino RM2',
             'type'=> 'AC',
             'seats'=>3,
+            'fare'=>1000,
             'departure_time'=> "8:20",
         ]);
 
@@ -28,6 +29,7 @@ class busesTableSeeder extends Seeder
             'model'=>'Hino RM2',
             'type'=> 'AC',
             'seats'=>3,
+            'fare'=>1000,
             'departure_time'=> "11:50",
         ]);
 
@@ -38,6 +40,7 @@ class busesTableSeeder extends Seeder
             'model'=>'Hino RM2',
             'type'=> 'AC',
             'seats'=>3,
+            'fare'=>1000,
             'departure_time'=> "20:50",
         ]);
 
@@ -48,6 +51,7 @@ class busesTableSeeder extends Seeder
             'model'=>'Hino',
             'type'=> 'NON-AC',
             'seats'=>4,
+            'fare'=>700,
             'departure_time'=> "8:3",
         ]);
 
@@ -58,6 +62,7 @@ class busesTableSeeder extends Seeder
             'model'=>'Hino',
             'type'=> 'NON-AC',
             'seats'=>4,
+            'fare'=>700,
             'departure_time'=> "12:00",
         ]);
 
@@ -68,6 +73,7 @@ class busesTableSeeder extends Seeder
             'model'=>'Hino',
             'type'=> 'NON-AC',
             'seats'=>4,
+            'fare'=>700,
             'departure_time'=> "20:00",
         ]);
 
@@ -78,6 +84,7 @@ class busesTableSeeder extends Seeder
             'model'=>'Hyundai',
             'type'=> 'AC',
             'seats'=>3,
+            'fare'=>1800,
             'departure_time'=> "8:3",
         ]);
 
@@ -88,6 +95,7 @@ class busesTableSeeder extends Seeder
             'model'=>'Hyundai',
             'type'=> 'AC',
             'seats'=>3,
+            'fare'=>1800,
             'departure_time'=> "12:00",
         ]);
 
@@ -98,6 +106,7 @@ class busesTableSeeder extends Seeder
             'model'=>'Hyundai',
             'type'=> 'AC',
             'seats'=>3,
+            'fare'=>1800,
             'departure_time'=> "20:00",
         ]);
     }

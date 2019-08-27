@@ -18,6 +18,9 @@ class CreateBookingTable extends Migration
             $table->bigInteger('route_id');
             $table->bigInteger('bus_id');
             $table->bigInteger('seat_id');
+            $table->date('date');
+            $table->time('time');
+            $table->string('persons_name')->nullable();
             $table->string('persons_number')->nullable();
             $table->integer('fare');
             $table->string('status')->default('Open');
