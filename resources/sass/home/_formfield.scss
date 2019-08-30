@@ -30,6 +30,9 @@
     height: 60px;
     padding: 5px 15px;
     border: none;
+    @media only screen and (max-width: 1024px ) {
+      width: 3em;
+    }
     @media only screen and (max-width: 1250px ) {
       width: 7em;
     }

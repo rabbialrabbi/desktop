@@ -17,8 +17,15 @@
         @endforeach
     @endif
     {{--Search form Field--}}
+@if(session('errorMessage'))
+    <div class="wrapper alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>Error: </strong> {{session('errorMessage')}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
 
-
+    @endif
 
 
     <div id="searchResult" class="formfield">
@@ -27,39 +34,40 @@
         <div class="formfield_box row">
             <div class="col-sm-1 col-md-2 col-lg-2"></div>
             <div class="col-sm-10 col-md-8 col-lg-8">
-                <form action="/action_page.php">
+                <form action="/ticket/search" method="POST">
+                    @csrf
                     <div class="form-home">
                         <div class="form-element">
-                            <input class="from" list="from" placeholder="Want to go from">
+                            <input class="from" list="from" placeholder="Want to go from" name="city_from" required>
                             <datalist id="from">
 
-                                @foreach($fromValue as $from)
-                                    <option value="{{$from}}">
+                                @foreach($cities as $city)
+                                    <option value="{{$city->name}}"></option>
                                 @endforeach
 
                             </datalist>
                             <span></span>
                         </div>
                         <div class="form-element">
-                            <input list="to" placeholder="Want to go from">
+                            <input list="to" placeholder="Want to go To" name="city_to" required>
                             <datalist id="to">
 
-                                @foreach($toValue as $to)
-                                    <option value="{{$to}}">
+                                @foreach($cities as $city)
+                                    <option value="{{$city->name}}"></option>
                                 @endforeach
 
                             </datalist>
                             <span></span>
                         </div>
                         <div class="form-element">
-                            <input list="type" placeholder="Want to go from">
+                            <input list="type" value="Bus" name="type" required>
                             <datalist id="type">
                                 <option value="Bus">
                             </datalist>
                             <span></span>
                         </div>
                         <div class="form-element">
-                            <input type="date">
+                            <input type="date" name="search_date">
                         </div>
                         <div class="form-element">
                             <input type="submit">

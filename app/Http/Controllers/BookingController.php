@@ -17,44 +17,64 @@ use Carbon\Carbon;
 
 class BookingController extends Controller
 {
+    protected $search_date = '';
     public function __construct()
     {
-        $this->middleware('auth')->except(['showAgency','showBus','showSeat','booking','confirmBooking']);
+        $this->middleware('auth')->except(['showAgency','showBus','showSeat','booking','confirmBooking','error']);
     }
 
     public function showAgency($from_id, $to_id)
     {
-       $route_id= route::where(['departure_id'=>$from_id, 'arrival_id'=>$to_id])->first();
+        if(session('date')){
+            $this->search_date = session('date');
+        }
 
-           $destination_from=city::findOrFail($from_id);
-           $destination_to=city::findOrFail($to_id);
+        $route_id= @route::where(['departure_id'=>$from_id, 'arrival_id'=>$to_id])->first();
 
+        $destination_from=city::findOrFail($from_id);
+        $destination_to=city::findOrFail($to_id);
 
-       $find_buses = DB::table('buses')->select(DB::raw('count(id) as bus_count, agency_id'))->where('route_id','=',$route_id->id)->groupBy('agency_id')->get();
+        if(!$route_id){
 
+            $msg = "This route is not available yet.";
+            return redirect("/bookingError/{$msg}");
 
-       foreach ($find_buses as $buses) {
-           $bus_list[] = [
-               'agency' => agency::findOrFail($buses->agency_id)->name,
-               'agency_id' => $buses->agency_id,
-               'trips' => $buses->bus_count,
-               'first_trip' => bus::where(['route_id' => $route_id->id, 'agency_id' => $buses->agency_id])
-                   ->first()->departure_time,
-               'last_trip' => bus::where(['route_id' => $route_id->id, 'agency_id' => $buses->agency_id])
-                   ->orderBy('departure_time', 'desc')
-                   ->first()->departure_time
-           ];
-       }
+        }else{
 
-           return view('agencyDetails', [
-               'routes'=>$bus_list,
-               'destination_from'=>$destination_from,
-               'destination_to'=>$destination_to,
-               'route_info'=>$route_id
+            $find_buses = DB::table('buses')->select(DB::raw('count(id) as bus_count, agency_id'))->where('route_id','=',$route_id->id)->groupBy('agency_id')->get();
 
-           ]);
+            if(!$find_buses->first()){
 
+                $msg = "No agency available yet. Please select from below.";
+                return redirect("/bookingError/{$msg}");
+
+            }else{
+
+                foreach ($find_buses as $buses) {
+                    $bus_list[] = [
+                        'agency' => agency::findOrFail($buses->agency_id)->name,
+                        'agency_id' => $buses->agency_id,
+                        'trips' => $buses->bus_count,
+                        'first_trip' => bus::where(['route_id' => $route_id->id, 'agency_id' => $buses->agency_id])
+                            ->first()->departure_time,
+                        'last_trip' => bus::where(['route_id' => $route_id->id, 'agency_id' => $buses->agency_id])
+                            ->orderBy('departure_time', 'desc')
+                            ->first()->departure_time
+                    ];
+                }
+                return view('agencyDetails', [
+                    'routes'=>$bus_list,
+                    'destination_from'=>$destination_from,
+                    'destination_to'=>$destination_to,
+                    'route_info'=>$route_id,
+                    'date'=>$this->search_date
+
+                ]);
+            }
+        }
     }
+
+
 
     public function showBus(){
 
@@ -182,6 +202,14 @@ class BookingController extends Controller
         $ticket->save();
 
         return back();
+
+    }
+
+    public function error($msg){
+
+        return view('error.bookingError',[
+            'errorMessage'=>$msg
+        ]);
 
     }
 

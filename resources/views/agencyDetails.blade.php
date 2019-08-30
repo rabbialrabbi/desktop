@@ -34,8 +34,15 @@
                     <form id="formId{{$route['agency_id']}}" action="/bookingbus" method="GET">
                         <input type="hidden" name="agency_id" value={{$route['agency_id']}}>
                         <input type="hidden" name="route_id" value={{$route_info->id}}>
-                        <input type="hidden" name="date" id="" value="Nothing">
-                        <input type="button" id="datepicker{{$route['agency_id']}}" onclick="datePicker({{$route['agency_id']}})" value="Select Date">
+
+                        @if(!$date)
+                            <input type="hidden" name="date" id="" value="Nothing">
+                            <input type="button" id="datepicker{{$route['agency_id']}}" onclick="datePicker({{$route['agency_id']}})" value="Select Date">
+                            @else
+                            <input type="hidden" name="date" value={{$date}}>
+                            <input type="submit"  value="Find Bus">
+                        @endif
+
                     </form>
                 </td>
             </tr>
