@@ -7,7 +7,7 @@
     <div class="wrapper">
         <table class="table">
             <thead>
-            <tr class="bg-secondary">
+            <tr class="table-head">
                 <th scope="col">SN</th>
                 <th scope="col">Agency</th>
                 <th scope="col">Time</th>

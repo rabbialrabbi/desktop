@@ -1,5 +1,8 @@
 @extends('layout.layout')
 
+@section('title','About')
+@section('menu','about')
+
 @section('body')
 
 <div class="wrapper">

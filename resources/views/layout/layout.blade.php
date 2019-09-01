@@ -12,9 +12,12 @@
     <link rel="stylesheet" href="/resources/demos/style.css">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}" type="text/css">
 
-    <title>Document</title>
+    <title>@yield('title')</title>
 </head>
 <body>
+
+
+
 
 
 <div id="app" class="up-header wrapper">
@@ -27,11 +30,11 @@
         <div class="col-6">
             <div class="up-header_menu">
                 <ul>
-                    <li  class="up-header_menu-li menu-active">
+                    <li id="home_menu"  class="up-header_menu-li">
                         <div class="up-header_menu-bar">
-                        <div class="up-header_menu-display bar-active"></div>
+                        <div id="home_bar" class="up-header_menu-display"></div>
                         </div>
-                        <a class="anchor anchor-active" href="/ticket">Home</a>
+                        <a id="home_anchor" class="anchor " href="/ticket">Home</a>
                     </li>
                     <li  class="up-header_menu-li ">
                         <div class="up-header_menu-bar">
@@ -44,11 +47,11 @@
                             <div  class="up-header_menu-display"></div>
                         </div>
                         <a class="anchor"  href="#">FAQ</a></li>
-                    <li  class="up-header_menu-li">
+                    <li id="about_menu"  class="up-header_menu-li">
                         <div class="up-header_menu-bar">
-                            <div  class="up-header_menu-display"></div>
+                            <div id="about_bar"  class="up-header_menu-display"></div>
                         </div>
-                        <a class="anchor" href="#">About</a>
+                        <a id="about_anchor" class="anchor" href="/">About</a>
                     </li>
                 </ul>
             </div>
@@ -107,6 +110,35 @@
 <script src="{{asset('js/app.js')}}"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script>
+
+          let active_menu =  '@yield('menu')';
+
+          switch (active_menu) {
+             case 'home':{
+                 document.getElementById('home_menu').className += ' menu-active';
+                 document.getElementById('home_bar').className += ' bar-active';
+                 document.getElementById('home_anchor').className += ' anchor-active';
+                 break
+              }
+              case 'about':{
+                  document.getElementById('about_menu').className += ' menu-active';
+                  document.getElementById('about_bar').className += ' bar-active';
+                  document.getElementById('about_anchor').className += ' anchor-active';
+                  break
+              }
+              case 'contact':{
+                  document.getElementById('contact_menu').className += ' menu-active';
+                  document.getElementById('contact_bar').className += ' bar-active';
+                  document.getElementById('contact_anchor').className += ' anchor-active';
+                  break
+              }
+              case 'faq':{
+                  document.getElementById('faq_menu').className += ' menu-active';
+                  document.getElementById('faq_bar').className += ' bar-active';
+                  document.getElementById('faq_anchor').className += ' anchor-active';
+                  break
+              }
+          }
     let menu = document.getElementsByClassName('up-header_menu-li');
     let bar = document.getElementsByClassName('up-header_menu-display');
     let anchor = document.getElementsByClassName('anchor');

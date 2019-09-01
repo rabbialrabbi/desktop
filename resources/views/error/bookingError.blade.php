@@ -7,13 +7,8 @@
 
 @section('body')
 
-    <div class="wrapper jumbotron">
-        <h1 class="display-4">{{$errorMessage}}</h1>
-
-
-        <p class="lead">
-            <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-        </p>
+    <div class="wrapper jumbotron error-booking bg-info">
+        <h2>{{$errorMessage}}</h2>
     </div>
 
 @endsection

@@ -1,3 +1,50 @@
+.booking{
+
+  &-name{
+    padding-right: 0;
+    margin-right: -20px;
+  }
+  &-contact{
+    margin-left: 20px;
+  }
+
+  &-input{
+    padding-left: 0;
+    transform: translateY(-10px);
+  }
+
+  &-details {
+
+    & h2{
+      text-align: center;
+      margin-bottom: 30px;
+      font-family: 'Exo 2', sans-serif;
+      font-weight: bolder;
+    }
+
+    & p {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 600;
+    }
+
+    & input[type=text]{
+      border: none    ;
+      border-bottom: 1px solid gray ;
+      padding-left: 15px;
+      font-family: 'Caveat', cursive;
+      font-weight: bold;
+      font-size: 20px;
+      width: 80%;
+    }
+    & input[type=text]:focus{
+      outline: none    ;
+      border-bottom: 1px solid $themeBlue ;
+    }
+
+  }
+
+}
+
 .seat{
 border: 1px solid #0D71B3;
   &-box{
@@ -48,6 +95,15 @@ border: 1px solid #0D71B3;
     margin-right: auto;
     text-align: center;
     position: relative;
+
+    & h4 {
+      background-color: $themeBlue;
+      color: white;
+      font-family: 'Exo 2', sans-serif;
+      padding: 10px;
+      margin: 25px;
+      border-radius: 10px;
+    }
   }
 }
 
@@ -56,10 +112,19 @@ border: 1px solid #0D71B3;
 }
 
 .seat-details_table{
+
+  & thead th{
+    padding: 15px;
+    color: $themeBlue;
+  }
   width: 80%;
   margin-left: auto;
   margin-right: auto;
  }
+
+.seat-details_table tbody td{
+  padding: 10px;
+}
 .seat-details_tfoot{
   text-align: center;
 }
@@ -81,7 +146,6 @@ border: 1px solid #0D71B3;
   height: 30px;
   margin-left: 20px;
 }
-
 
 
 

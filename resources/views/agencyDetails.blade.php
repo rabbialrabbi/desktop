@@ -8,14 +8,14 @@
     <div class="wrapper">
         <h2>Destination : {{$destination_from->name}} to {{$destination_to->name}} </h2>
 
-        <p><strong>{{$destination_to->name}}</strong>
+        <p><strong>{{$destination_to->name}} :</strong>
             {{$destination_to->description}} <a href="{{$destination_to->link}}"> More.. </a></p>
 
         <h5>Estimate Distance: {{$route_info->est_distance}} Km | Estimate Time : {{$route_info->est_time}} hr | Estimate Price : {{$route_info->est_price}} TK</h5>
 
         <table class="table">
             <thead>
-            <tr class="bg-secondary">
+            <tr class="table-head">
                 <th scope="col">Agency</th>
                 <th scope="col">Trips</th>
                 <th scope="col">First Trip</th>

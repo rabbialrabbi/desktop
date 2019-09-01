@@ -4,12 +4,14 @@
 @import url('https://fonts.googleapis.com/css?family=Courgette&display=swap');
 
 @import url('https://fonts.googleapis.com/css?family=Gugi" rel="stylesheet');
-@import url('https://fonts.googleapis.com/css?family=Courgette|Lato|Nunito|Roboto&display=swap" rel="stylesheet');
+@import url('https://fonts.googleapis.com/css?family=Courgette|Exo+2|Lato|Nunito|Roboto&display=swap ');
+@import url('https://fonts.googleapis.com/css?family=Caveat&display=swap');
 
 
 // Variables
 @import 'variables';
-@import "errors";
+@import "error/errors";
+@import "error/bookingError";
 @import "wrapper";
 @import "slick";
 @import "upheader/upheader";

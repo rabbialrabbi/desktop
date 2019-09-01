@@ -36,7 +36,7 @@ class BookingController extends Controller
 
         if(!$route_id){
 
-            $msg = "This route is not available yet.";
+            $msg = "This route is not available yet. Only Dhaka to Rangpur Route is available for test";
             return redirect("/bookingError/{$msg}");
 
         }else{
@@ -45,7 +45,7 @@ class BookingController extends Controller
 
             if(!$find_buses->first()){
 
-                $msg = "No agency available yet. Please select from below.";
+                $msg = "No agency available yet. Only Dhaka to Rangpur Route is available for test";
                 return redirect("/bookingError/{$msg}");
 
             }else{
@@ -96,19 +96,33 @@ class BookingController extends Controller
     public function showSeat($bus_id, $booking_date , seat $seat)
     {
 
-
+        $bookedValue  = session('bookedValue') ? session('bookedValue') : 0 ;
         $bus = bus::findOrFail($bus_id);
-        $columns = $seat->getSeatDetails($bus_id, $booking_date);
+        $departure_city= $bus->route()->first()->departureCity()->first()->name;
+        $arrival_city= $bus->route()->first()->arrivalCity()->first()->name;
         $date = carbon::create($booking_date)->format('Y-m-d');
+        $booking = ['departure_city'=>$departure_city, 'arrival_city'=>$arrival_city, 'date'=>$date, 'bookedValue'=>session('bookedValue')];
+
+        $columns = $seat->getSeatDetails($bus_id, $booking_date);
+
+
+
 
         return view('seatDetails',[
             'columns'=>$columns,
             'bus' =>$bus,
-            'booking_date'=>$date,
+            'booking'=>$booking,
             ]);
     }
 
-    public function confirmBooking(){
+    public function confirmBooking(Request $request){
+
+        if($request->session()->has('bookedValue')){
+            $i = $request->session()->get('bookedValue');
+        }else{
+            $i= 0;
+        }
+
 
         $seat_name = [
             'seat_A1','seat_A2','seat_A3','seat_A4','seat_A5','seat_A6','seat_A7','seat_A8','seat_A9','seat_A10',
@@ -116,6 +130,7 @@ class BookingController extends Controller
             'seat_C1','seat_C2','seat_C3','seat_C4','seat_C5','seat_C6','seat_C7','seat_C8','seat_C9','seat_C10',
             'seat_D1','seat_D2','seat_D3','seat_D4','seat_D5','seat_D6','seat_D7','seat_D8','seat_D9','seat_D10'
             ];
+
 
         foreach ($_POST as $key=>$value){
 
@@ -131,9 +146,12 @@ class BookingController extends Controller
                 $booking->fare = $_POST['fare'];
                 $booking->status = 'Pending';
                 $booking->save();
+                $i++;
 
             }
         }
+
+        $request->session()->put('bookedValue',$i);
 
         return back();
 

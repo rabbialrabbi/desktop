@@ -1,5 +1,8 @@
 @extends('layout.layout')
 
+@section('title','Home')
+@section('menu','home')
+
 @section('body')
 
     {{--error field--}}
