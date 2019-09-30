@@ -17,7 +17,7 @@ use Carbon\Carbon;
 
 class BookingController extends Controller
 {
-    protected $search_date = '';
+    protected $search_date = ''; // asign  in showAgency method
     public function __construct()
     {
         $this->middleware('auth')->except(['showAgency','showBus','showSeat','booking','confirmBooking','error']);
@@ -33,6 +33,7 @@ class BookingController extends Controller
 
         $destination_from=city::findOrFail($from_id);
         $destination_to=city::findOrFail($to_id);
+
 
         if(!$route_id){
 
