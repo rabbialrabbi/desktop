@@ -1,0 +1,14 @@
+
+--------------- Pending --------------
+
+// input all bus data
+// a user can confirm request
+// added extra bus
+// in mini account user can see the total seat booking
+// in mini account user can see the total amount
+
+
+
+----------------- Done ---------------
+// added route
+// added City

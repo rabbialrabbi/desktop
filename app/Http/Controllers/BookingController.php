@@ -17,7 +17,7 @@ use Carbon\Carbon;
 
 class BookingController extends Controller
 {
-    protected $search_date = ''; // asign  in showAgency method
+    protected $search_date = ''; // assign  in showAgency method
     public function __construct()
     {
         $this->middleware('auth')->except(['showAgency','showBus','showSeat','booking','confirmBooking','error']);
@@ -33,7 +33,6 @@ class BookingController extends Controller
 
         $destination_from=city::findOrFail($from_id);
         $destination_to=city::findOrFail($to_id);
-
 
         if(!$route_id){
 
@@ -56,11 +55,8 @@ class BookingController extends Controller
                         'agency' => agency::findOrFail($buses->agency_id)->name,
                         'agency_id' => $buses->agency_id,
                         'trips' => $buses->bus_count,
-                        'first_trip' => bus::where(['route_id' => $route_id->id, 'agency_id' => $buses->agency_id])
-                            ->first()->departure_time,
-                        'last_trip' => bus::where(['route_id' => $route_id->id, 'agency_id' => $buses->agency_id])
-                            ->orderBy('departure_time', 'desc')
-                            ->first()->departure_time
+                        'first_trip' => Carbon::createFromTimeString(bus::where(['route_id' => $route_id->id, 'agency_id' => $buses->agency_id])->first()->departure_time)->format('h:i A'),
+                        'last_trip' => Carbon::createFromTimeString(bus::where(['route_id' => $route_id->id, 'agency_id' => $buses->agency_id])->orderBy('departure_time', 'desc')->first()->departure_time)->format('h:i A')
                     ];
                 }
                 return view('agencyDetails', [
@@ -94,8 +90,10 @@ class BookingController extends Controller
 
     }
 
-    public function showSeat($bus_id, $booking_date , seat $seat)
+    public function showSeat(seat $seat)
     {
+        $bus_id = request('bus_id');
+        $booking_date = request('booking_date');
 
         $bookedValue  = session('bookedValue') ? session('bookedValue') : 0 ;
         $bus = bus::findOrFail($bus_id);
@@ -105,7 +103,7 @@ class BookingController extends Controller
         $booking = ['departure_city'=>$departure_city, 'arrival_city'=>$arrival_city, 'date'=>$date, 'bookedValue'=>session('bookedValue')];
 
         $columns = $seat->getSeatDetails($bus_id, $booking_date);
-
+        $agencyName = agency::findOrFail($bus->agency_id);
 
 
 
@@ -113,6 +111,7 @@ class BookingController extends Controller
             'columns'=>$columns,
             'bus' =>$bus,
             'booking'=>$booking,
+            'agencyName'=>$agencyName->name
             ]);
     }
 

@@ -9,7 +9,17 @@
     <h1>About</h1>
     <hr>
 
-    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+    <p><strong>Thanks for visiting my site.</strong> First of all it is a Development site that is still under development.</p>
+
+        <strong>For test purpose Only Dhaka to Rangpur route is available right now</strong>
+    <br><br><br><br>
+    <strong>Short Description about developer:</strong>
+    <br><br>
+    <p>Name: Rabbial Anower</p>
+    <p>Mail:rabbialrabbi@gmail.com</p>
+    <p>Contact: +8801723659050</p>
+    <br>
+    <p>Resource: https://github.com/rabbialrabbi/desktop.git</p>
 
 </div>
 @endsection

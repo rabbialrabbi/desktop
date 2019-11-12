@@ -7,7 +7,7 @@
         <div class="row persons">
             <div class="col-2"></div>
             <div class="col-9 booking-details">
-                <h2>SR Travels</h2>
+                <h2>{{$agencyName}}</h2>
                 <div class="row">
                     <div class="col-2 booking-name">
                         <p>Name :</p>

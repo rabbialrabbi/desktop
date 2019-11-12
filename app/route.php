@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class route extends Model
 {
+    protected $guarded = [];
     public function bus(){
         return $this->belongsTo('App\bus');
     }

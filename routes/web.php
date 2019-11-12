@@ -28,6 +28,14 @@ Route::get('/bookingseat/{bus_id}/{booking_date}', 'bookingController@showSeat')
 Route::post('/booking', 'bookingController@confirmBooking');
 
 Route::get('/bookingError/{msg}', 'BookingController@error');
+
+Route::prefix('admin')->group(function () {
+    Route::get('addRoute', 'AdminController@showAddRoute');
+    Route::post('addRoute', 'AdminController@addRoute');
+    Route::get('addCity', function (){
+        dd('Working Good');
+    })->name('addCity');
+});
 // end after update
 
 
