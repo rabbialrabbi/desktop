@@ -1,4 +1,5 @@
-{{--from Route::get('/bookingseat/{bus_id}', 'bookingController@showSeat')->name('seat.show');--}}
+{{--from Route::get('/admim/route/create', 'AdminController@showRoute');--}}
+
 @extends('layout.layout')
 
 @section('body')
@@ -20,7 +21,7 @@
             @endif
             <br><br>
         <h3>Add route</h3>
-    <form action="addRoute" method="POST">
+    <form action="/admin/route" method="POST">
         @csrf
         <div class="row">
             <div class="col-4">From: </div>

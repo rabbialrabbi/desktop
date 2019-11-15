@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 class AdminController extends Controller
 {
 
-    public function showAddRoute()
+    public function showRoute()
     {
         $routes = route::with(['departureCity','arrivalCity'])->get();
         $city= city::all();
@@ -21,10 +21,8 @@ class AdminController extends Controller
         ]);
     }
 
-    public function addRoute()
+    public function storeRoute()
     {
-
-
         $validation = request()->validate([
             "fromCity" => 'required',
             "toCity" => 'required',
@@ -39,7 +37,7 @@ class AdminController extends Controller
         ])->first() ;
 
 
-        if(! $repeatValidation->id){
+        if(! $repeatValidation){
             route::create([
                 'departure_id' => request()->fromCity,
                 'arrival_id' => request()->toCity,
@@ -54,6 +52,38 @@ class AdminController extends Controller
 
             return redirect()->back()->with('message','Route is already Available');
 
+        }
+    }
+
+    public function showCity()
+    {
+        return view('generator.addCity');
+
+    }
+
+    public function storeCity()
+    {
+        // Regular expression for validate the link
+//        $regex = '/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/';
+
+        $sanitizeData = request()->validate([
+            'name'=>'required|min:3',
+            'description'=>'required|min:3',
+            'link'=> 'required'  // edo create regular expression for link
+        ]);
+
+
+        $repeatValidation = city::where([
+            'name'=>request()->name
+        ])->first() ;
+
+
+        if(!$repeatValidation){
+            city::create($sanitizeData);
+
+            return back()->with('message','City add Successfully');
+        }else{
+            return back()->with('message','City is already Exist');
         }
     }
 }

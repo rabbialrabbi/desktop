@@ -15,10 +15,9 @@ class CreateSeatsTable extends Migration
     {
         Schema::create('seats', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('bus_id');
             $table->text('column');
             $table->text('row');
-            $table->text('status')->default('open');
+            $table->integer('seat_type');
             $table->timestamps();
         });
     }
