@@ -4,13 +4,16 @@
 @section('body')
 
     <div class="container">
-        <form action="/admin/route" method="POST">
+        <form action="/admin/bus" method="post">
             @csrf
             <div class="row">
                 <div class="col-4">Agency: </div>
                 <div class="col-8">
                     <select name="agency_id" id="from">
-                        <option value=""></option>
+                        @foreach($agencies as $agency)
+                        <option value="{{$agency->id}}" selected>{{$agency->name}}</option>
+
+                            @endforeach
 
                     </select>
                 </div>
@@ -19,11 +22,10 @@
                 <div class="col-4">Route: </div>
                 <div class="col-8">
                     <select name="route_id" id="to">
-                        @foreach($cities as $city )
-                            <option value="{{$city->id}}">{{$city->name}}</option>
-                        @endforeach
-                        <option value="addCity">Add City</option>
-
+                        <option value="" selected disabled hidden>Choose here</option>
+                        @foreach($routes as $route )
+                        <option value="{{$route->id}}">{{$route->departureCity()->first()->name}} to {{$route->arrivalCity()->first()->name}} </option>
+                            @endforeach
                     </select>
                 </div>
             </div>
@@ -57,26 +59,26 @@
             <div class="row">
                 <div class="col-4">Seats: </div>
                 <div class="col-8">
-                    <select name="type" id="to">
-                        <option value="A/C">A/C</option>
-                        <option value="NON A/C">NON A/C</option>
+                    <select name="seats" id="to">
+                        <option value='30'>3row (30seats)</option>
+                        <option value='40'>4row (40seats)</option>
                     </select>
                 </div>
             </div>
             <div class="row">
-                <div class="col-4">Type: </div>
+                <div class="col-4">Fare: </div>
                 <div class="col-8">
-                    <input type="text" name="seats">
+                    <input type="text" name="fare">
                 </div>
             </div>
             <div class="row">
-                <div class="col-4">Type: </div>
+                <div class="col-4">Departure Time: </div>
                 <div class="col-8">
-                    <input type="text" name="seats">
+                    <input type="time" name="departure_time">
                 </div>
             </div>
 
-            <div><input type="submit" value="Add Route"></div>
+            <div><input type="submit" value="Add Bus"></div>
         </form>
     </div>
 
