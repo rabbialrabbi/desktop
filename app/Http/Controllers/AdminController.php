@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\agency;
+use App\bus;
 use App\city;
+use App\data;
 use App\route;
 use Faker\Generator as Faker;
 use Illuminate\Http\Request;
@@ -10,14 +13,24 @@ use Illuminate\Http\Request;
 class AdminController extends Controller
 {
 
+    public function index()
+    {
+        $data = new data();
+        $data = $data->get_submenu_data('add');
+        return view('adminPanel.add',['submenulist'=>$data,'add'=>'is-active']);
+    }
+
     public function showRoute()
     {
+        $data = (new data())->get_submenu_data('add');
         $routes = route::with(['departureCity','arrivalCity'])->get();
         $city= city::all();
 
-        return view('generator.addRoute',[
+        return view('adminPanel.addRoute',[
             'cities'=>$city,
-            'routes'=>$routes
+            'routes'=>$routes,
+            'submenulist'=>$data,
+            'active'=>['add'=>'is-active']
         ]);
     }
 
@@ -57,7 +70,11 @@ class AdminController extends Controller
 
     public function showCity()
     {
-        return view('generator.addCity');
+        $data = (new data())->get_submenu_data('add');
+        return view('adminPanel.addCity',[
+            'submenulist'=>$data,
+            'add'=>'is-active'
+        ]);
 
     }
 
@@ -85,5 +102,39 @@ class AdminController extends Controller
         }else{
             return back()->with('message','City is already Exist');
         }
+    }
+
+    public function showBus()
+    {
+        $agency = agency::all();
+        $route = route::with('departureCity','arrivalCity')->get();
+        $data = (new data())->get_submenu_data('add');
+        return view('adminPanel.addBus',[
+            'routes'=>$route,
+            'agencies'=>$agency,
+            'submenulist'=>$data,
+        ]);
+    }
+
+    public function storeBus()
+    {
+        $validation = request()->validate([
+            "agency_id" => "required|numeric",
+            "route_id" => "required|numeric",
+            "number" => "required",
+            "model" => "required",
+            "type" => "required",
+            "break" => "required",
+            "seats" => "required|numeric",
+            'fare' => "required|numeric",
+            "departure_time" => "required|date_format:H:i",
+        ]);
+
+        bus::create($validation);
+
+        return back()->with('message','');
+
+
+
     }
 }

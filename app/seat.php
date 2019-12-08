@@ -14,12 +14,12 @@ class seat extends Model
     protected $time = '';
 
 //Query for data of column
-    public function getData($bus_id, $column = 'A')
+    public function getData($seat_type, $column = 'A')
     {
 
        $data= DB::table('seats')
            ->select(DB::raw('CONCAT(seats.column,seats.row) as name, id'))
-           ->where([['bus_id', '=', $bus_id], ['column', '=', $column]])
+           ->where([['seat_type', '=', $seat_type], ['column', '=', $column]])
            ->get();
 
        foreach ($data as $d){
@@ -58,13 +58,13 @@ class seat extends Model
         $this->time = $bus->departure_time;
 
         // Collect seat details
-        $columnA = $this->getData($bus_id, 'A');
-        $columnB = $this->getData($bus_id, 'B');
-        $columnC = $this->getData($bus_id, 'C');
+        $columnA = $this->getData($bus->seats, 'A');
+        $columnB = $this->getData($bus->seats, 'B');
+        $columnC = $this->getData($bus->seats, 'C');
 
         // for bus with seat column type 4
-        if($bus->seats == 4){
-            $columnD = $this->getData($bus_id, 'D');
+        if($bus->seats == 40){
+            $columnD = $this->getData($bus->seats, 'D');
 
             for ($i = 0; $i < COUNT($columnA); $i++) {
                 $column[] = array('A' => $columnA[$i], 'B' => $columnB[$i], 'C' => $columnC[$i], 'D' => $columnD[$i]);

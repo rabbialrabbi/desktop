@@ -10,6 +10,9 @@
 
 // Variables
 @import 'variables';
+@import "bulma/bulma.min.css";
+@import "bulma/custorm";
+
 @import "error/errors";
 @import "error/bookingError";
 @import "wrapper";
@@ -26,4 +29,5 @@
 @import "login/main";
 @import "ticket";
 @import "profile/admin";
+@import "adminPanel/sidebar";
 @import "footer";

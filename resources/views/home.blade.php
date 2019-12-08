@@ -91,9 +91,9 @@
         {{--</div> --}}
     {{--</div>--}}
 
-    <div class="heading ">
+    <div class="title_heading ">
         <h2>Our Valuable Agency</h2>
-        <div class="heading-uline"></div>
+        <div class="title_heading-uline"></div>
     </div>
     <div class="regular slider wrapper">
         @foreach($agencies as $agency)
@@ -106,9 +106,9 @@
 
 
     <div class="search-result wrapper">
-        <div class="heading ">
+        <div class="title_heading ">
             <h2>Top Bus Route </h2>
-            <div class="heading-uline"></div>
+            <div class="title_heading-uline"></div>
         </div>
         <div class="row">
             <div class="container">
@@ -144,9 +144,9 @@
 
 
     <div class="available_city wrapper">
-        <div class="heading">
+        <div class="title_heading">
         <h2>Available Route </h2>
-        <div class="heading-uline"></div>
+        <div class="title_heading-uline"></div>
         </div>
 
         <div class="row ">

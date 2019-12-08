@@ -75,12 +75,12 @@
                             <div class="get">Gate</div>
                         </div>
                         <div class="col-4">Engine</div>
-                        <div class="col-4"><img src="{{asset('image/wheel.png')}}" alt="wheel" width="50px"
+                        <div class="col-4"><img src="{{ asset('image/wheel.png')}}" alt="wheel" width="50px"
                                                 height="45px">
                         </div>
                     </div>
 
-                    @if($bus->seats == 3)
+                    @if($bus->seats == 30)
                         @foreach($columns as $column)
                             <div class="row seat-box">
                                 <div class="col-3">
@@ -98,7 +98,7 @@
                                 </div>
                             </div>
                         @endforeach
-                    @else
+                    @elseif($bus->seats == 40)
                         @foreach($columns as $column)
                             <div class="row seat-box">
                                 <div class="col-3">

@@ -1,0 +1,8 @@
+.hero_background{
+    background-color: $themeBlue;
+    color: white;
+
+    & h1, h2{
+        color: white;
+    }
+}

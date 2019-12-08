@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class bus extends Model
 {
+    public $guarded = [];
     public function seat(){
         return $this->hasMany('App\seat');
     }

@@ -30,11 +30,12 @@ Route::post('/booking', 'BookingController@confirmBooking');
 Route::get('/bookingError/{msg}', 'BookingController@error');
 
 Route::prefix('admin')->group(function () {
-    Route::get('route/create', 'AdminController@showRoute');
+    Route::get('index', 'AdminController@index');
+    Route::get('route/create', 'AdminController@showRoute')->name('add.route');
     Route::post('route', 'AdminController@storeRoute');
-    Route::get('city/create', 'AdminController@showCity');
+    Route::get('city/create', 'AdminController@showCity')->name('add.city');
     Route::post('city', 'AdminController@storeCity');
-    Route::get('bus/create', 'AdminController@showBus');
+    Route::get('bus/create', 'AdminController@showBus')->name('add.bus');
     Route::post('bus', 'AdminController@storeBus');
 });
 // end after update

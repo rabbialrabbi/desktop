@@ -76,14 +76,14 @@ class BookingController extends Controller
     public function showBus(){
 
         if(@$_GET['agency_id'] && @$_GET['route_id']){
-            $bus_list=  bus::with('agency','seat')->where(['agency_id'=>$_GET['agency_id'], 'route_id'=>$_GET['route_id']])->get();
-        }else{
-            $bus_list=  bus::with('agency','seat','route')->where(['agency_id'=>$_GET['agencyId']])->get();
+            $bus_list=  bus::with('agency')->where(['agency_id'=>$_GET['agency_id'], 'route_id'=>$_GET['route_id']])->get();
+        }
+        else{
+            $bus_list=  bus::with('agency','route')->where(['agency_id'=>$_GET['agencyId']])->get();
         }
 
 
         $date = carbon::create($_GET['date'])->toDateString();
-
 
            return view('busDetails',['buses'=>$bus_list, 'booking_date'=>$date]);
 
@@ -103,8 +103,8 @@ class BookingController extends Controller
         $booking = ['departure_city'=>$departure_city, 'arrival_city'=>$arrival_city, 'date'=>$date, 'bookedValue'=>session('bookedValue')];
 
         $columns = $seat->getSeatDetails($bus_id, $booking_date);
-        $agencyName = agency::findOrFail($bus->agency_id);
 
+        $agencyName = agency::findOrFail($bus->agency_id);
 
 
         return view('seatDetails',[

@@ -23,9 +23,11 @@
 <div id="app" class="up-header wrapper">
     <div class="row">
         <div class="col-3">
-            <div class="up-header_left">
-                <p>eTicket<span> .com</span></p>
-            </div>
+            <a class="navbar-brand" href="{{ url('/ticket') }}">
+                <div class="up-header_left">
+                    <p>eTicket<span> .com</span></p>
+                </div>
+            </a>
         </div>
         <div class="col-6">
             <div class="up-header_menu">
@@ -74,6 +76,8 @@
                 </div>
 
                 <div class="up-header_right-dropdown">
+                    @guest
+                        @if(Route::has('register'))
                     <div class="row">
                         <div class="dropdown-img">
                             <img src="{{asset('image/avatar.jpg')}}" alt="account-logo" >
@@ -82,8 +86,8 @@
                     <div class="row">
 
                         <div class="dropdown-button">
-                            <button>Sign In</button>
-                            <button>Register</button>
+                            <button onclick="location.href='/login'" >Sign In</button>
+                            <button onclick="location.href='/register'" >Register</button>
                         </div>
                         {{--<div class="dropdown-button">--}}
                             {{--<button>LogIn</button>--}}
@@ -91,6 +95,32 @@
                         {{--</div>--}}
 
                     </div>
+                            @endif
+                            @else
+                        <div class="row">
+                            <div class="dropdown-img">
+                                <img src="{{asset('image/avatar.jpg')}}" alt="account-logo" >
+                            </div>
+                        </div>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" >
+                                @csrf
+                                <div class="row">
+
+                                    <div class="dropdown-button">
+                                        <button onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();" >Sign Out</button>
+                                    </div>
+                                </div>
+                                <div class="row">
+
+                                    <div class="dropdown-button">
+                                        <button onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();" >Sign Out</button>
+                                    </div>
+                                </div>
+                            </form>
+                        @endguest
                 </div>
 
             </div>
