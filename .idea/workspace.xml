@@ -2,40 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c544db70-9192-45cd-b243-d0e4cbae3905" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/data.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/adminPanel/_sidebar.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/bulma/_custorm.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/custom/_default.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/adminPanel/add.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/adminPanel/dashboard.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layout/adminlayout.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/dc09623d-baf1-4d24-8ebd-4f6efa235744.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BookingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BookingController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/bus.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/bus.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/seat.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/seat.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/busesTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/busesTableSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/seatsTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/seatsTableSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/_footer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/_footer.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/home/_searchResult.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/home/_searchResult.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/generator/addBus.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/adminPanel/addBus.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/generator/addCity.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/adminPanel/addCity.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/generator/addRoute.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/adminPanel/addRoute.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layout/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/layout.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/seatDetails.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/seatDetails.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Feature/ExampleTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/ExampleTest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -210,12 +178,6 @@
       <path value="$PROJECT_DIR$/vendor/paragonie/random_compat" />
       <path value="$PROJECT_DIR$/vendor/symfony/var-dumper" />
     </include_path>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1209" />
-    <option name="y" value="161" />
-    <option name="width" value="656" />
-    <option name="height" value="872" />
   </component>
   <component name="ProjectId" id="1UcfU9vUgRVaSVNrgvCH8Zu8Bi9" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -432,7 +394,7 @@
       <workItem from="1575660821811" duration="39000" />
       <workItem from="1575777419732" duration="155000" />
       <workItem from="1575777630504" duration="264000" />
-      <workItem from="1575777929404" duration="127000" />
+      <workItem from="1575777929404" duration="3417000" />
     </task>
     <servers />
   </component>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\agency;
 use App\bus;
 use App\city;
+use App\data;
 use App\route;
 use Faker\Generator as Faker;
 use Illuminate\Http\Request;
@@ -14,20 +15,21 @@ class AdminController extends Controller
 
     public function index()
     {
-        $sub_menu_data = $this->get_submenu_data('add');
-        return view('adminPanel.add',['submenulist'=>$sub_menu_data,'add'=>'is-active']);
+        $data = new data();
+        $data = $data->get_submenu_data('add');
+        return view('adminPanel.add',['submenulist'=>$data,'add'=>'is-active']);
     }
 
     public function showRoute()
     {
-        $sub_menu_data = $this->get_submenu_data('add');
+        $data = (new data())->get_submenu_data('add');
         $routes = route::with(['departureCity','arrivalCity'])->get();
         $city= city::all();
 
         return view('adminPanel.addRoute',[
             'cities'=>$city,
             'routes'=>$routes,
-            'submenulist'=>$sub_menu_data,
+            'submenulist'=>$data,
             'active'=>['add'=>'is-active']
         ]);
     }
@@ -68,11 +70,12 @@ class AdminController extends Controller
 
     public function showCity()
     {
-        $sub_menu_data = $this->get_submenu_data('add');
+        $data = (new data())->get_submenu_data('add');
         return view('adminPanel.addCity',[
-            'submenulist'=>$sub_menu_data,
+            'submenulist'=>$data,
             'add'=>'is-active'
         ]);
+
     }
 
     public function storeCity()
@@ -85,6 +88,7 @@ class AdminController extends Controller
             'description'=>'required|min:3',
             'link'=> 'required'  // edo create regular expression for link
         ]);
+
 
         $repeatValidation = city::where([
             'name'=>request()->name
@@ -104,11 +108,11 @@ class AdminController extends Controller
     {
         $agency = agency::all();
         $route = route::with('departureCity','arrivalCity')->get();
-        $sub_menu_data = $this->get_submenu_data('add');
+        $data = (new data())->get_submenu_data('add');
         return view('adminPanel.addBus',[
             'routes'=>$route,
             'agencies'=>$agency,
-            'submenulist'=>$sub_menu_data,
+            'submenulist'=>$data,
         ]);
     }
 
@@ -131,22 +135,6 @@ class AdminController extends Controller
         return back()->with('message','');
 
 
-
-    }
-
-
-    public function get_submenu_data($menu_name){
-        switch ($menu_name) {
-            case "add":
-                return $data =(object) [
-                    (object) ['menu_name'=>'Add City', 'link_name'=>'add.city','active_class'=>'add_city'],
-                    (object)['menu_name'=>'Add Route', 'link_name'=>'add.route','active_class'=>'add_route'],
-                    (object)['menu_name'=>'Add Bus', 'link_name'=>'add.bus','active_class'=>'add_bus'],
-                ];
-                break;
-            default:
-                return 'error';
-        }
 
     }
 }
