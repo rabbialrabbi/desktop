@@ -63,7 +63,8 @@
             <div class="up-header_right">
                 <div class="row">
                     <div class="up-header_right-center">
-                        <img src="{{asset('image/user.png')}}" alt="account">
+                        <img src="{{ asset('storage/profile/user.png') }}" alt="account_logo">
+
                     </div>
                 </div>
                 <div class="row">
@@ -80,7 +81,7 @@
                         @if(Route::has('register'))
                     <div class="row">
                         <div class="dropdown-img">
-                            <img src="{{asset('image/avatar.jpg')}}" alt="account-logo" >
+                            <img src="{{asset('storage/profile/avatar.jpg')}}" alt="account-logo" >
                         </div>
                     </div>
                     <div class="row">
@@ -99,7 +100,14 @@
                             @else
                         <div class="row">
                             <div class="dropdown-img">
-                                <img src="{{asset('image/avatar.jpg')}}" alt="account-logo" >
+                                <img src="{{asset('storage/profile/avatar.jpg')}}" alt="account-logo" >
+                            </div>
+                        </div>
+
+                        <div class="row">
+
+                            <div class="dropdown-button">
+                                <button onclick="location.href='/admin/index'" >Profile</button>
                             </div>
                         </div>
 
@@ -112,14 +120,11 @@
                                                      document.getElementById('logout-form').submit();" >Sign Out</button>
                                     </div>
                                 </div>
-                                <div class="row">
 
-                                    <div class="dropdown-button">
-                                        <button onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();" >Sign Out</button>
-                                    </div>
-                                </div>
                             </form>
+
+
+
                         @endguest
                 </div>
 

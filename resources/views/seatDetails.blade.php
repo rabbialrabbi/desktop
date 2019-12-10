@@ -75,7 +75,7 @@
                             <div class="get">Gate</div>
                         </div>
                         <div class="col-4">Engine</div>
-                        <div class="col-4"><img src="{{ asset('image/wheel.png')}}" alt="wheel" width="50px"
+                        <div class="col-4"><img src="{{ asset('storage/wheel.png')}}" alt="wheel" width="50px"
                                                 height="45px">
                         </div>
                     </div>

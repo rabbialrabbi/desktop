@@ -37,12 +37,18 @@ Route::prefix('admin')->group(function () {
     Route::post('city', 'AdminController@storeCity');
     Route::get('bus/create', 'AdminController@showBus')->name('add.bus');
     Route::post('bus', 'AdminController@storeBus');
+    Route::get('agency/create', 'AdminController@showAgency')->name('add.agency');
+    Route::post('agency', 'AdminController@storeAgency');
 });
 // end after update
 
 
 
 
+Route::get('/test', function(){
+    return view('welcome');
+});
+//Route::post('/other', 'AdminController@storeAgency');
 Route::get('/ticket/{id}', 'ticketController@ticketDetails');
 Route::get('/ticket/{id}/confirm', 'ticketController@ticketConfirm');
 

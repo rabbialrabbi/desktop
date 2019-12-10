@@ -6,6 +6,8 @@ use App\agency;
 use App\bus;
 use App\city;
 use App\route;
+use Carbon\Carbon;
+use File;
 use Faker\Generator as Faker;
 use Illuminate\Http\Request;
 
@@ -129,8 +131,40 @@ class AdminController extends Controller
         bus::create($validation);
 
         return back()->with('message','');
+    }
+
+    public function showAgency()
+    {
+        $route = route::with('departureCity','arrivalCity')->get();
+        $sub_menu_data = $this->get_submenu_data('add');
+        return view('adminPanel.addAgency',[
+            'submenulist'=>$sub_menu_data,
+        ]);
+    }
+
+    public function storeAgency(Request $request)
+    {
+        $validation = $this->validate($request,[
+            'name'=>'required',
+            'address'=>'required',
+            'contact'=>'required',
+           'image'=>'required|image|mimes:png,jpg,jpeg'
+        ]);
 
 
+
+        $agency_logo = 'logo_'.Carbon::now()->timestamp.'.'.$request->file('image')->getClientOriginalExtension();
+
+        $request->file('image')->storeAs('agency_logo',$agency_logo);
+
+        $feedback = agency::create([
+            'name'=> $request->name,
+            'address'=> $request->address,
+            'contact'=> $request->contact,
+            'image_name'=> $agency_logo
+        ]);
+
+        dd($feedback);
 
     }
 
@@ -139,6 +173,7 @@ class AdminController extends Controller
         switch ($menu_name) {
             case "add":
                 return $data =(object) [
+                    (object)['menu_name'=>'Add Agency', 'link_name'=>'add.agency','active_class'=>'add_agency'],
                     (object) ['menu_name'=>'Add City', 'link_name'=>'add.city','active_class'=>'add_city'],
                     (object)['menu_name'=>'Add Route', 'link_name'=>'add.route','active_class'=>'add_route'],
                     (object)['menu_name'=>'Add Bus', 'link_name'=>'add.bus','active_class'=>'add_bus'],

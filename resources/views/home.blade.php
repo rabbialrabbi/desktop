@@ -32,7 +32,7 @@
 
 
     <div id="searchResult" class="formfield">
-        <img src= "{{ asset('image/flyair.jpg') }}" alt="BackGround" height="600px">
+        <img src= "{{ asset('storage/flyair.jpg') }}" alt="BackGround" height="600px">
 
         <div class="formfield_box row">
             <div class="col-sm-1 col-md-2 col-lg-2"></div>
@@ -98,7 +98,7 @@
     <div class="regular slider wrapper">
         @foreach($agencies as $agency)
 
-            <div><a href="/agency/{{$agency->id}}"><img src="image/{{$agency->image_name}}" alt="{{$agency->image_name}}" ></a></div>
+            <div><a href="/agency/{{$agency->id}}"><img src="storage/agency_logo/{{$agency->image_name}}" alt="{{$agency->image_name}}" ></a></div>
 
             @endforeach
     </div>

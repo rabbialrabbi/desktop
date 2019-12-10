@@ -2,8 +2,46 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c544db70-9192-45cd-b243-d0e4cbae3905" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/database/migrations/test.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/adminPanel/addAgency.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminController.temp.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/agency.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/agency.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_07_29_010855_create_agency_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_07_29_010855_create_agency_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/alhamraLogo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/avatar-row.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/avatar.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/deshtravelsLogo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/eagletravelsLogo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/enatravelsLogo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/flyair.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/greenlineLogo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/haniftravelsLogo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/maniktravelsLogo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/nabiltravelsLogo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/sakuratravelsLogo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/salomtravelsLogo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/shohagtravelsLogo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/shymolitravelsLogo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/srtravelsLogo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/trtravelsLogo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/user.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/wheel.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layout/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/layout.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layout/layout.blade.temp.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/seatDetails.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/seatDetails.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/app/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/app/public/.gitignore" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,14 +79,21 @@
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
         <item name="ticketapp@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="ticketapp: schema" type="c314c289:MysqlImplModel$Schema" />
+        <item name="ticketapp: schema" type="ebfa3cd1:MariaImplModel$Schema" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
         <item name="ticketapp@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="ticketapp: schema" type="c314c289:MysqlImplModel$Schema" />
-        <item name="seats: table" type="98d5ac3d:MysqlImplModel$Table" />
+        <item name="ticketapp: schema" type="ebfa3cd1:MariaImplModel$Schema" />
+        <item name="agency: table" type="dbc44a63:MariaImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="ticketapp@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="ticketapp: schema" type="ebfa3cd1:MariaImplModel$Schema" />
+        <item name="seats: table" type="dbc44a63:MariaImplModel$Table" />
       </path>
     </expand>
     <select />
@@ -67,26 +112,6 @@
         <option value="SCSS File" />
       </list>
     </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>ledger</find>
-      <find>formfield</find>
-      <find>form</find>
-      <find>formfield_box</find>
-      <find>input</find>
-      <find>'bus_id'=&gt;4</find>
-      <find>'d'</find>
-      <find>sit</find>
-      <find>booking</find>
-      <find>,</find>
-      <find>'bus_id' =&gt; 2,</find>
-      <find>'bus_id' =&gt; 3,</find>
-      <find>'bus_id' =&gt; 1,</find>
-      <find>'bus_id' =&gt; 4,</find>
-      <find>heading</find>
-      <find>h1,</find>
-    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -177,6 +202,10 @@
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-idn" />
       <path value="$PROJECT_DIR$/vendor/paragonie/random_compat" />
       <path value="$PROJECT_DIR$/vendor/symfony/var-dumper" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/vendor/intervention/image" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/psr7" />
     </include_path>
   </component>
   <component name="ProjectId" id="1UcfU9vUgRVaSVNrgvCH8Zu8Bi9" />
@@ -195,25 +224,25 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="full.screen.before.presentation.mode" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/adminPanel" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="editing.templates" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views/adminPanel" />
+      <recent name="E:\apache\htdocs\Project\htdocs\desktop\public\js" />
+      <recent name="E:\apache\htdocs\Project\htdocs\Test\image" />
+      <recent name="E:\apache\htdocs\Project\htdocs\desktop\resources\Image" />
+      <recent name="E:\apache\htdocs\Project\htdocs\desktop\resources\sass\slick" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\apache\htdocs\Project\htdocs\desktop\resources\views\adminPanel" />
       <recent name="E:\apache\htdocs\Project\htdocs\Test\laravel\resources\js" />
       <recent name="E:\apache\htdocs\Project\htdocs\desktop\resources\js" />
       <recent name="E:\apache\htdocs\Project\htdocs\desktop\resources\sass\error" />
       <recent name="E:\apache\htdocs\Project\htdocs\Test" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\apache\htdocs\Project\htdocs\desktop\public\js" />
-      <recent name="E:\apache\htdocs\Project\htdocs\Test\image" />
-      <recent name="E:\apache\htdocs\Project\htdocs\desktop\resources\Image" />
-      <recent name="E:\apache\htdocs\Project\htdocs\desktop\resources\sass\slick" />
-      <recent name="E:\apache\htdocs\Project\htdocs\Test\sytle" />
     </key>
   </component>
   <component name="RunManager">
@@ -394,7 +423,12 @@
       <workItem from="1575660821811" duration="39000" />
       <workItem from="1575777419732" duration="155000" />
       <workItem from="1575777630504" duration="264000" />
-      <workItem from="1575777929404" duration="3417000" />
+      <workItem from="1575777929404" duration="6752000" />
+      <workItem from="1575807654168" duration="2967000" />
+      <workItem from="1575851731772" duration="7173000" />
+      <workItem from="1575938783699" duration="10952000" />
+      <workItem from="1575983599419" duration="1046000" />
+      <workItem from="1575985594600" duration="3089000" />
     </task>
     <servers />
   </component>
@@ -417,10 +451,26 @@
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.env" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1989" y="228" width="672" height="678" key="search.everywhere.popup" timestamp="1575777970813">
+    <state x="2045" y="282" width="551" height="469" key="#com.intellij.codeInsight.template.impl.EditVariableDialog" timestamp="1575854346637">
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
-    <state x="1989" y="228" width="672" height="678" key="search.everywhere.popup/1366.0.1920.1080/0.0.1366.768@1366.0.1920.1080" timestamp="1575777970813" />
+    <state x="2045" y="282" width="551" height="469" key="#com.intellij.codeInsight.template.impl.EditVariableDialog/1366.0.1920.1080/0.0.1366.768@1366.0.1920.1080" timestamp="1575854346637" />
+    <state x="2059" y="269" width="524" height="495" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1575994119728">
+      <screen x="1366" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2059" y="269" width="524" height="495" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/1366.0.1920.1080/0.0.1366.768@1366.0.1920.1080" timestamp="1575994119728" />
+    <state x="2144" y="441" width="354" height="150" key="NewPhpFileDialog" timestamp="1575819475388">
+      <screen x="1366" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2144" y="441" width="354" height="150" key="NewPhpFileDialog/1366.0.1920.1080/0.0.1366.768@1366.0.1920.1080" timestamp="1575819475388" />
+    <state x="1830" y="154" key="SettingsEditor" timestamp="1575854359312">
+      <screen x="1366" y="0" width="1920" height="1080" />
+    </state>
+    <state x="1830" y="154" key="SettingsEditor/1366.0.1920.1080/0.0.1366.768@1366.0.1920.1080" timestamp="1575854359312" />
+    <state x="1989" y="228" width="672" height="678" key="search.everywhere.popup" timestamp="1575851927177">
+      <screen x="1366" y="0" width="1920" height="1080" />
+    </state>
+    <state x="1989" y="228" width="672" height="678" key="search.everywhere.popup/1366.0.1920.1080/0.0.1366.768@1366.0.1920.1080" timestamp="1575851927177" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
