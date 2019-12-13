@@ -1,10 +1,13 @@
 import Vue from "vue";
+import chart from "chart.js";
 
 import './select2';
 
 window.select = select;
+import router form "router"
 
 window.Vue = Vue;
+window.Chart = chart;
 
 window._ = require('lodash');
 

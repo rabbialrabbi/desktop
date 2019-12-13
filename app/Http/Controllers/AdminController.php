@@ -7,24 +7,24 @@ use App\bus;
 use App\city;
 use App\route;
 use Carbon\Carbon;
-use File;
 use Faker\Generator as Faker;
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
 
 class AdminController extends Controller
 {
 
     public function index()
     {
-        $sub_menu_data = $this->get_submenu_data('add');
-        return view('adminPanel.add',['submenulist'=>$sub_menu_data,'add'=>'is-active']);
+        $sub_menu_data = $this->get_submenu_data('dashboard');
+        return view('adminPanel.dashboard',['submenulist'=>$sub_menu_data,'add'=>'is-active']);
     }
 
     public function showRoute()
     {
         $sub_menu_data = $this->get_submenu_data('add');
         $routes = route::with(['departureCity','arrivalCity'])->get();
-        $city= city::all();
+        $city = city::all();
 
         return view('adminPanel.addRoute',[
             'cities'=>$city,
@@ -155,7 +155,7 @@ class AdminController extends Controller
 
         $agency_logo = 'logo_'.Carbon::now()->timestamp.'.'.$request->file('image')->getClientOriginalExtension();
 
-        $request->file('image')->storeAs('agency_logo',$agency_logo);
+        $request->file('image')->storeAs('public/agency_logo',$agency_logo);
 
         $feedback = agency::create([
             'name'=> $request->name,
@@ -164,7 +164,10 @@ class AdminController extends Controller
             'image_name'=> $agency_logo
         ]);
 
-        dd($feedback);
+        $resize_image = Image::make(public_path('/storage/agency_logo/'.$agency_logo))->resize(400,250);
+        $resize_image->save();
+
+        return back()->with('message','Image Upload successful');
 
     }
 
@@ -177,6 +180,11 @@ class AdminController extends Controller
                     (object) ['menu_name'=>'Add City', 'link_name'=>'add.city','active_class'=>'add_city'],
                     (object)['menu_name'=>'Add Route', 'link_name'=>'add.route','active_class'=>'add_route'],
                     (object)['menu_name'=>'Add Bus', 'link_name'=>'add.bus','active_class'=>'add_bus'],
+                ];
+                break;
+            case 'dashboard':
+                return $data =(object) [
+                    (object) ['menu_name'=>'test', 'link_name'=>'add.city','active_class'=>'add_city'],
                 ];
                 break;
             default:

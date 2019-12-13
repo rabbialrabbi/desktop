@@ -988,6 +988,12 @@ body::after {
   opacity: 0.9;
 }
 
+.dashboard_chart {
+  width: 80%;
+  padding-bottom: 30%;
+  height: 12rem;
+}
+
 .login {
   max-width: 40rem;
   margin-left: auto;

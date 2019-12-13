@@ -22,11 +22,10 @@
             <nav class="tabs is-boxed is-fullwidth">
                 <div class="container">
                     <ul>
-                        <li class="{{ isset($dashboard)?$dashboard:''}}"><a>Dash Bord</a></li>
-                        <li class="{{ isset($active['add'])?$active['add']:''}}"><a>Add</a></li>
+                        <li class="{{ isset($active['dashboard'])?$active['dashboard']:''}}"><a href="/admin/index">Dash Bord</a></li>
+                        <li class="{{ isset($active['add'])?$active['add']:''}}"><a href="{{route('add.agency')}}">Add</a></li>
                         <li class="{{ isset($grid)?$grid:''}}"><a>Grid</a></li>
                         <li class="{{ isset($accounts)?$accounts:''}}"><a>Accounts</a></li>
-
                     </ul>
                 </div>
             </nav>
