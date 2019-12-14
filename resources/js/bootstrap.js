@@ -1,10 +1,9 @@
 import Vue from "vue";
 import chart from "chart.js";
+import VueRouter from "vue-router";
 
-import './select2';
 
-window.select = select;
-import router form "router"
+Vue.use(VueRouter);
 
 window.Vue = Vue;
 window.Chart = chart;
@@ -18,7 +17,6 @@ window._ = require('lodash');
  */
 
 try {
-    window.Popper = require('popper.js').default;
     window.$ = window.jQuery = require('jquery');
 } catch (e) {}
 

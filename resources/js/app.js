@@ -1,6 +1,8 @@
 require('./bootstrap');
 
+
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+Vue.component('button-counter', require('./components/datepicker.vue').default);
 
 
 /**
@@ -16,8 +18,7 @@ const app = new Vue({
     }
 });
 
-const seartchResult = new Vue({
-    el:'#searchResult',
-    components:{}
-
-});
+const datepicker = new Vue({
+    el:'#datepicker',
+    components:{button-counter}
+    });

@@ -13,6 +13,10 @@
 
         <h5>Estimate Distance: {{$route_info->est_distance}} Km | Estimate Time : {{$route_info->est_time}} hr | Estimate Price : {{$route_info->est_price}} TK</h5>
 
+        <div id="datepicker">
+            <button-counter></button-counter>
+        </div>
+
         <table class="table">
             <thead>
             <tr class="table-head">
