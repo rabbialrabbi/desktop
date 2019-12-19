@@ -19,9 +19,9 @@
 
 
 
+<div id="app">
 
-
-<div id="app" class="up-header wrapper">
+<div class="up-header wrapper">
     <div class="row">
         <div class="col-3">
             <a class="navbar-brand" href="{{ url('/ticket') }}">
@@ -141,6 +141,7 @@
 <div class="footer">
     <p class="wrapper">CopyRight @ 2019</p>
 
+</div>
 </div>
 
 <script src="{{asset('js/app.js')}}"></script>
