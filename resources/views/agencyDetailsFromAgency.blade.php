@@ -3,19 +3,7 @@
 @extends('layout.layout')
 
 @section('body')
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script>
-        $( function() {
-            $( "#datepicker" ).datepicker({
-                minDate:0,
-                onSelect : function (dateText, inst) {
-                    $("input[name='date']").val(dateText);
-                    $('#formId').submit(); // <-- SUBMIT
-                }
-            });
-        } );
-    </script>
+
 
 
 
@@ -23,8 +11,8 @@
 
 
         <table class="table">
-            <thead>
-            <tr class="bg-secondary">
+            <thead class="5-5">
+            <tr class="table-head">
                 <th scope="col">Agency</th>
                 <th scope="col">Buses</th>
                 <th scope="col">First Trip</th>
@@ -42,7 +30,7 @@
                         <form id="formId" action="/bookingbus" method="GET">
                             <input type="hidden" name="agencyId" value={{$agency->id}}>
                             <input type="hidden" name="date" id="" value="Nothing">
-                            <input type="button" id="datepicker" value="Select Date">
+                            <input type="button" id="agency_datepicker" value="Select Date">
                         </form>
                     </td>
                 </tr>

@@ -29,7 +29,7 @@ Route::post('/booking', 'BookingController@confirmBooking');
 
 Route::get('/bookingError/{msg}', 'BookingController@error');
 
-Route::prefix('admin')->group(function () {
+Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('index', 'AdminController@index');
     Route::get('route/create', 'AdminController@showRoute')->name('add.route');
     Route::post('route', 'AdminController@storeRoute');

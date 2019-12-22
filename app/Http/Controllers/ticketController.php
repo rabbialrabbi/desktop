@@ -56,7 +56,7 @@ class ticketController extends Controller
         }
         else
             {
-            $date = Carbon::create($_POST['search_date'])->format('Y-m-d');
+            $date = Carbon::createFromFormat('d M, y',$_POST['search_date'])->format('Y-m-d');
             return redirect()->route("show.agency",['from_id'=>$from_id,'to_id'=>$to_id])->with('date',$date);
         }
 

@@ -8,7 +8,7 @@
 @section('body')
 
     <div class="wrapper jumbotron error-booking bg-info">
-        <h2>{{$errorMessage}}</h2>
+        <h2> {{$errorMessage}} <a href="{{route($linkLink)}}"> {{$linkText}}</a></h2>
     </div>
 
 @endsection

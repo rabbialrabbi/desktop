@@ -18,6 +18,7 @@ use Carbon\Carbon;
 class BookingController extends Controller
 {
     protected $search_date = ''; // assign  in showAgency method
+
     public function __construct()
     {
         $this->middleware('auth')->except(['showAgency','showBus','showSeat','booking','confirmBooking','error']);
@@ -36,8 +37,8 @@ class BookingController extends Controller
 
         if(!$route_id){
 
-            $msg = "This route is not available yet. Only Dhaka to Rangpur Route is available for test";
-            return redirect("/bookingError/{$msg}");
+            $msg = 'This route is not available yet. Only Dhaka to Rangpur Route is available for test.You Can also add';
+            return redirect("/bookingError/{$msg}")->with(['text'=>'Route','linkLink'=>'add.route']);
 
         }else{
 
@@ -45,8 +46,8 @@ class BookingController extends Controller
 
             if(!$find_buses->first()){
 
-                $msg = "No agency available yet. Only Dhaka to Rangpur Route is available for test";
-                return redirect("/bookingError/{$msg}");
+                $msg = "No agency available yet. Only Dhaka to Rangpur Route is available for test.You Can also add ";
+                return redirect("/bookingError/{$msg}")->with(['text'=>'Agency','linkLink'=>'add.agency']);
 
             }else{
 
@@ -55,17 +56,19 @@ class BookingController extends Controller
                         'agency' => agency::findOrFail($buses->agency_id)->name,
                         'agency_id' => $buses->agency_id,
                         'trips' => $buses->bus_count,
-                        'first_trip' => Carbon::createFromTimeString(bus::where(['route_id' => $route_id->id, 'agency_id' => $buses->agency_id])->first()->departure_time)->format('h:i A'),
-                        'last_trip' => Carbon::createFromTimeString(bus::where(['route_id' => $route_id->id, 'agency_id' => $buses->agency_id])->orderBy('departure_time', 'desc')->first()->departure_time)->format('h:i A')
+                        'first_trip' => Carbon::createFromTimeString(bus::where(['route_id' => $route_id->id, 'agency_id' => $buses->agency_id])
+                            ->first()->departure_time)->format('h:i A'),
+                        'last_trip' => Carbon::createFromTimeString(bus::where(['route_id' => $route_id->id, 'agency_id' => $buses->agency_id])
+                            ->orderBy('departure_time', 'desc')->first()->departure_time)->format('h:i A')
                     ];
                 }
+
                 return view('agencyDetails', [
                     'routes'=>$bus_list,
                     'destination_from'=>$destination_from,
                     'destination_to'=>$destination_to,
                     'route_info'=>$route_id,
                     'date'=>$this->search_date
-
                 ]);
             }
         }
@@ -82,8 +85,7 @@ class BookingController extends Controller
             $bus_list=  bus::with('agency','route')->where(['agency_id'=>$_GET['agencyId']])->get();
         }
 
-
-        $date = carbon::create($_GET['date'])->toDateString();
+        $date = carbon::parse($_GET['date'])->format('h:i A');
 
            return view('busDetails',['buses'=>$bus_list, 'booking_date'=>$date]);
 
@@ -154,33 +156,7 @@ class BookingController extends Controller
         $request->session()->put('bookedValue',$i);
 
         return back();
-
-
-
-/*
-// ttips array to object convert
-        foreach ($_POST as $key=>$value){
-
-            if(in_array($key, $seat_name)){
-                $d[] = ['date'=>$_POST['date'], 'time'=>$_POST['time']];
-
-            }
-        }
-
-        $object = json_decode(json_encode($d)) ;
-
-       foreach ($object as $data){
-          echo $data->date ."<br/>";
-       }
-*/
     }
-
-
-
-
-
-
-
 
     public function create()
     {
@@ -226,7 +202,9 @@ class BookingController extends Controller
     public function error($msg){
 
         return view('error.bookingError',[
-            'errorMessage'=>$msg
+            'errorMessage'=>$msg,
+            'linkText'=>session('text'),
+            'linkLink'=>session('linkLink')
         ]);
 
     }

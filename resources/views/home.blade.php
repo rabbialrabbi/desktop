@@ -19,6 +19,7 @@
 
         @endforeach
     @endif
+
     {{--Search form Field--}}
 @if(session('errorMessage'))
     <div class="wrapper alert alert-danger alert-dismissible fade show" role="alert">
@@ -70,10 +71,10 @@
                             <span></span>
                         </div>
                         <div class="form-element">
-                            <input type="date" name="search_date">
+                            <input id='datepicaker_search' type="text" name="search_date">
                         </div>
                         <div class="form-element">
-                            <input type="submit">
+                            <input type="submit" value="Search">
                         </div>
                         <div class="clr"></div>
                     </div>
@@ -211,21 +212,8 @@
 
     --}}
 
-    <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
-    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <script src="{{asset('js/slick.js')}}" type="text/javascript" charset="utf-8"></script>
-    <script type="text/javascript">
-        $(document).on('ready', function() {
-            $(".regular").slick({
-                autoplay: true,
-                autoplaySpeed: 1000,
-                arrows:false,
-                infinite: true,
-                slidesToShow: 6,
-                slidesToScroll: 1
-            });
-        });
-    </script>
+
+
 
 
 @endsection

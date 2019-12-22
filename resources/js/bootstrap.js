@@ -3,6 +3,7 @@ import chart from "chart.js";
 import VueRouter from "vue-router";
 
 
+
 Vue.use(VueRouter);
 
 window.Vue = Vue;

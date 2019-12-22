@@ -2,13 +2,37 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c544db70-9192-45cd-b243-d0e4cbae3905" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/js/jquery-custom-ui.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/datepicker/agencydetails.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/sass/cityName.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/error/errorCheck.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BookingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BookingController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ticketController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ticketController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/adminPanel/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/adminPanel/dashboard.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/bootstrap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/_footer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/_footer.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/adminPanel/addAgency.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/adminPanel/addAgency.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/adminPanel/addBus.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/adminPanel/addBus.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/adminPanel/addCity.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/adminPanel/addCity.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/adminPanel/addRoute.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/adminPanel/addRoute.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/agencyDetails.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/agencyDetails.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/agencyDetailsFromAgency.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/agencyDetailsFromAgency.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/busDetails.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/busDetails.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/error/bookingError.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/error/bookingError.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layout/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/layout.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/seatDetails.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/seatDetails.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,8 +85,8 @@
         <option value="HTML File" />
         <option value="CSS File" />
         <option value="SCSS File" />
-        <option value="JavaScript File" />
         <option value="Vue Single File Component" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -159,6 +183,7 @@
       <path value="$PROJECT_DIR$/vendor/ralouphie/getallheaders" />
       <path value="$PROJECT_DIR$/vendor/intervention/image" />
       <path value="$PROJECT_DIR$/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/vendor/laracasts/utilities" />
     </include_path>
   </component>
   <component name="ProjectId" id="1UcfU9vUgRVaSVNrgvCH8Zu8Bi9" />
@@ -395,6 +420,18 @@
       <workItem from="1576249524296" duration="7725000" />
       <workItem from="1576286544734" duration="1925000" />
       <workItem from="1576731714861" duration="425000" />
+      <workItem from="1576734509124" duration="84000" />
+      <workItem from="1576738211909" duration="381000" />
+      <workItem from="1576757975766" duration="10461000" />
+      <workItem from="1576814145856" duration="1426000" />
+      <workItem from="1576829810818" duration="582000" />
+      <workItem from="1576845125435" duration="9109000" />
+      <workItem from="1576892508889" duration="3899000" />
+      <workItem from="1576896455107" duration="523000" />
+      <workItem from="1576897021978" duration="3315000" />
+      <workItem from="1576916690669" duration="1481000" />
+      <workItem from="1576929750569" duration="686000" />
+      <workItem from="1576975930311" duration="25138000" />
     </task>
     <servers />
   </component>
@@ -416,6 +453,17 @@
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.env" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="WindowStateProjectService">
     <state x="2045" y="282" width="551" height="469" key="#com.intellij.codeInsight.template.impl.EditVariableDialog" timestamp="1575854346637">
       <screen x="1366" y="0" width="1920" height="1080" />
@@ -429,6 +477,10 @@
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
     <state x="2059" y="269" width="524" height="495" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/1366.0.1920.1080/0.0.1366.768@1366.0.1920.1080" timestamp="1575994119728" />
+    <state x="1466" y="98" width="1720" height="841" key="DiffContextDialog" timestamp="1577014019975">
+      <screen x="1366" y="0" width="1920" height="1080" />
+    </state>
+    <state x="1466" y="98" width="1720" height="841" key="DiffContextDialog/1366.0.1920.1080/0.0.1366.768@1366.0.1920.1080" timestamp="1577014019975" />
     <state width="939" height="262" key="GridCell.Tab.0.bottom" timestamp="1576249491994">
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
@@ -445,10 +497,14 @@
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
     <state width="939" height="262" key="GridCell.Tab.0.right/1366.0.1920.1080/0.0.1366.768@1366.0.1920.1080" timestamp="1576249491994" />
-    <state x="2144" y="441" width="354" height="150" key="NewPhpFileDialog" timestamp="1575819475388">
+    <state x="2110" y="318" width="422" height="394" key="NewPhpClassDialog" timestamp="1577039684210">
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
-    <state x="2144" y="441" width="354" height="150" key="NewPhpFileDialog/1366.0.1920.1080/0.0.1366.768@1366.0.1920.1080" timestamp="1575819475388" />
+    <state x="2110" y="318" width="422" height="394" key="NewPhpClassDialog/1366.0.1920.1080/0.0.1366.768@1366.0.1920.1080" timestamp="1577039684210" />
+    <state x="2144" y="441" width="354" height="156" key="NewPhpFileDialog" timestamp="1577035838080">
+      <screen x="1366" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2144" y="441" width="354" height="156" key="NewPhpFileDialog/1366.0.1920.1080/0.0.1366.768@1366.0.1920.1080" timestamp="1577035838080" />
     <state x="1830" y="154" key="SettingsEditor" timestamp="1575854359312">
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
@@ -461,10 +517,14 @@
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
     <state x="1772" y="0" width="981" height="659" maximized="true" key="dock-window-2/1366.0.1920.1080/0.0.1366.768@1366.0.1920.1080" timestamp="1576049897165" />
-    <state x="1989" y="228" width="672" height="678" key="search.everywhere.popup" timestamp="1576682077191">
+    <state x="1742" y="38" width="886" height="921" key="find.popup" timestamp="1577027304358">
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
-    <state x="1989" y="228" width="672" height="678" key="search.everywhere.popup/1366.0.1920.1080/0.0.1366.768@1366.0.1920.1080" timestamp="1576682077191" />
+    <state x="1742" y="38" width="886" height="921" key="find.popup/1366.0.1920.1080/0.0.1366.768@1366.0.1920.1080" timestamp="1577027304358" />
+    <state x="1989" y="228" width="672" height="678" key="search.everywhere.popup" timestamp="1577036655757">
+      <screen x="1366" y="0" width="1920" height="1080" />
+    </state>
+    <state x="1989" y="228" width="672" height="678" key="search.everywhere.popup/1366.0.1920.1080/0.0.1366.768@1366.0.1920.1080" timestamp="1577036655757" />
     <state x="2051" y="427" width="540" height="179" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1576249547251">
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
@@ -477,6 +537,10 @@
           <url>file://$PROJECT_DIR$/app/Http/Controllers/BookingController.php</url>
           <line>4</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/resources/js/datepicker/agencydetails.js</url>
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

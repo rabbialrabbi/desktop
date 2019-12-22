@@ -8,7 +8,7 @@
             <div class="col-2"></div>
             <div class="col-9 booking-details">
                 <h2>{{$agencyName}}</h2>
-                <div class="row">
+                <div class="row mb-3">
                     <div class="col-2 booking-name">
                         <p>Name :</p>
                     </div>
@@ -23,7 +23,7 @@
                         <input type="text" name="person_contact" placeholder="Number...">
                     </div>
                 </div>
-                <div class="row">
+                <div class="row mb-3">
                     <div class="col-2">
                         <p>From :</p>
                     </div>
@@ -39,7 +39,7 @@
                     </div>
                 </div>
 
-                <div class="row">
+                <div class="row mb-4">
                     <div class="col-2">
                         <p>Date :</p>
                     </div>
@@ -51,7 +51,7 @@
                         <p>Time :</p>
                     </div>
                     <div class="col-2 pl-0">
-                        {{$bus->departure_time}}
+                        {{\Carbon\Carbon::parse($bus->departure_time)->format('h:i A')}}
                     </div>
 
                     <div class="col-2">

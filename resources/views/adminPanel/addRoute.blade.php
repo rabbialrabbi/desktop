@@ -5,118 +5,84 @@
     <?php $active= ['add'=>'is-active', 'add_route'=>'is-active'] ?>
 @endsection
 @section('subbody')
-
-
-
     <div class="container">
         @if(session('message'))
             <span style="color:red;"> {{session('message')}}</span>
         @endif
-            @if ($errors->any())
-                <div class="alert alert-danger">
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
-            <br><br>
+
         <h3>Add route</h3>
     <form action="/admin/route" method="POST">
         @csrf
-        <div class="row">
-            <div class="col-4">From: </div>
-            <div class="col-8">
+        <div class="row mb-3">
+            <div class="col-2">From: </div>
+            <div class="col-10">
                 <select name="fromCity" id="from">
                     @foreach($cities as $city )
                         <option value="{{$city->id}}">{{$city->name}}</option>
                         @endforeach
-                        <option value="addCity">Add City</option>
+                        <option value="addCity" onclick="redirectTo()">Add City</option>
 
                 </select>
+                @if($errors->has('fromCity'))
+                    <span class="text-danger ml-1"> * {{$errors->first('fromCity')}}</span>
+                @endif
             </div>
         </div>
-        <div class="row">
-            <div class="col-4">To: </div>
-            <div class="col-8">
+        <div class="row mb-3">
+            <div class="col-2">To: </div>
+            <div class="col-10">
                 <select name="toCity" id="to">
                     @foreach($cities as $city )
                         <option value="{{$city->id}}">{{$city->name}}</option>
                     @endforeach
-                    <option value="addCity">Add City</option>
+                    <option value="addCity" onclick="redirectTo()">Add City</option>
 
                 </select>
+                @if($errors->has('toCity'))
+                   <span class="text-danger ml-1"> * {{$errors->first('toCity')}}</span>
+                @endif
             </div>
         </div>
-        <div class="row">
-            <div class="col-4">Estimate Distance: </div>
-            <div class="col-8">
+        <div class="row mb-3">
+            <div class="col-2">Estimate Distance: </div>
+            <div class="col-10">
                 <input type="text" name="distance">
+                @if($errors->has('distance'))
+                   <span class="text-danger ml-1"> * {{$errors->first('distance')}}</span>
+                @endif
             </div>
         </div>
-        <div class="row">
-            <div class="col-4">Estimate Time: </div>
-            <div class="col-8">
+        <div class="row mb-3">
+            <div class="col-2">Estimate Time: </div>
+            <div class="col-10">
                 <input type="text" name="time">
+                @if($errors->has('time'))
+                   <span class="text-danger ml-1"> * {{$errors->first('time')}}</span>
+                @endif
             </div>
         </div>
-        <div class="row">
-            <div class="col-4">Estimate Price: </div>
-            <div class="col-8">
+        <div class="row mb-3">
+            <div class="col-2">Estimate Price: </div>
+            <div class="col-10">
                 <input type="text" name="price">
+                @if($errors->has('price'))
+                   <span class="text-danger ml-1"> * {{$errors->first('price')}}</span>
+                @endif
             </div>
         </div>
-        <div><input type="submit" value="Add Route"></div>
-    </form>
-
-            {{--available route--}}
-            <div class="available_city wrapper">
-                <div class="heading">
-                    <h2>Available Route </h2>
-                    <div class="heading-uline"></div>
-                </div>
-
-                <div class="row ">
-                    <div class="col-4 available_city-col">
-
-                        <table>
-
-
-                            @foreach($routes as $route)
-
-                                @if($route->id <=3)
-                                    <p><i class="fa fa-map-marker" aria-hidden="true"></i> {{ $route->departureCity()->first()->name}} -----------> {{ $route->arrivalCity()->first()->name}}</p>
-                                    @else
-                                    <p><i class="fa fa-map-marker" aria-hidden="true"></i> {{ $route->departureCity()->first()->name}} -----------> {{ $route->arrivalCity()->first()->name}}</p>
-                                @endif
-
-
-                            @endforeach
-                        </table>
-
-                    </div>
-                    <div class="col-4"></div>
-                    <div class="col-4"></div>
-                </div>
+        <div class="row mt-5">
+            <div class="col-2"></div>
+            <div class="col-10">
+                <input type="submit" value="Add Route">
             </div>
+        </div>
+    </form>
 
     </div>
 
     <script>
-        var pointerFrom = document.getElementById('from');
-        pointerFrom.onchange = function () {
-            var userOption = this.options[this.selectedIndex];
-            if(userOption.value === 'addCity'){
-                window.open('/admin/addCity', '_self');
-            }
-        };
-        var pointerTo = document.getElementById('to');
-        pointerTo.onchange = function () {
-            var userOption = this.options[this.selectedIndex];
-            if(userOption.value === 'addCity'){
-                window.open('/admin/addCity', '_self');
-            }
+        function redirectTo() {
+            window.open('/admin/city/create', '_self');
         }
     </script>
 

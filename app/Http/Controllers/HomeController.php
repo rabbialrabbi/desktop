@@ -45,7 +45,7 @@ class HomeController extends Controller
 
 
 
-        return view('agencyDetailsfromAgency',['agency'=>$agency]);
+        return view('agencyDetailsFromAgency',['agency'=>$agency]);
 
     }
 }

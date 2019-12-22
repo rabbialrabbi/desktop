@@ -138,13 +138,65 @@
 
 
 
-<div class="footer">
+<div class="footers">
     <p class="wrapper">CopyRight @ 2019</p>
 
 </div>
 </div>
 
 <script src="{{asset('js/app.js')}}"></script>
+<script src="{{asset('js/jquery-custom-ui.js')}}"></script>
+{{--<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>--}}
+
+
+{{--for datepicker--}}
+@if(@$routes)
+    <script >
+        @foreach($routes as $route)
+        $("#datepicker{{$route['agency_id']}}").datepicker({
+            minDate:0,
+            onSelect : function (dateText, inst) {
+                $("input[name='date']").val(dateText);
+                $("#formId{{$route['agency_id']}}").submit(); // <-- SUBMIT
+            }
+        })
+        @endforeach
+    </script>
+@endif
+
+<script>
+$('#datepicaker_search').datepicker({
+    dateFormat:"d M, y",
+    minDate:0,
+    onSelect: function (data,inst) {
+        $("input[name='search_date']").val(data);
+
+    }
+});
+
+$( "#agency_datepicker" ).datepicker({
+    minDate:0,
+    onSelect : function (dateText, inst) {
+        $("input[name='date']").val(dateText);
+        $('#formId').submit(); // <-- SUBMIT
+    }
+});
+</script>
+
+<script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+<script src="{{asset('js/slick.js')}}" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+    $(document).on('ready', function() {
+        $(".regular").slick({
+            autoplay: true,
+            autoplaySpeed: 1000,
+            arrows:false,
+            infinite: true,
+            slidesToShow: 6,
+            slidesToScroll: 1
+        });
+    });
+</script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script>
 

@@ -9,26 +9,52 @@
         @if(session('message'))
             <span style="color:red;"> {{session('message')}}</span>
         @endif
-        @if ($errors->any())
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
-        <br><br>
-        <form action="/admin/city" method="post">
-            @csrf
-            <p>Name Of the city : <input type="text" name="name"></p>
-            <p>Description : <textarea name="description" rows="1" cols="80">
-</textarea></p>
-            <p>Description link : <input type="text" name="link"></p>
-            <p>Google map x api : <input type="text" name="apix"></p>
-            <p>Google map y api : <input type="text" name="apiy"></p>
-            <input type="submit" value="Add">
-        </form>
+
+                <h4 class="mb-5">Add City</h4>
+
+                <form action="/admin/city" method="POST">
+                    @csrf
+                    <div class="row mb-3">
+                        <div class="col-2">City Name: </div>
+                        <div class="col-8">
+                            <select name="name" id="">
+                                @foreach($cityList as $city)
+                                <option value="{{$city}}">{{$city}}</option>
+                                    @endforeach
+                            </select>
+                            @if($errors->has('name'))
+                                <span class="text-danger ml-1"> * {{$errors->first('name')}}</span>
+                            @endif
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-2">Description: </div>
+                        <div class="col-8">
+                            <textarea name="description" rows="1" cols="40"></textarea>
+                            @if($errors->has('description'))
+                                <span class="text-danger ml-1"> * {{$errors->first('description')}}</span>
+                            @endif
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-2">Description Link: </div>
+                        <div class="col-8">
+                            <input type="text" name="link">
+                            @if($errors->has('link'))
+                                <span class="text-danger ml-1"> * {{$errors->first('link')}}</span>
+                            @endif
+                        </div>
+                    </div>
+
+                    <div class="row mt-5">
+                        <div class="col-2"></div>
+                        <div class="col-10">
+                            <input type="submit" value="Add City">
+                        </div>
+                    </div>
+                </form>
 
     </div>
 

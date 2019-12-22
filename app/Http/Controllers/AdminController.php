@@ -70,10 +70,14 @@ class AdminController extends Controller
 
     public function showCity()
     {
+        $cityList= $this->getCitylist();
+        sort($cityList);
+
         $sub_menu_data = $this->get_submenu_data('add');
         return view('adminPanel.addCity',[
             'submenulist'=>$sub_menu_data,
-            'add'=>'is-active'
+            'add'=>'is-active',
+            'cityList'=>$cityList
         ]);
     }
 
@@ -91,7 +95,6 @@ class AdminController extends Controller
         $repeatValidation = city::where([
             'name'=>request()->name
         ])->first() ;
-
 
         if(!$repeatValidation){
             city::create($sanitizeData);
@@ -191,5 +194,9 @@ class AdminController extends Controller
                 return 'error';
         }
 
+    }
+
+    public function getCitylist(){
+        return ["Barisal","Bhola","Patuakhali","Pirojpur","Jhalokati","Barguna","Amtali","Bakerganj","Char Fasson","Gournadi","Swarupkati","Kuakata","Muladi","Bhandaria","Mathbaria","Lalmohan","Borhanuddin","Daulatkhan","Banaripara","Mehendiganj","Nalchity","Patharghata","Kalapara","Chittagong","Chhagalnaiya","Daganbhuiyan","Parshuram","Sonagazi","Bandarban","Khagrachhari","Rangamati","Rangunia","Sandwip","Fatikchhari","Nazir Hat","Baroiyarhat","Mirsharai","Sitakunda","Hathazari","Raozan","Patiya","Chandanaish","Satkania","Boalkhali","Akhaura","Sarail","Chowmuhani","Laksam","Hatiya","Maijdee","Lakshmipur","Burichong","Dhaka","Ghorashal","Monohardi","Shibpur","Raipura","Madhabdi","Mirzapur","Dhanbari","Madhupur","Gopalpur","Ghatail","Kalihati","Sakhipur","Bhuapur","Elenga","Karatia","Aricha","Basail","Bhairab","Kishoreganj","Manikganj","Munshiganj","Gopalganj","Shariatpur","Madaripur","Rajbari","Khulna","Bagherhat","Chuadanga","Darshana","Chuadanga","Jhenaidah","Magura","Meherpur","Narail","Noapara","Shatkhira","Mymensingh","Shambhuganj","Muktagachha","Bhaluka","Gouripur","Phulpur","Trishal","Nandail","Gaffargaon","Ishwarganj","Haluaghat","Fulbaria","Netrokona","Sherpur","Rajshahi","Joypurhat","Rahanpur","Kalai","Khetlal","Akkelpur","Panchbibi","Mundumala","Naogaon","Natore","Shahjadpur","Ullapara","Iswardi","Santhia","Dhunat","Sherpur","Bogra","Tanore","Rangpur","Gaibandha","Kurigram","Lalmonirhat","Nilphamari","Panchagarh","Thakurgaon","Saidpur","Sylhet","Golapganj","Habiganj","Maulvibazar","Sreemangal","Sunamganj","Beanibazar","Barlekha","Zakiganj","Chhatak","Balagonj","Osmaninogor","Joggonathpur"];
     }
 }
