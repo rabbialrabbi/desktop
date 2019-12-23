@@ -83,9 +83,6 @@ class AdminController extends Controller
 
     public function storeCity()
     {
-        // Regular expression for validate the link
-//        $regex = '/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/';
-
         $sanitizeData = request()->validate([
             'name'=>'required|min:3',
             'description'=>'required|min:3',

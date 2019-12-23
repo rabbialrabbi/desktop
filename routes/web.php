@@ -40,6 +40,12 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('agency/create', 'AdminController@showAgency')->name('add.agency');
     Route::post('agency', 'AdminController@storeAgency');
 });
+
+//axios request
+
+Route::get('getdata',function (){
+    return [65,59,80,81,56,55,40,10,30,50];
+});
 // end after update
 
 

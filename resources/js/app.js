@@ -1,42 +1,10 @@
 require('./bootstrap');
-import Chart from 'chart.js';
+import dashboardChart from "./components/dashboardChart";
 
 
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-Vue.component('dashboard-chart', {
-    template: `
-    <div class="dashboard_chart">
-        <canvas id="dashboard_chart" style="margin-right: 100px;" > </canvas>
-    </div>
-    `,
-    mounted() {
-        let canvas_id = document.getElementById('dashboard_chart').getContext('2d');
-
-        var myLineChart = new Chart(canvas_id, {
-            type: 'line',
-            data: {
-                "labels":["January","February","March","April","May","June","August","September","October","November","December"],
-                "datasets":[{
-                    "label":"My First Dataset",
-                    "data":[65,59,80,81,56,55,40,10,30,50],
-                    "fill":false,
-                    "borderColor":"rgb(75, 192, 192)",
-                    "lineTension":false}]
-
-            },
-            options: {
-                scales: {
-                    yAxes: [{
-                        ticks: {
-                            beginAtZero: true
-                        }
-                    }]
-                }
-            }
-        });
-    }
-});
+Vue.component('dashboard-chart', dashboardChart);
 
 
 
