@@ -3,13 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="c544db70-9192-45cd-b243-d0e4cbae3905" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/datepicker.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/dashboardChart.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/datepicker/agencydetails.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/about.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/about.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,17 +32,6 @@
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
         <item name="ticketapp@localhost" type="feb32156:DbDataSourceImpl" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="ticketapp@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="ticketapp@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="ticketapp: schema" type="ebfa3cd1:MariaImplModel$Schema" />
       </path>
     </expand>
     <select />
@@ -175,29 +159,30 @@
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SearchEverywhereHistoryKey" value="we&#9;FILE&#9;file://E:/apache/htdocs/Project/htdocs/desktop/routes/web.php&#10;showSe&#9;null&#9;null&#10;AuthenticatesUsers&#9;null&#9;null&#10;web&#9;FILE&#9;file://E:/apache/htdocs/Project/htdocs/Test/laravel/routes/web.php&#10;test&#9;FILE&#9;file://E:/apache/htdocs/Project/htdocs/Test/laravel/app/Http/Controllers/testController.php&#10;booking&#9;FILE&#9;file://E:/apache/htdocs/Project/htdocs/desktop/app/Http/Controllers/BookingController.php&#10;bookingC&#9;FILE&#9;file://E:/apache/htdocs/Project/htdocs/desktop/app/Http/Controllers/BookingController.php&#10;booki&#9;FILE&#9;file://E:/apache/htdocs/Project/htdocs/desktop/app/Http/Controllers/BookingController.php&#10;bookin&#9;FILE&#9;file://E:/apache/htdocs/Project/htdocs/desktop/app/Http/Controllers/BookingController.php&#10;bookingc&#9;FILE&#9;file://E:/apache/htdocs/Project/htdocs/desktop/app/Http/Controllers/BookingController.php&#10;showA&#9;null&#9;null&#10;slider&#9;null&#9;null&#10;toolti&#9;null&#9;null&#10;color pic&#9;ACTION&#9;ShowColorPicker" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="full.screen.before.presentation.mode" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/adminPanel" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Test" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="editing.templates" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/resources/views/adminPanel" />
-      <recent name="E:\apache\htdocs\Project\htdocs\desktop\public\js" />
-      <recent name="E:\apache\htdocs\Project\htdocs\Test\image" />
-      <recent name="E:\apache\htdocs\Project\htdocs\desktop\resources\Image" />
-      <recent name="E:\apache\htdocs\Project\htdocs\desktop\resources\sass\slick" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\apache\htdocs\Project\htdocs\desktop\resources\views\adminPanel" />
       <recent name="E:\apache\htdocs\Project\htdocs\Test\laravel\resources\js" />
       <recent name="E:\apache\htdocs\Project\htdocs\desktop\resources\js" />
       <recent name="E:\apache\htdocs\Project\htdocs\desktop\resources\sass\error" />
       <recent name="E:\apache\htdocs\Project\htdocs\Test" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/resources/views/adminPanel" />
+      <recent name="E:\apache\htdocs\Project\htdocs\desktop\public\js" />
+      <recent name="E:\apache\htdocs\Project\htdocs\Test\image" />
+      <recent name="E:\apache\htdocs\Project\htdocs\desktop\resources\Image" />
     </key>
   </component>
   <component name="RunManager">
@@ -429,6 +414,9 @@
       <workItem from="1577113416917" duration="58000" />
       <workItem from="1577113767111" duration="108000" />
       <workItem from="1577114469805" duration="799000" />
+      <workItem from="1577333210741" duration="260000" />
+      <workItem from="1577808234503" duration="1491000" />
+      <workItem from="1577882219993" duration="1403000" />
     </task>
     <servers />
   </component>
@@ -480,6 +468,11 @@
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
     <state x="1466" y="98" width="1720" height="841" key="DiffContextDialog/1366.0.1920.1080/0.0.1366.768@1366.0.1920.1080" timestamp="1577014019975" />
+    <state x="655" y="207" width="424" height="484" key="FileChooserDialogImpl" timestamp="1577885343219">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="466" y="154" width="424" height="484" key="FileChooserDialogImpl/0.27.1366.741@0.27.1366.741" timestamp="1577333468218" />
+    <state x="655" y="207" key="FileChooserDialogImpl/0.27.1920.1053@0.27.1920.1053" timestamp="1577885343219" />
     <state width="939" height="262" key="GridCell.Tab.0.bottom" timestamp="1576249491994">
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
