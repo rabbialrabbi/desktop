@@ -16,8 +16,8 @@
                         <option value="" selected disabled hidden>Choose here</option>
                         @foreach($agencies as $agency)
                         <option value="{{$agency->id}}">{{$agency->name}}</option>
-
-                            @endforeach
+                        @endforeach
+                        <option value="Add City" onclick="window.open('/admin/agency/create','_self')">ADD AGENCY</option>
 
                     </select>
                     @if($errors->has('agency_id'))
@@ -33,6 +33,7 @@
                         @foreach($routes as $route )
                         <option value="{{$route->id}}">{{$route->departureCity()->first()->name}} to {{$route->arrivalCity()->first()->name}} </option>
                             @endforeach
+                        <option value="Add Route" onclick="window.open('/admin/route/create','_self')">ADD ROUTE</option>
                     </select>
                     @if($errors->has('route_id'))
                    <span class="text-danger ml-1"> * {{$errors->first('route_id')}}</span>

@@ -1738,19 +1738,34 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  name: "chart",
   data: function data() {
     return {
-      sells: []
+      'agency': 'NULL',
+      'month': 'NULL'
     };
   },
-  name: "datepicker",
+  props: ['scores'],
   mounted: function mounted() {
-    axios.get('/getdata').then(function (response) {
-      this.sells = response.data;
-    }); // edo start from here
-
+    // axios.get('/getdata').then(function(response){
+    //     this.sells = response.data
+    // });
     var canvas_id = document.getElementById('dashboard_chart').getContext('2d');
     var myLineChart = new chart_js__WEBPACK_IMPORTED_MODULE_0___default.a(canvas_id, {
       type: 'line',
@@ -1758,7 +1773,7 @@ __webpack_require__.r(__webpack_exports__);
         "labels": ["January", "February", "March", "April", "May", "June", "August", "September", "October", "November", "December"],
         "datasets": [{
           "label": "My First Dataset",
-          "data": this.sells,
+          "data": this.scores,
           "fill": false,
           "borderColor": "rgb(75, 192, 192)",
           "lineTension": false
@@ -63823,21 +63838,87 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "dashboard_chart" }, [
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-2" }),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-4" }, [
+        _c(
+          "select",
+          {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: (_vm.agency = this.value),
+                expression: "agency=this.value"
+              }
+            ],
+            on: {
+              change: function($event) {
+                var $$selectedVal = Array.prototype.filter
+                  .call($event.target.options, function(o) {
+                    return o.selected
+                  })
+                  .map(function(o) {
+                    var val = "_value" in o ? o._value : o.value
+                    return val
+                  })
+                _vm.$set(
+                  (_vm.agency = this),
+                  "value",
+                  $event.target.multiple ? $$selectedVal : $$selectedVal[0]
+                )
+              }
+            }
+          },
+          [
+            _c("option", { attrs: { value: "TR Travels" } }, [
+              _vm._v("TR Travels")
+            ]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "SR Travels" } }, [
+              _vm._v("SR Travels")
+            ])
+          ]
+        )
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-4 ml-5" }, [
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.month,
+              expression: "month"
+            }
+          ],
+          attrs: { type: "text", placeholder: "Month" },
+          domProps: { value: _vm.month },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.month = $event.target.value
+            }
+          }
+        })
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-2" })
+    ]),
+    _vm._v(" "),
+    _c("p", [_vm._v(_vm._s(_vm.agency))]),
+    _vm._v(" "),
+    _c("canvas", {
+      staticStyle: { "margin-right": "100px" },
+      attrs: { id: "dashboard_chart" }
+    })
+  ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "dashboard_chart" }, [
-      _c("canvas", {
-        staticStyle: { "margin-right": "100px" },
-        attrs: { id: "dashboard_chart" }
-      })
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 

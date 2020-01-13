@@ -2,9 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c544db70-9192-45cd-b243-d0e4cbae3905" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BookingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BookingController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/BookingFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/BookingFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/UserFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/UserFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_08_14_004623_create_booking_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_08_14_004623_create_booking_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/bookingTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/bookingTableSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/dashboardChart.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/dashboardChart.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/adminPanel/addAgency.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/adminPanel/addAgency.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/adminPanel/addBus.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/adminPanel/addBus.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/adminPanel/addRoute.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/adminPanel/addRoute.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/adminPanel/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/adminPanel/dashboard.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/seatDetails.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/seatDetails.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +45,29 @@
     <expand>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="MySQL - @localhost" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
         <item name="ticketapp@localhost" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="ticketapp@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="ticketapp@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="ticketapp: schema" type="76f4a085:MysqlImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="ticketapp@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="ticketapp: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="booking: table" type="285a2a93:MysqlImplModel$Table" />
       </path>
     </expand>
     <select />
@@ -164,7 +200,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="full.screen.before.presentation.mode" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Test" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="editing.templates" />
@@ -200,7 +236,17 @@
       <list>
         <serviceView>
           <treeState>
-            <expand />
+            <expand>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:ticketapp@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:ticketapp@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="com.intellij.database.console.session.MessageBusSession@715dbb07" type="9fbbdea:ServiceModel$ServiceNode" />
+              </path>
+            </expand>
             <select />
           </treeState>
         </serviceView>
@@ -417,20 +463,16 @@
       <workItem from="1577333210741" duration="260000" />
       <workItem from="1577808234503" duration="1491000" />
       <workItem from="1577882219993" duration="1403000" />
+      <workItem from="1578467923000" duration="311000" />
+      <workItem from="1578503009800" duration="1731000" />
+      <workItem from="1578573514558" duration="4318000" />
+      <workItem from="1578619481628" duration="193000" />
+      <workItem from="1578744169054" duration="7915000" />
+      <workItem from="1578832697492" duration="4791000" />
+      <workItem from="1578887403962" duration="10266000" />
+      <workItem from="1578916604693" duration="8994000" />
     </task>
     <servers />
-  </component>
-  <component name="TodoView">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-      <is-preview-enabled value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-modules-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-      <todo-filter name="Personal" />
-      <is-preview-enabled value="true" />
-    </todo-panel>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -473,29 +515,38 @@
     </state>
     <state x="466" y="154" width="424" height="484" key="FileChooserDialogImpl/0.27.1366.741@0.27.1366.741" timestamp="1577333468218" />
     <state x="655" y="207" key="FileChooserDialogImpl/0.27.1920.1053@0.27.1920.1053" timestamp="1577885343219" />
-    <state width="939" height="262" key="GridCell.Tab.0.bottom" timestamp="1576249491994">
-      <screen x="1366" y="0" width="1920" height="1080" />
+    <state width="1291" height="277" key="GridCell.Tab.0.bottom" timestamp="1578892743752">
+      <screen x="0" y="27" width="1920" height="1053" />
     </state>
+    <state width="1291" height="277" key="GridCell.Tab.0.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1578892743752" />
     <state width="939" height="262" key="GridCell.Tab.0.bottom/1366.0.1920.1080/0.0.1366.768@1366.0.1920.1080" timestamp="1576249491994" />
-    <state width="939" height="262" key="GridCell.Tab.0.center" timestamp="1576249491994">
-      <screen x="1366" y="0" width="1920" height="1080" />
+    <state width="1291" height="277" key="GridCell.Tab.0.center" timestamp="1578892743752">
+      <screen x="0" y="27" width="1920" height="1053" />
     </state>
+    <state width="1291" height="277" key="GridCell.Tab.0.center/0.27.1920.1053@0.27.1920.1053" timestamp="1578892743752" />
     <state width="939" height="262" key="GridCell.Tab.0.center/1366.0.1920.1080/0.0.1366.768@1366.0.1920.1080" timestamp="1576249491994" />
-    <state width="939" height="262" key="GridCell.Tab.0.left" timestamp="1576249491994">
-      <screen x="1366" y="0" width="1920" height="1080" />
+    <state width="1291" height="277" key="GridCell.Tab.0.left" timestamp="1578892743752">
+      <screen x="0" y="27" width="1920" height="1053" />
     </state>
+    <state width="1291" height="277" key="GridCell.Tab.0.left/0.27.1920.1053@0.27.1920.1053" timestamp="1578892743752" />
     <state width="939" height="262" key="GridCell.Tab.0.left/1366.0.1920.1080/0.0.1366.768@1366.0.1920.1080" timestamp="1576249491994" />
-    <state width="939" height="262" key="GridCell.Tab.0.right" timestamp="1576249491994">
-      <screen x="1366" y="0" width="1920" height="1080" />
+    <state width="1291" height="277" key="GridCell.Tab.0.right" timestamp="1578892743752">
+      <screen x="0" y="27" width="1920" height="1053" />
     </state>
+    <state width="1291" height="277" key="GridCell.Tab.0.right/0.27.1920.1053@0.27.1920.1053" timestamp="1578892743752" />
     <state width="939" height="262" key="GridCell.Tab.0.right/1366.0.1920.1080/0.0.1366.768@1366.0.1920.1080" timestamp="1576249491994" />
+    <state width="263" height="541" key="HiddenNamespacesPopup" timestamp="1578745367935">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state width="263" height="541" key="HiddenNamespacesPopup/0.27.1366.741@0.27.1366.741" timestamp="1578745367935" />
     <state x="2110" y="318" width="422" height="394" key="NewPhpClassDialog" timestamp="1577039684210">
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
     <state x="2110" y="318" width="422" height="394" key="NewPhpClassDialog/1366.0.1920.1080/0.0.1366.768@1366.0.1920.1080" timestamp="1577039684210" />
-    <state x="2144" y="441" width="354" height="156" key="NewPhpFileDialog" timestamp="1577035838080">
-      <screen x="1366" y="0" width="1920" height="1080" />
+    <state x="554" y="330" width="252" height="157" key="NewPhpFileDialog" timestamp="1578750085981">
+      <screen x="0" y="27" width="1366" height="741" />
     </state>
+    <state x="554" y="330" width="252" height="157" key="NewPhpFileDialog/0.27.1366.741@0.27.1366.741" timestamp="1578750085981" />
     <state x="2144" y="441" width="354" height="156" key="NewPhpFileDialog/1366.0.1920.1080/0.0.1366.768@1366.0.1920.1080" timestamp="1577035838080" />
     <state x="1830" y="154" key="SettingsEditor" timestamp="1575854359312">
       <screen x="1366" y="0" width="1920" height="1080" />
@@ -513,9 +564,11 @@
       <screen x="1366" y="0" width="1920" height="1080" />
     </state>
     <state x="1742" y="38" width="886" height="921" key="find.popup/1366.0.1920.1080/0.0.1366.768@1366.0.1920.1080" timestamp="1577027304358" />
-    <state x="1989" y="228" width="672" height="678" key="search.everywhere.popup" timestamp="1577036655757">
-      <screen x="1366" y="0" width="1920" height="1080" />
+    <state x="443" y="183" width="672" height="466" key="search.everywhere.popup" timestamp="1578752490358">
+      <screen x="0" y="27" width="1366" height="741" />
     </state>
+    <state x="443" y="183" width="672" height="466" key="search.everywhere.popup/0.27.1366.741@0.27.1366.741" timestamp="1578752490358" />
+    <state x="623" y="249" width="672" height="662" key="search.everywhere.popup/0.27.1920.1053@0.27.1920.1053" timestamp="1578504642928" />
     <state x="1989" y="228" width="672" height="678" key="search.everywhere.popup/1366.0.1920.1080/0.0.1366.768@1366.0.1920.1080" timestamp="1577036655757" />
     <state x="2051" y="427" width="540" height="179" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1576249547251">
       <screen x="1366" y="0" width="1920" height="1080" />

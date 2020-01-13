@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\agency;
+use App\booking;
 use App\bus;
 use App\city;
 use App\route;
@@ -18,6 +19,19 @@ class AdminController extends Controller
     {
         $sub_menu_data = $this->get_submenu_data('dashboard');
         return view('adminPanel.dashboard',['submenulist'=>$sub_menu_data,'add'=>'is-active']);
+    }
+
+    public function chartData(Request $request)
+    {
+        $amout=0;
+
+        $dataset = booking::where([['agency_id','=',2],['date','=','2020-01-20']]);
+        $data= $dataset->map(function ($item){
+           
+        });
+        dd($data);
+
+
     }
 
     public function showRoute()
@@ -151,24 +165,27 @@ class AdminController extends Controller
            'image'=>'required|image|mimes:png,jpg,jpeg'
         ]);
 
+        $duplicate_check = agency::where([['name','=',request()->name]])->first();
 
+        if($duplicate_check){
+            return back()->with('message','The agency is already exist');
+        }else{
+            $agency_logo = 'logo_'.Carbon::now()->timestamp.'.'.$request->file('image')->getClientOriginalExtension();
 
-        $agency_logo = 'logo_'.Carbon::now()->timestamp.'.'.$request->file('image')->getClientOriginalExtension();
+            $request->file('image')->storeAs('public/agency_logo',$agency_logo);
 
-        $request->file('image')->storeAs('public/agency_logo',$agency_logo);
+            $feedback = agency::create([
+                'name'=> $request->name,
+                'address'=> $request->address,
+                'contact'=> $request->contact,
+                'image_name'=> $agency_logo
+            ]);
 
-        $feedback = agency::create([
-            'name'=> $request->name,
-            'address'=> $request->address,
-            'contact'=> $request->contact,
-            'image_name'=> $agency_logo
-        ]);
+            $resize_image = Image::make(public_path('/storage/agency_logo/'.$agency_logo))->resize(400,250);
+            $resize_image->save();
 
-        $resize_image = Image::make(public_path('/storage/agency_logo/'.$agency_logo))->resize(400,250);
-        $resize_image->save();
-
-        return back()->with('message','Image Upload successful');
-
+            return back()->with('message','Image Upload successful');
+        }
     }
 
 

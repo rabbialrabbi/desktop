@@ -7,7 +7,7 @@
         <div class="row persons">
             <div class="col-2"></div>
             <div class="col-9 booking-details">
-                <h2>{{$agencyName}}</h2>
+                <h2>{{$agency->name}}</h2>
                 <div class="row mb-3">
                     <div class="col-2 booking-name">
                         <p>Name :</p>
@@ -142,6 +142,7 @@
                             </tr>
                             </thead>
                             <tbody id="tbody">
+                            <input type="hidden" name="agency_id" value="{{$agency->id}}">
                             <input type="hidden" name="route_id" value="{{$bus->route_id}}">
                             <input type="hidden" name="bus_id" value="{{$bus->id}}">
                             <input type="hidden" name="fare" value="{{$bus->fare}}">
