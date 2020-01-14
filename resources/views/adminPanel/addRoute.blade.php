@@ -20,7 +20,7 @@
                     @foreach($cities as $city )
                         <option value="{{$city->id}}">{{$city->name}}</option>
                         @endforeach
-                        <option value="addCity" onclick="redirectTo()">Add City</option>
+                        <option value="addCity" onclick="window.open('/admin/city/create', '_self')">Add City</option>
 
                 </select>
                 @if($errors->has('fromCity'))
@@ -35,7 +35,7 @@
                     @foreach($cities as $city )
                         <option value="{{$city->id}}">{{$city->name}}</option>
                     @endforeach
-                    <option value="addCity" onclick="redirectTo()">Add City</option>
+                    <option value="addCity" onclick="window.open('/admin/city/create', '_self')">Add City</option>
 
                 </select>
                 @if($errors->has('toCity'))
@@ -79,12 +79,5 @@
     </form>
 
     </div>
-
-    <script>
-        function redirectTo() {
-            window.open('/admin/city/create', '_self');
-        }
-    </script>
-
 @endsection
 

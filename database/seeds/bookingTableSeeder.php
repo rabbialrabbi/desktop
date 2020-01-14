@@ -13,6 +13,7 @@ class bookingTableSeeder extends Seeder
     public function run()
     {
         DB::table('booking')->insert([
+            'agency_id'=>1,
             'route_id'=>1,
             'bus_id'=> 1,
             'seat_id'=>1,
@@ -26,6 +27,7 @@ class bookingTableSeeder extends Seeder
         ]);
 
         DB::table('booking')->insert([
+            'agency_id'=>1,
             'route_id'=>1,
             'bus_id'=> 1,
             'seat_id'=>5,

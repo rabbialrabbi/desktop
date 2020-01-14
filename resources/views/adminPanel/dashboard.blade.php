@@ -20,8 +20,9 @@
             </div>
         @endif
         <br><br>
+        <dashboard-chart></dashboard-chart>
 
-        <dashboard-chart :sells=[10,20,40,80,60,40,20,50]></dashboard-chart>
+{{--        <dashboard-chart v-bind:scores =[10,30,40,80,30,70]></dashboard-chart>--}}
 
     </div>
 

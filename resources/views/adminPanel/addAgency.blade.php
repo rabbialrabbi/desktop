@@ -5,7 +5,9 @@
     <?php $active= ['add'=>'is-active', 'add_agency'=>'is-active'] ?>
 @endsection
 @section('subbody')
-
+    @if(session('message'))
+        <span style="color:red;"> {{session('message')}}</span>
+    @endif
     <div class="container">
 {{--        @include('error.errorCheck')--}}
         <h4 class="mb-5">Add Agency</h4>
@@ -15,9 +17,14 @@
         <div class="row mb-3">
             <div class="col-2">Name: </div>
             <div class="col-8">
-                <input type="text" name="name">
+                <input list="type" name="name" required>
+                <datalist id="type">
+                    <option value="Other">
+                    <option value="Other2">
+                    <option value="Other">
+                </datalist>
                 @if($errors->has('name'))
-                   <span class="text-danger ml-1"> * {{$errors->first('name')}}</span>
+                    <span class="text-danger ml-1"> * {{$errors->first('name')}}</span>
                 @endif
             </div>
         </div>

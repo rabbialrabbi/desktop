@@ -20,4 +20,3 @@ const app = new Vue({
 
     }
 });
-
