@@ -3,8 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="c544db70-9192-45cd-b243-d0e4cbae3905" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/dashboardChart.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/dashboardChart.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/adminPanel/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/adminPanel/dashboard.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/v8-compile-cache-0/6.2.414.50/zSvarzSwwwzShtmlzSworkshopzSdesktopzSnode_moduleszSwebpack-clizSbinzScli.js.BLOB" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/v8-compile-cache-0/6.2.414.50/zSvarzSwwwzShtmlzSworkshopzSdesktopzSnode_moduleszSwebpack-clizSbinzScli.js.MAP" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -164,25 +167,25 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="full.screen.before.presentation.mode" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Test" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="editing.templates" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\apache\htdocs\Project\htdocs\desktop\resources\views\adminPanel" />
-      <recent name="E:\apache\htdocs\Project\htdocs\Test\laravel\resources\js" />
-      <recent name="E:\apache\htdocs\Project\htdocs\desktop\resources\js" />
-      <recent name="E:\apache\htdocs\Project\htdocs\desktop\resources\sass\error" />
-      <recent name="E:\apache\htdocs\Project\htdocs\Test" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/resources/views/adminPanel" />
       <recent name="E:\apache\htdocs\Project\htdocs\desktop\public\js" />
       <recent name="E:\apache\htdocs\Project\htdocs\Test\image" />
       <recent name="E:\apache\htdocs\Project\htdocs\desktop\resources\Image" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\apache\htdocs\Project\htdocs\desktop\resources\views\adminPanel" />
+      <recent name="E:\apache\htdocs\Project\htdocs\Test\laravel\resources\js" />
+      <recent name="E:\apache\htdocs\Project\htdocs\desktop\resources\js" />
+      <recent name="E:\apache\htdocs\Project\htdocs\desktop\resources\sass\error" />
+      <recent name="E:\apache\htdocs\Project\htdocs\Test" />
     </key>
   </component>
   <component name="RunManager">
@@ -417,6 +420,8 @@
       <workItem from="1577333210741" duration="260000" />
       <workItem from="1577808234503" duration="1491000" />
       <workItem from="1577882219993" duration="1403000" />
+      <workItem from="1578621953558" duration="816000" />
+      <workItem from="1578622872450" duration="1882000" />
     </task>
     <servers />
   </component>

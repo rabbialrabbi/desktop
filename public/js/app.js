@@ -1740,17 +1740,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  props: ['sells'],
   data: function data() {
-    return {
-      sells: []
-    };
+    return {};
   },
-  name: "datepicker",
+  name: "chart",
   mounted: function mounted() {
-    axios.get('/getdata').then(function (response) {
-      this.sells = response.data;
-    }); // edo start from here
-
+    // axios.get('/getdata').then(function(response){
+    //     this.sells = response.data
+    // });
     var canvas_id = document.getElementById('dashboard_chart').getContext('2d');
     var myLineChart = new chart_js__WEBPACK_IMPORTED_MODULE_0___default.a(canvas_id, {
       type: 'line',
@@ -79148,8 +79146,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/rabbi/Wrokshop/desktop/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /home/rabbi/Wrokshop/desktop/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /var/www/html/Workshop/desktop/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /var/www/html/Workshop/desktop/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

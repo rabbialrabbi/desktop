@@ -8,18 +8,17 @@
     import Chart from "chart.js";
 
     export default {
+        props:['sells'],
         data(){
             return{
-                sells:[]
             }
         },
-        name: "datepicker",
+        name: "chart",
         mounted() {
 
-            axios.get('/getdata').then(function(response){
-                this.sells = response.data
-            });
-            // edo start from here
+            // axios.get('/getdata').then(function(response){
+            //     this.sells = response.data
+            // });
 
             let canvas_id = document.getElementById('dashboard_chart').getContext('2d');
 
