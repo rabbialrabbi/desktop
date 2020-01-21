@@ -13,38 +13,40 @@
             </div>
             <div class="col-2"></div>
         </div>
+
         <p>{{agency}}</p>
+
         <canvas id="dashboard_chart" style="margin-right: 100px;" > </canvas>
+
+
     </div>
 </template>
 
 <script>
+    import canvasComponent from "./canvasComponent";
     import Chart from "chart.js";
 
     export default {
         name: "chart",
+        components:{'canvas-component': canvasComponent},
         data(){
             return{
                 agency:1,
                 month:1,
-                fare:[]
+                fares:[]
             }
         },
         mounted() {
 
-            axios.get('/dashboardchart/'+this.agency+'/'+this.month).then(response =>this.fare = response.data);
-            // axios.get('/dashboardchart/{agency}/{month}')
-            //     .then(function (response) {
-            //         // handle success
-            //         console.log(response);
-            //     })
-            //     .catch(function (error) {
-            //         // handle error
-            //         console.log(error);
-            //     })
-            //     .finally(function () {
-            //         // always executed
-            //     });
+            axios.get('/dashboardchart/'+this.agency+'/'+this.month)
+                .then(response => {
+                    const amount = response.data;
+                    for(let key in amount){
+                        const fare= amount[key];
+                        this.fares.push(fare)
+                    }
+                });
+            console.log(this.fares);
 
             let canvas_id = document.getElementById('dashboard_chart').getContext('2d');
 
@@ -54,7 +56,7 @@
                     "labels":["January","February","March","April","May","June","August","September","October","November","December"],
                     "datasets":[{
                         "label":"My First Dataset",
-                        "data":this.fare,
+                        "data":[33500,19200,31000],
                         "fill":false,
                         "borderColor":"rgb(75, 192, 192)",
                         "lineTension":false}]
