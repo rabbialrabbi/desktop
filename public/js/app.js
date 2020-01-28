@@ -1799,16 +1799,12 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   mounted: function mounted() {
-    var _this = this;
-
+    var users = [];
     axios.get('/dashboardchart/' + this.agency + '/' + this.month).then(function (response) {
-      var amount = response.data;
-
-      for (var key in amount) {
-        var fare = amount[key];
-
-        _this.fares.push(fare);
-      }
+      var data = response.data.bmw.map(function (bmw) {
+        return bmw.speed;
+      });
+      console.log(data);
     });
     console.log(this.fares);
     var canvas_id = document.getElementById('dashboard_chart').getContext('2d');
@@ -1818,7 +1814,7 @@ __webpack_require__.r(__webpack_exports__);
         "labels": ["January", "February", "March", "April", "May", "June", "August", "September", "October", "November", "December"],
         "datasets": [{
           "label": "My First Dataset",
-          "data": [33500, 19200, 31000],
+          "data": users,
           "fill": false,
           "borderColor": "rgb(75, 192, 192)",
           "lineTension": false

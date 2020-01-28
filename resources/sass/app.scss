@@ -1,18 +1,10 @@
-
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
-@import url('https://fonts.googleapis.com/css?family=Courgette&display=swap');
-
-@import url('https://fonts.googleapis.com/css?family=Gugi" rel="stylesheet');
-@import url('https://fonts.googleapis.com/css?family=Courgette|Exo+2|Lato|Nunito|Roboto&display=swap ');
-@import url('https://fonts.googleapis.com/css?family=Caveat&display=swap');
-
+@import "font";
 
 // Variables
 @import 'variables';
 @import "bulma/bulma.min.css";
 @import "bulma/custorm";
-
 @import "error/errors";
 @import "error/bookingError";
 @import "wrapper";

@@ -37,15 +37,13 @@
             }
         },
         mounted() {
-
+            const users=[];
             axios.get('/dashboardchart/'+this.agency+'/'+this.month)
                 .then(response => {
-                    const amount = response.data;
-                    for(let key in amount){
-                        const fare= amount[key];
-                        this.fares.push(fare)
-                    }
+                    var data = response.data.bmw.map(bmw => bmw.speed);
+                    console.log(data);
                 });
+
             console.log(this.fares);
 
             let canvas_id = document.getElementById('dashboard_chart').getContext('2d');
@@ -56,7 +54,7 @@
                     "labels":["January","February","March","April","May","June","August","September","October","November","December"],
                     "datasets":[{
                         "label":"My First Dataset",
-                        "data":[33500,19200,31000],
+                        "data":users,
                         "fill":false,
                         "borderColor":"rgb(75, 192, 192)",
                         "lineTension":false}]

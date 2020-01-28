@@ -57,11 +57,25 @@ class AdminController extends Controller
         $dataset= $booking->getData($request->agency,$request->month);
 
         foreach ($dataset as $key=>$value){
-            $fare[]= $value;
+            $fares[$key]= $value;
         }
+//        while($fares){
+//            $
+//        }
 
-        return $fare;
+        $car=['bmw'=>
+                [
+                    0=>['color'=>'black','speed'=>250],
+                    1=>['color'=>'black','speed'=>250],
+                    2=>['color'=>'black','speed'=>250],
+                ],
+            ];
+        $fare = (Object)['fare'=>$dataset];
+//        $datas = ['data'=>$fares];
+        $data = json_encode($car);
+//        dd($data);
 
+        return $data;
 
     }
 

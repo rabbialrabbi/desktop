@@ -2,10 +2,82 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="47f36ef0-5e7e-4b0f-ae96-578b7eb533bd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/js/components/canvasComponent.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/sass/_font.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fonts/Caveat/Caveat-Bold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fonts/Caveat/Caveat-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fonts/Caveat/OFL.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fonts/OpenSans/OpenSans-Bold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fonts/OpenSans/OpenSans-BoldItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fonts/OpenSans/OpenSans-ExtraBold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fonts/OpenSans/OpenSans-ExtraBoldItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fonts/OpenSans/OpenSans-Italic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fonts/OpenSans/OpenSans-Light.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fonts/OpenSans/OpenSans-LightItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fonts/OpenSans/OpenSans-Regular.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fonts/OpenSans/OpenSans-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fonts/OpenSans/OpenSans-SemiBold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fonts/OpenSans/OpenSans-SemiBoldItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fonts/font-awesome-4.7.0/HELP-US-OUT.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fonts/font-awesome-4.7.0/css/font-awesome.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fonts/font-awesome-4.7.0/css/font-awesome.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fonts/font-awesome-4.7.0/fonts/FontAwesome.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fonts/font-awesome-4.7.0/less/animated.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fonts/font-awesome-4.7.0/less/bordered-pulled.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fonts/font-awesome-4.7.0/less/core.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fonts/font-awesome-4.7.0/less/fixed-width.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fonts/font-awesome-4.7.0/less/font-awesome.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fonts/font-awesome-4.7.0/less/icons.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fonts/font-awesome-4.7.0/less/larger.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fonts/font-awesome-4.7.0/less/list.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fonts/font-awesome-4.7.0/less/mixins.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fonts/font-awesome-4.7.0/less/path.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fonts/font-awesome-4.7.0/less/rotated-flipped.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fonts/font-awesome-4.7.0/less/screen-reader.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fonts/font-awesome-4.7.0/less/stacked.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fonts/font-awesome-4.7.0/less/variables.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fonts/font-awesome-4.7.0/scss/_animated.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fonts/font-awesome-4.7.0/scss/_bordered-pulled.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fonts/font-awesome-4.7.0/scss/_core.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fonts/font-awesome-4.7.0/scss/_fixed-width.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fonts/font-awesome-4.7.0/scss/_icons.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fonts/font-awesome-4.7.0/scss/_larger.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fonts/font-awesome-4.7.0/scss/_list.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fonts/font-awesome-4.7.0/scss/_mixins.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fonts/font-awesome-4.7.0/scss/_path.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fonts/font-awesome-4.7.0/scss/_rotated-flipped.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fonts/font-awesome-4.7.0/scss/_screen-reader.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fonts/font-awesome-4.7.0/scss/_stacked.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fonts/font-awesome-4.7.0/scss/_variables.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fonts/font-awesome-4.7.0/scss/font-awesome.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fonts/poppins/Poppins-Black.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fonts/poppins/Poppins-BlackItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fonts/poppins/Poppins-Bold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fonts/poppins/Poppins-BoldItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fonts/poppins/Poppins-ExtraBold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fonts/poppins/Poppins-ExtraBoldItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fonts/poppins/Poppins-ExtraLight.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fonts/poppins/Poppins-ExtraLightItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fonts/poppins/Poppins-Italic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fonts/poppins/Poppins-Light.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fonts/poppins/Poppins-LightItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fonts/poppins/Poppins-Medium.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fonts/poppins/Poppins-MediumItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fonts/poppins/Poppins-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fonts/poppins/Poppins-SemiBold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fonts/poppins/Poppins-SemiBoldItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fonts/poppins/Poppins-Thin.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fonts/poppins/Poppins-ThinItalic.ttf" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/dashboardChart.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/dashboardChart.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,10 +90,25 @@
       <executable />
     </execution>
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Vue Single File Component" />
+        <option value="SCSS File" />
       </list>
     </option>
   </component>
@@ -121,12 +208,14 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../javaScript" />
+    <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -144,7 +233,17 @@
       <list>
         <serviceView>
           <treeState>
-            <expand />
+            <expand>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:ticketapp@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:ticketapp@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="com.intellij.database.console.session.MessageBusSession@42897fa0" type="9fbbdea:ServiceModel$ServiceNode" />
+              </path>
+            </expand>
             <select />
           </treeState>
         </serviceView>
@@ -170,6 +269,14 @@
       <workItem from="1579408338976" duration="4003000" />
       <workItem from="1579431137018" duration="436000" />
       <workItem from="1579453863805" duration="77000" />
+      <workItem from="1579579229221" duration="854000" />
+      <workItem from="1579609670324" duration="5218000" />
+      <workItem from="1579671919864" duration="263000" />
+      <workItem from="1579784802819" duration="8909000" />
+      <workItem from="1579883492811" duration="521000" />
+      <workItem from="1579908535172" duration="23000" />
+      <workItem from="1580001838546" duration="2033000" />
+      <workItem from="1580179535303" duration="1865000" />
     </task>
     <servers />
   </component>
@@ -177,9 +284,21 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="743" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1579397055669">
+    <state x="713" y="176" width="800" height="677" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1580003058480">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="743" y="310" width="424" height="484" key="FileChooserDialogImpl/0.27.1920.1053@0.27.1920.1053" timestamp="1579397055669" />
+    <state x="713" y="176" width="800" height="677" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1580003058480" />
+    <state x="743" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1580184071598">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="743" y="310" width="424" height="484" key="FileChooserDialogImpl/0.27.1920.1053@0.27.1920.1053" timestamp="1580184071598" />
+    <state x="456" y="187" key="SettingsEditor" timestamp="1579785802618">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="456" y="187" key="SettingsEditor/0.27.1920.1053@0.27.1920.1053" timestamp="1579785802618" />
+    <state x="623" y="257" width="672" height="678" key="search.everywhere.popup" timestamp="1579796858651">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="623" y="257" width="672" height="678" key="search.everywhere.popup/0.27.1920.1053@0.27.1920.1053" timestamp="1579796858651" />
   </component>
 </project>
