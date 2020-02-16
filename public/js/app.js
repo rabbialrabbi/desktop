@@ -1784,52 +1784,71 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "chart",
-  components: {
-    'canvas-component': _canvasComponent__WEBPACK_IMPORTED_MODULE_0__["default"]
-  },
   data: function data() {
     return {
-      agency: 1,
-      month: 1,
+      agency: '2',
+      month: '1',
       fares: []
     };
   },
-  mounted: function mounted() {
-    var users = [];
-    axios.get('/dashboardchart/' + this.agency + '/' + this.month).then(function (response) {
-      var data = response.data.bmw.map(function (bmw) {
-        return bmw.speed;
-      });
-      console.log(data);
-    });
-    console.log(this.fares);
-    var canvas_id = document.getElementById('dashboard_chart').getContext('2d');
-    var myLineChart = new chart_js__WEBPACK_IMPORTED_MODULE_1___default.a(canvas_id, {
-      type: 'line',
-      data: {
-        "labels": ["January", "February", "March", "April", "May", "June", "August", "September", "October", "November", "December"],
-        "datasets": [{
-          "label": "My First Dataset",
-          "data": users,
-          "fill": false,
-          "borderColor": "rgb(75, 192, 192)",
-          "lineTension": false
-        }]
-      },
-      options: {
-        scales: {
-          yAxes: [{
-            ticks: {
-              beginAtZero: true
-            }
-          }]
+  methods: {
+    ajexCall: function ajexCall(agency, month, getChart) {
+      axios.get('/dashboardchart/' + agency + '/' + month).then(function (response) {
+        // var data = response.data.bmw.map(bmw => bmw.speed);
+        var data = [];
+        var rcv = response.data;
+
+        for (var key in rcv) {
+          var info = rcv[key];
+          data.push(info);
         }
-      }
-    });
+
+        getChart(data);
+      });
+    },
+    getChart: function getChart(data) {
+      var canvas_id = document.getElementById('dashboard_chart').getContext('2d');
+      var myLineChart = new chart_js__WEBPACK_IMPORTED_MODULE_1___default.a(canvas_id, {
+        type: 'line',
+        data: {
+          "labels": ["January", "February", "March", "April", "May", "June", "August", "September", "October", "November", "December"],
+          "datasets": [{
+            "label": "My First Dataset",
+            "data": data,
+            "fill": false,
+            "borderColor": "rgb(75, 192, 192)",
+            "lineTension": false
+          }]
+        },
+        options: {
+          scales: {
+            yAxes: [{
+              ticks: {
+                beginAtZero: true
+              }
+            }]
+          }
+        }
+      });
+    }
+  },
+  mounted: function mounted() {
+    var agency = this.agency;
+    var month = this.month;
+
+    function call(id) {
+      console.log(id);
+    }
+
+    this.ajexCall(this.agency, this.month, this.getChart);
   }
 });
 
@@ -63907,29 +63926,85 @@ var render = function() {
     _c("div", { staticClass: "row" }, [
       _c("div", { staticClass: "col-2" }),
       _vm._v(" "),
-      _vm._m(0),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-4 ml-5" }, [
-        _c("input", {
-          directives: [
-            {
-              name: "model",
-              rawName: "v-model",
-              value: _vm.month,
-              expression: "month"
-            }
-          ],
-          attrs: { type: "text", placeholder: "Month" },
-          domProps: { value: _vm.month },
-          on: {
-            input: function($event) {
-              if ($event.target.composing) {
-                return
+      _c("div", { staticClass: "col-4" }, [
+        _c(
+          "select",
+          {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.agency,
+                expression: "agency"
               }
-              _vm.month = $event.target.value
+            ],
+            attrs: { name: "agency", id: "agency" },
+            on: {
+              change: [
+                function($event) {
+                  var $$selectedVal = Array.prototype.filter
+                    .call($event.target.options, function(o) {
+                      return o.selected
+                    })
+                    .map(function(o) {
+                      var val = "_value" in o ? o._value : o.value
+                      return val
+                    })
+                  _vm.agency = $event.target.multiple
+                    ? $$selectedVal
+                    : $$selectedVal[0]
+                },
+                function($event) {
+                  return _vm.ajexCall(_vm.agency, _vm.month, _vm.getChart)
+                }
+              ]
             }
-          }
-        })
+          },
+          [
+            _c("option", { attrs: { value: "1", selected: "" } }, [
+              _vm._v("SR Travels")
+            ]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "2" } }, [_vm._v("TR Travels")])
+          ]
+        )
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-4" }, [
+        _c(
+          "select",
+          {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.month,
+                expression: "month"
+              }
+            ],
+            attrs: { name: "month", id: "month", onchange: "precall()" },
+            on: {
+              change: function($event) {
+                var $$selectedVal = Array.prototype.filter
+                  .call($event.target.options, function(o) {
+                    return o.selected
+                  })
+                  .map(function(o) {
+                    var val = "_value" in o ? o._value : o.value
+                    return val
+                  })
+                _vm.month = $event.target.multiple
+                  ? $$selectedVal
+                  : $$selectedVal[0]
+              }
+            }
+          },
+          [
+            _c("option", { attrs: { value: "1" } }, [_vm._v("January")]),
+            _vm._v(" "),
+            _c("option", { attrs: { value: "2" } }, [_vm._v("February")])
+          ]
+        )
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "col-2" })
@@ -63943,22 +64018,7 @@ var render = function() {
     })
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-4" }, [
-      _c("select", [
-        _c("option", { attrs: { value: "TR Travels" } }, [
-          _vm._v("TR Travels")
-        ]),
-        _vm._v(" "),
-        _c("option", { attrs: { value: "SR Travels" } }, [_vm._v("SR Travels")])
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -79338,8 +79398,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /var/www/html/Workshop/desktop/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /var/www/html/Workshop/desktop/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/rabbi/Wrokshop/desktop/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/rabbi/Wrokshop/desktop/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
