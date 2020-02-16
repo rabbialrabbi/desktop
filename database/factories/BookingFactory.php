@@ -10,7 +10,16 @@ use Faker\Generator as Faker;
 
 $factory->define(booking::class, function (Faker $faker) {
     return [
-        //
+    'agency_id'=>1,
+    'route_id'=>2,
+    'bus_id'=>10,
+    'seat_id'=>2,
+    'date'=>'2020/01/20',
+    'time'=>'8:15:00',
+    'persons_name'=>'Mr. Gentel Man',
+    'persons_number'=> '01723659050',
+    'fare'=>350,
+    'status'=>'Booked'
     ];
 });
 

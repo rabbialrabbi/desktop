@@ -1,25 +1,50 @@
 <template>
     <div class="dashboard_chart">
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-4">
+                <select>
+                    <option value="TR Travels">TR Travels</option>
+                    <option value="SR Travels">SR Travels</option>
+                </select>
+            </div>
+            <div class="col-4 ml-5">
+                <input type="text" v-model="month" placeholder="Month">
+            </div>
+            <div class="col-2"></div>
+        </div>
+
+        <p>{{agency}}</p>
+
         <canvas id="dashboard_chart" style="margin-right: 100px;" > </canvas>
+
+
     </div>
 </template>
 
 <script>
+    import canvasComponent from "./canvasComponent";
     import Chart from "chart.js";
 
     export default {
+        name: "chart",
+        components:{'canvas-component': canvasComponent},
         data(){
             return{
-                sells:[]
+                agency:1,
+                month:1,
+                fares:[]
             }
         },
-        name: "datepicker",
         mounted() {
+            const users=[];
+            axios.get('/dashboardchart/'+this.agency+'/'+this.month)
+                .then(response => {
+                    var data = response.data.bmw.map(bmw => bmw.speed);
+                    console.log(data);
+                });
 
-            axios.get('/getdata').then(function(response){
-                this.sells = response.data
-            });
-            // edo start from here
+            console.log(this.fares);
 
             let canvas_id = document.getElementById('dashboard_chart').getContext('2d');
 
@@ -29,7 +54,7 @@
                     "labels":["January","February","March","April","May","June","August","September","October","November","December"],
                     "datasets":[{
                         "label":"My First Dataset",
-                        "data":this.sells,
+                        "data":users,
                         "fill":false,
                         "borderColor":"rgb(75, 192, 192)",
                         "lineTension":false}]
@@ -45,8 +70,6 @@
                     }
                 }
             });
-
-
         }
     }
 </script>

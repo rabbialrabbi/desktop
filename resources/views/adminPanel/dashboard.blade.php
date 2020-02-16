@@ -20,8 +20,9 @@
             </div>
         @endif
         <br><br>
-
         <dashboard-chart></dashboard-chart>
+
+{{--        <dashboard-chart v-bind:scores =[10,30,40,80,30,70]></dashboard-chart>--}}
 
     </div>
 
