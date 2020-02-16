@@ -1721,10 +1721,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/dashboardChart.vue?vue&type=script&lang=js&":
-/*!*************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/dashboardChart.vue?vue&type=script&lang=js& ***!
-  \*************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/canvasComponent.vue?vue&type=script&lang=js&":
+/*!**************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/canvasComponent.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1738,27 +1738,83 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  name: "canvasComponent",
+  props: ['fare'],
+  mounted: function mounted() {}
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/dashboardChart.vue?vue&type=script&lang=js&":
+/*!*************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/dashboardChart.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _canvasComponent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./canvasComponent */ "./resources/js/components/canvasComponent.vue");
+/* harmony import */ var chart_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! chart.js */ "./node_modules/chart.js/dist/Chart.js");
+/* harmony import */ var chart_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(chart_js__WEBPACK_IMPORTED_MODULE_1__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: "chart",
+  components: {
+    'canvas-component': _canvasComponent__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
   data: function data() {
     return {
-      sells: []
+      agency: 1,
+      month: 1,
+      fares: []
     };
   },
-  name: "datepicker",
   mounted: function mounted() {
-    axios.get('/getdata').then(function (response) {
-      this.sells = response.data;
-    }); // edo start from here
-
+    var users = [];
+    axios.get('/dashboardchart/' + this.agency + '/' + this.month).then(function (response) {
+      var data = response.data.bmw.map(function (bmw) {
+        return bmw.speed;
+      });
+      console.log(data);
+    });
+    console.log(this.fares);
     var canvas_id = document.getElementById('dashboard_chart').getContext('2d');
-    var myLineChart = new chart_js__WEBPACK_IMPORTED_MODULE_0___default.a(canvas_id, {
+    var myLineChart = new chart_js__WEBPACK_IMPORTED_MODULE_1___default.a(canvas_id, {
       type: 'line',
       data: {
         "labels": ["January", "February", "March", "April", "May", "June", "August", "September", "October", "November", "December"],
         "datasets": [{
           "label": "My First Dataset",
-          "data": this.sells,
+          "data": users,
           "fill": false,
           "borderColor": "rgb(75, 192, 192)",
           "lineTension": false
@@ -63808,6 +63864,30 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/canvasComponent.vue?vue&type=template&id=233ec48a&scoped=true&":
+/*!******************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/canvasComponent.vue?vue&type=template&id=233ec48a&scoped=true& ***!
+  \******************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div")
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/dashboardChart.vue?vue&type=template&id=442143b5&scoped=true&":
 /*!*****************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/dashboardChart.vue?vue&type=template&id=442143b5&scoped=true& ***!
@@ -63823,18 +63903,59 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "dashboard_chart" }, [
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-2" }),
+      _vm._v(" "),
+      _vm._m(0),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-4 ml-5" }, [
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.month,
+              expression: "month"
+            }
+          ],
+          attrs: { type: "text", placeholder: "Month" },
+          domProps: { value: _vm.month },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.month = $event.target.value
+            }
+          }
+        })
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-2" })
+    ]),
+    _vm._v(" "),
+    _c("p", [_vm._v(_vm._s(_vm.agency))]),
+    _vm._v(" "),
+    _c("canvas", {
+      staticStyle: { "margin-right": "100px" },
+      attrs: { id: "dashboard_chart" }
+    })
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "dashboard_chart" }, [
-      _c("canvas", {
-        staticStyle: { "margin-right": "100px" },
-        attrs: { id: "dashboard_chart" }
-      })
+    return _c("div", { staticClass: "col-4" }, [
+      _c("select", [
+        _c("option", { attrs: { value: "TR Travels" } }, [
+          _vm._v("TR Travels")
+        ]),
+        _vm._v(" "),
+        _c("option", { attrs: { value: "SR Travels" } }, [_vm._v("SR Travels")])
+      ])
     ])
   }
 ]
@@ -79061,6 +79182,75 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/canvasComponent.vue":
+/*!*****************************************************!*\
+  !*** ./resources/js/components/canvasComponent.vue ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _canvasComponent_vue_vue_type_template_id_233ec48a_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./canvasComponent.vue?vue&type=template&id=233ec48a&scoped=true& */ "./resources/js/components/canvasComponent.vue?vue&type=template&id=233ec48a&scoped=true&");
+/* harmony import */ var _canvasComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./canvasComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/canvasComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _canvasComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _canvasComponent_vue_vue_type_template_id_233ec48a_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _canvasComponent_vue_vue_type_template_id_233ec48a_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "233ec48a",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/canvasComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/canvasComponent.vue?vue&type=script&lang=js&":
+/*!******************************************************************************!*\
+  !*** ./resources/js/components/canvasComponent.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_canvasComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./canvasComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/canvasComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_canvasComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/canvasComponent.vue?vue&type=template&id=233ec48a&scoped=true&":
+/*!************************************************************************************************!*\
+  !*** ./resources/js/components/canvasComponent.vue?vue&type=template&id=233ec48a&scoped=true& ***!
+  \************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_canvasComponent_vue_vue_type_template_id_233ec48a_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./canvasComponent.vue?vue&type=template&id=233ec48a&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/canvasComponent.vue?vue&type=template&id=233ec48a&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_canvasComponent_vue_vue_type_template_id_233ec48a_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_canvasComponent_vue_vue_type_template_id_233ec48a_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/components/dashboardChart.vue":
 /*!****************************************************!*\
   !*** ./resources/js/components/dashboardChart.vue ***!
@@ -79148,8 +79338,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/rabbi/Wrokshop/desktop/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /home/rabbi/Wrokshop/desktop/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /var/www/html/Workshop/desktop/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /var/www/html/Workshop/desktop/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

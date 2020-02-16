@@ -46,8 +46,8 @@ class BookingController extends Controller
 
             if(!$find_buses->first()){
 
-                $msg = "No agency available yet. Only Dhaka to Rangpur Route is available for test.You Can also add ";
-                return redirect("/bookingError/{$msg}")->with(['text'=>'Agency','linkLink'=>'add.agency']);
+                $msg = "No Bus available yet. Only Dhaka to Rangpur Route is available for test.You Can also add ";
+                return redirect("/bookingError/{$msg}")->with(['text'=>'Bus','linkLink'=>'add.bus']);
 
             }else{
 
@@ -85,7 +85,7 @@ class BookingController extends Controller
             $bus_list=  bus::with('agency','route')->where(['agency_id'=>$_GET['agencyId']])->get();
         }
 
-        $date = carbon::parse($_GET['date'])->format('h:i A');
+        $date = carbon::parse($_GET['date'])->format('Y-m-d');
 
            return view('busDetails',['buses'=>$bus_list, 'booking_date'=>$date]);
 
@@ -106,14 +106,14 @@ class BookingController extends Controller
 
         $columns = $seat->getSeatDetails($bus_id, $booking_date);
 
-        $agencyName = agency::findOrFail($bus->agency_id);
+        $agency = agency::findOrFail($bus->agency_id);
 
 
         return view('seatDetails',[
             'columns'=>$columns,
             'bus' =>$bus,
             'booking'=>$booking,
-            'agencyName'=>$agencyName->name
+            'agency'=>$agency
             ]);
     }
 
@@ -140,6 +140,7 @@ class BookingController extends Controller
 
                 $booking = new booking();
 
+                $booking->agency_id = $_POST['agency_id'];
                 $booking->route_id = $_POST['route_id'];
                 $booking->bus_id= $_POST['bus_id'];
                 $booking->seat_id= $_POST[$key];

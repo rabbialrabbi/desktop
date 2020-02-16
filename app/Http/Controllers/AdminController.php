@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\agency;
+use App\booking;
 use App\bus;
 use App\city;
 use App\route;
@@ -10,6 +11,7 @@ use Carbon\Carbon;
 use Faker\Generator as Faker;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
+use function foo\func;
 
 class AdminController extends Controller
 {
@@ -18,6 +20,63 @@ class AdminController extends Controller
     {
         $sub_menu_data = $this->get_submenu_data('dashboard');
         return view('adminPanel.dashboard',['submenulist'=>$sub_menu_data,'add'=>'is-active']);
+    }
+
+    public function chartData(Request $request,booking $booking)
+    {
+//        for ($i = 0; $i < 30; $i++){
+//            $data = new booking();
+//            $data->agency_id = 1;
+//            $data->route_id = 2;
+//            $data->bus_id = 10;
+//            $data->seat_id = $i+1;
+//            $data->date = '2020/01/24';
+//            $data->time = '10:10:00';
+//            $data->persons_name = 'Mr. Gentel Man';
+//            $data->persons_number =  '01723659050';
+//            $data->fare = 650;
+//            $data->status = 'Booked';
+//            $data->save();
+//        }
+//
+//        for ($i = 0; $i < 40; $i++){
+//            $data = new booking();
+//            $data->agency_id = 1;
+//            $data->route_id = 2;
+//            $data->bus_id = 11;
+//            $data->seat_id = $i+1;
+//            $data->date = '2020/01/24';
+//            $data->time = '09:15:00';
+//            $data->persons_name = 'Mr. Gentel Man';
+//            $data->persons_number =  '01723659050';
+//            $data->fare = 350;
+//            $data->status = 'Booked';
+//            $data->save();
+//        }
+
+        $dataset= $booking->getData($request->agency,$request->month);
+
+        foreach ($dataset as $key=>$value){
+            $fares[$key]= $value;
+        }
+//        while($fares){
+//            $
+//        }
+
+        $car=['bmw'=>
+                [
+                    0=>['color'=>'black','speed'=>250],
+                    1=>['color'=>'black','speed'=>250],
+                    2=>['color'=>'black','speed'=>250],
+                ],
+            ];
+        $fare = (Object)['fare'=>$dataset];
+//        $datas = ['data'=>$fares];
+        $data = json_encode($car);
+//        dd($data);
+
+        return $data;
+
     }
 
     public function showRoute()
@@ -151,24 +210,27 @@ class AdminController extends Controller
            'image'=>'required|image|mimes:png,jpg,jpeg'
         ]);
 
+        $duplicate_check = agency::where([['name','=',request()->name]])->first();
 
+        if($duplicate_check){
+            return back()->with('message','The agency is already exist');
+        }else{
+            $agency_logo = 'logo_'.Carbon::now()->timestamp.'.'.$request->file('image')->getClientOriginalExtension();
 
-        $agency_logo = 'logo_'.Carbon::now()->timestamp.'.'.$request->file('image')->getClientOriginalExtension();
+            $request->file('image')->storeAs('public/agency_logo',$agency_logo);
 
-        $request->file('image')->storeAs('public/agency_logo',$agency_logo);
+            $feedback = agency::create([
+                'name'=> $request->name,
+                'address'=> $request->address,
+                'contact'=> $request->contact,
+                'image_name'=> $agency_logo
+            ]);
 
-        $feedback = agency::create([
-            'name'=> $request->name,
-            'address'=> $request->address,
-            'contact'=> $request->contact,
-            'image_name'=> $agency_logo
-        ]);
+            $resize_image = Image::make(public_path('/storage/agency_logo/'.$agency_logo))->resize(400,250);
+            $resize_image->save();
 
-        $resize_image = Image::make(public_path('/storage/agency_logo/'.$agency_logo))->resize(400,250);
-        $resize_image->save();
-
-        return back()->with('message','Image Upload successful');
-
+            return back()->with('message','Image Upload successful');
+        }
     }
 
 

@@ -21,7 +21,6 @@ Route::get('/agency/{id}', 'HomeController@agencyDetails');
 Route::get('/ticket','ticketController@index');
 Route::post('/ticket/search', 'ticketController@search')->name('home.search');
 
-
 Route::get('/booking/{from_id}/{to_id}', 'BookingController@showAgency')->name('show.agency');
 Route::get('/bookingbus', 'BookingController@showBus');
 Route::get('/bookingseat/{bus_id}/{booking_date}', 'BookingController@showSeat')->name('seat.show');
@@ -43,9 +42,7 @@ Route::prefix('admin')->middleware('auth')->group(function () {
 
 //axios request
 
-Route::get('getdata',function (){
-    return [65,59,80,81,56,55,40,10,30,50];
-});
+Route::get('dashboardchart/{agency}/{month}','AdminController@chartData');
 // end after update
 
 
@@ -84,5 +81,3 @@ Route::get('/about', function () {
 
 
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
