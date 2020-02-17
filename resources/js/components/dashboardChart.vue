@@ -9,7 +9,7 @@
                 </select>
             </div>
             <div class="col-4">
-                <select name="month" id="month" onchange="precall()" v-model="month">
+                <select name="month" id="month" v-on:change="ajexCall(agency,month,getChart)"  v-model="month">
                     <option value="1">January</option>
                     <option value="2">February</option>
 

@@ -24,13 +24,15 @@ class AdminController extends Controller
 
     public function chartData(Request $request,booking $booking)
     {
-//        for ($i = 0; $i < 30; $i++){
+//        $lenght = mt_rand(1,4);
+//
+//        for ($i = 1; $i < $lenght; $i++){
 //            $data = new booking();
-//            $data->agency_id = 1;
+//            $data->agency_id = $request->agency;
 //            $data->route_id = 2;
 //            $data->bus_id = 10;
 //            $data->seat_id = $i+1;
-//            $data->date = '2020/01/24';
+//            $data->date = '2020/0'.$request->month.'/'.$request->date;
 //            $data->time = '10:10:00';
 //            $data->persons_name = 'Mr. Gentel Man';
 //            $data->persons_number =  '01723659050';
@@ -38,6 +40,7 @@ class AdminController extends Controller
 //            $data->status = 'Booked';
 //            $data->save();
 //        }
+//        dd('script run Ok with Intry: '.$i);
 //
 //        for ($i = 0; $i < 40; $i++){
 //            $data = new booking();
@@ -53,7 +56,7 @@ class AdminController extends Controller
 //            $data->status = 'Booked';
 //            $data->save();
 //        }
-        $rcvData = [$request->agency,$request->month];
+//        $rcvData = [$request->agency,$request->month];
 
         $dataset= $booking->getData($request->agency,$request->month);
 
