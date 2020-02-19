@@ -253,6 +253,8 @@ $( "#agency_datepicker" ).datepicker({
     }
 </script>
 
+@stack('scripts')
+
 </body>
 </html>
 

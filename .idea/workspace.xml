@@ -2,12 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="47f36ef0-5e7e-4b0f-ae96-578b7eb533bd" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/layouts/testheader.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/dashboardChart.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/dashboardChart.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/agencyDetails.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/agencyDetails.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layout/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/layout.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,11 +174,11 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\phpShop\desktop" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/resources/js/components" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\phpShop\desktop" />
     </key>
   </component>
   <component name="RunManager">
@@ -230,6 +232,7 @@
       <workItem from="1580001838546" duration="2033000" />
       <workItem from="1580179535303" duration="1865000" />
       <workItem from="1581935814114" duration="3154000" />
+      <workItem from="1582103426781" duration="6994000" />
     </task>
     <servers />
   </component>
@@ -246,14 +249,18 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="743" y="310" width="424" height="484" key="FileChooserDialogImpl/0.27.1920.1053@0.27.1920.1053" timestamp="1580184071598" />
+    <state x="514" y="286" key="NewPhpFileDialog" timestamp="1582105031895">
+      <screen x="0" y="0" width="1360" height="728" />
+    </state>
+    <state x="514" y="286" key="NewPhpFileDialog/0.0.1360.728@0.0.1360.728" timestamp="1582105031895" />
     <state x="456" y="187" key="SettingsEditor" timestamp="1579785802618">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="456" y="187" key="SettingsEditor/0.27.1920.1053@0.27.1920.1053" timestamp="1579785802618" />
-    <state x="441" y="159" width="672" height="470" key="search.everywhere.popup" timestamp="1581936984393">
+    <state x="441" y="159" width="672" height="470" key="search.everywhere.popup" timestamp="1582104949426">
       <screen x="0" y="0" width="1360" height="728" />
     </state>
-    <state x="441" y="159" width="672" height="470" key="search.everywhere.popup/0.0.1360.728@0.0.1360.728" timestamp="1581936984393" />
+    <state x="441" y="159" width="672" height="470" key="search.everywhere.popup/0.0.1360.728@0.0.1360.728" timestamp="1582104949426" />
     <state x="443" y="189" width="672" height="478" key="search.everywhere.popup/0.27.1366.741@0.27.1366.741" timestamp="1581870371128" />
     <state x="623" y="257" width="672" height="678" key="search.everywhere.popup/0.27.1920.1053@0.27.1920.1053" timestamp="1579796858651" />
   </component>
