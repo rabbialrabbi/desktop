@@ -61,7 +61,10 @@
         .m-b-md {
             margin-bottom: 30px;
         }
+
+
     </style>
+    @stack('style')
 
 </head>
 <body>

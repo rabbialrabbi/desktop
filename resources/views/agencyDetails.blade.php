@@ -15,21 +15,20 @@
 
 
         <table class="table table-hover">
-            <thead>
             <tr class="table-head">
-                <th scope="col">Agency</th>
-                <th scope="col">Trips</th>
-                <th scope="col">First Trip</th>
-                <th scope="col">Last Trip</th>
+                <th scope="col" style="width:25%;">Agency</th>
+                <th scope="col" style="width:25%;">Trips</th>
+                <th scope="col" style="width:25%;">First Trip</th>
+                <th scope="col" style="width:25%;"  >Last Trip</th>
             </tr>
-            </thead>
-            <tbody>
-            @foreach($routes as $route)
-            <tr id="tableContent{{$route['agency_id']}}">
-                <th scope="row">{{$route['agency'] }}</th>
-                <td>{{$route['trips'] }} (trips)</td>
-                <td>{{$route['first_trip'] }}</td>
-                <td id="test">{{$route['last_trip'] }}</td>
+        </table>
+        @foreach($routes as $route)
+        <table class="table table-hover">
+            <tr id="tableContent{{$route['agency_id']}}" style="cursor: pointer;">
+                <th scope="row" style="width:25%;">{{$route['agency'] }}</th>
+                <td style="width:25%;">{{$route['trips'] }} (trips)</td>
+                <td style="width:25%;">{{$route['first_trip'] }}</td>
+                <td style="width:25%;" id="test">{{$route['last_trip'] }}</td>
 {{--                <td>--}}
 {{--                    <form id="formId{{$route['agency_id']}}" action="/bookingbus" method="GET">--}}
 {{--                        <input type="hidden" name="agency_id" value={{$route['agency_id']}}>--}}
@@ -46,22 +45,41 @@
 {{--                    </form>--}}
 {{--                </td>--}}
             </tr>
-                @endforeach
+        </table >
+            <table id="subTableContent{{$route['agency_id']}}" class="table table-hover" style="display:none;width: 96%;margin-left: auto;margin-right: auto">
 
-            </tbody>
-        </table>
+            </table>
+        @endforeach
     </div>
 
     @push('scripts')
 {{--    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>--}}
-    <script>
-        @foreach($routes as $route)
-        $("#tableContent{{$route['agency_id']}}").each(function () {
+{{--    <script>--}}
+{{--        @foreach($routes as $route)--}}
+{{--        $("#tableContent{{$route['agency_id']}}").each(function () {--}}
 
+{{--        })--}}
+{{--        @endforeach--}}
+{{--        console.log($('#test'))--}}
+{{--    </script>--}}
+<script >
+        @foreach($routes as $route)
+        $("#tableContent{{$route['agency_id']}}").click(function(){
+            $('#subTableContent{{$route['agency_id']}}').html("<tr></tr>");
+            axios.post('/testdata',{
+                agency_id:'Rabbial',
+                route_id:'Anower',
+                date:'2020/02/20'
+            }).then((response)=>{
+                console.log(response.data)
+            }).catch((error)=>{
+                console.log(error)
+            });
+            $('#subTableContent{{$route['agency_id']}}').append("<tr style='padding: 50px'><td style='width:25%;'>SN</td><td style='width:25%;'>Name</td><td style='width:25%;'>Contact</td><td style='width:25%;'>Note</td></tr>").toggle();
         })
         @endforeach
-        console.log($('#test'))
     </script>
+
     @endpush
 @endsection
 
