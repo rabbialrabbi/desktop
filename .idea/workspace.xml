@@ -3,10 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="47f36ef0-5e7e-4b0f-ae96-578b7eb533bd" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BookingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BookingController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/agencyDetails.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/agencyDetails.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layout/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/layout.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/testheader.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/testheader.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -34,25 +32,25 @@
     <expand>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="MariaDB - ticketapp@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="ticketapp@localhost" type="feb32156:DbDataSourceImpl" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="MariaDB - ticketapp@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="ticketapp@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="MariaDB - ticketapp@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="ticketapp@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="ticketapp: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="ticketapp: schema" type="ebfa3cd1:MariaImplModel$Schema" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="MariaDB - ticketapp@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="ticketapp@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="ticketapp: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="booking: table" type="285a2a93:MysqlImplModel$Table" />
+        <item name="ticketapp: schema" type="ebfa3cd1:MariaImplModel$Schema" />
+        <item name="routes: table" type="dbc44a63:MariaImplModel$Table" />
       </path>
     </expand>
     <select />
@@ -161,7 +159,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="DatabaseDriversLRU" value="mysql&#10;mariadb" />
+    <property name="DatabaseDriversLRU" value="mariadb&#10;mysql" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -233,7 +231,9 @@
       <workItem from="1582103426781" duration="7286000" />
       <workItem from="1582168578330" duration="3903000" />
       <workItem from="1582182143937" duration="1020000" />
-      <workItem from="1582344235875" duration="13287000" />
+      <workItem from="1582344235875" duration="13371000" />
+      <workItem from="1582428456238" duration="16174000" />
+      <workItem from="1582514709693" duration="12411000" />
     </task>
     <servers />
   </component>
@@ -241,9 +241,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="507" y="132" width="699" height="477" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1581871255861">
-      <screen x="0" y="27" width="1366" height="741" />
+    <state x="713" y="147" width="699" height="477" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1582438360901">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="713" y="147" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582438360901" />
     <state x="507" y="132" width="699" height="477" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1366.741@0.27.1366.741" timestamp="1581871255861" />
     <state x="713" y="176" width="800" height="677" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1580003058480" />
     <state x="743" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1580184071598">

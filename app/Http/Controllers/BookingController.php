@@ -21,7 +21,7 @@ class BookingController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth')->except(['showAgency','showBus','showSeat','booking','confirmBooking','error']);
+        $this->middleware('auth')->except(['showAgency','showBus','showSeat','booking','confirmBooking','error','ajexShowBus']);
     }
 
     public function showAgency($from_id, $to_id)
@@ -91,6 +91,43 @@ class BookingController extends Controller
 
 
     }
+
+    public function ajexShowBus(Request $request){
+
+
+        if(@$request->agency_id && @$request->route_id){
+            $bus_list=  bus::with('agency','route')->where(['agency_id'=>$request->agency_id, 'route_id'=>$request->route_id])->get();
+        }
+        else{
+            $bus_list=  bus::with('agency','route')->where(['agency_id'=>$request->agencyId])->get();
+        }
+
+        $date = carbon::parse($request->date)->timestamp;
+
+////        while($bus_list){
+////            $buses[] = array('agency_name'=>$bus_list->agency());
+////        }
+//        return $bus_list->route();
+
+        foreach($bus_list as $bus){
+            $buses[]= (object)[
+                'id'=>$bus->id,
+                'agency_name'=>$bus->agency()->first()->name,
+                'time'=>Carbon::parse($bus->departure_time)->format('h:i A'),
+                'destination'=>$bus->route()->first()->departureCity()->first()->name,
+                'type'=>$bus->model.' to '.$bus->type,
+                'fare'=>$bus->fare,
+                'date'=> $date
+                ] ;
+};
+//        $bus->route()->first()->departureCity()->first()->name
+
+//        return ['buses'=>$bus_list, 'booking_date'=>$date];
+//        return $buses;
+
+return $buses;
+    }
+
 
     public function showSeat(seat $seat)
     {

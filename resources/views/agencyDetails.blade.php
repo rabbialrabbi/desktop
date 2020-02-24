@@ -24,8 +24,8 @@
         </table>
         @foreach($routes as $route)
         <table class="table table-hover">
-            <tr id="tableContent{{$route['agency_id']}}" style="cursor: pointer;">
-                <th scope="row" style="width:25%;">{{$route['agency'] }}</th>
+            <tr id="tableContent{{$route['agency_id']}}" style="cursor: pointer;" >
+                <th scope="row" style="width:25%;" >{{$route['agency'] }}</th>
                 <td style="width:25%;">{{$route['trips'] }} (trips)</td>
                 <td style="width:25%;">{{$route['first_trip'] }}</td>
                 <td style="width:25%;" id="test">{{$route['last_trip'] }}</td>
@@ -63,20 +63,57 @@
 {{--        console.log($('#test'))--}}
 {{--    </script>--}}
 <script >
+
         @foreach($routes as $route)
-        $("#tableContent{{$route['agency_id']}}").click(function(){
+        $("#tableContent{{$route['agency_id']}}").click(function() {
+            var agencyId = {{$route['agency_id']}};
+                var routeId = {{$route_info->id}};
             $('#subTableContent{{$route['agency_id']}}').html("<tr></tr>");
-            axios.post('/testdata',{
-                agency_id:'Rabbial',
-                route_id:'Anower',
-                date:'2020/02/20'
-            }).then((response)=>{
-                console.log(response.data)
-            }).catch((error)=>{
+
+            axios.post('/testdata', {
+                agency_id: agencyId,
+                route_id: routeId,
+                date: '2020/02/20'
+            }).then((response) => {
+
+                var table =`<thead>
+                <tr class="table-head">
+                    <th scope="col">SN</th>
+                    <th scope="col">Agency</th>
+                    <th scope="col">Time</th>
+                    <th scope="col">Destination</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Fare</th>
+                    <th scope="col"></th>
+                    </tr>
+                    </thead>
+                    <tbody>` ;
+            response.data.forEach((buses)=>{
+               table += `<tr>
+                        <th scope="row">${buses.id}</th>
+                        <td>${buses.agency_name}</td>
+                        <td>${buses.time}</td>
+                        <td>${buses.destination}</td>
+                        <td>${buses.type}</td>
+                        <td>${buses.fare}</td>
+                        <td><a href=${'/bookingseat/'+buses.id+'/'+buses.date}>Booking</a>
+</td>
+                        </tr>`
+                    })
+
+                table+=`</tbody>`;
+
+
+
+                $('#subTableContent{{$route['agency_id']}}').append(table).toggle();
+
+
+            }).catch((error) => {
                 console.log(error)
             });
-            $('#subTableContent{{$route['agency_id']}}').append("<tr style='padding: 50px'><td style='width:25%;'>SN</td><td style='width:25%;'>Name</td><td style='width:25%;'>Contact</td><td style='width:25%;'>Note</td></tr>").toggle();
         })
+
+
         @endforeach
     </script>
 

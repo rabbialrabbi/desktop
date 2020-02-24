@@ -43,9 +43,7 @@ Route::prefix('admin')->middleware('auth')->group(function () {
 //axios request
 
 Route::get('dashboardchart/{agency}/{month}','AdminController@chartData');
-Route::post('testdata', function(\Illuminate\Http\Request $request){
-    return $request;
-});
+Route::post('testdata', 'BookingController@ajexShowBus');
 // end after update
 
 
